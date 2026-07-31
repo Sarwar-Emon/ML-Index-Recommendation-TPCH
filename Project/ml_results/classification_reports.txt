@@ -1,0 +1,38 @@
+============================================================
+CLASSIFICATION REPORTS
+TPC-H ML Index Recommendation
+============================================================
+
+
+Random Forest
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       0.95      1.00      0.98        42
+ Needs Index       1.00      0.99      0.99       140
+
+    accuracy                           0.99       182
+   macro avg       0.98      0.99      0.98       182
+weighted avg       0.99      0.99      0.99       182
+
+Gradient Boosting
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       1.00      1.00      1.00        42
+ Needs Index       1.00      1.00      1.00       140
+
+    accuracy                           1.00       182
+   macro avg       1.00      1.00      1.00       182
+weighted avg       1.00      1.00      1.00       182
+
+SVM
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       0.93      0.95      0.94        42
+ Needs Index       0.99      0.98      0.98       140
+
+    accuracy                           0.97       182
+   macro avg       0.96      0.97      0.96       182
+weighted avg       0.97      0.97      0.97       182

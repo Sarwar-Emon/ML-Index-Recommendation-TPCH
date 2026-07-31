@@ -1,0 +1,20 @@
+[2026-03-10 16:59:30.993249] two_table_joins_Q188
+  SQL: SELECT YEAR(l.L_SHIPDATE)           AS ship_year, SUM(l.L_EXTENDEDPRICE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERK
+  ERR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY GROUP BY YEAR(' at line 1
+
+[2026-03-10 17:09:42.125120] aggregation_Q120
+  SQL: SELECT r_regionkey, COUNT(*) AS nation_count FROM nation GROUP BY r_regionkey HAVING COUNT(*) > 5 ORDER BY nation_count 
+  ERR: 1054 (42S22): Unknown column 'r_regionkey' in 'field list'
+
+[2026-03-10 17:36:45.185451] complex_queries_Q100
+  SQL: SELECT o_orderkey, COUNT(*) AS lineitem_count, SUM(l_extendedprice * (1 - l_discount)) AS order_revenue FROM lineitem GR
+  ERR: 1054 (42S22): Unknown column 'o_orderkey' in 'field list'
+
+[2026-03-10 17:37:13.187430] complex_queries_Q115
+  SQL: SELECT p_partkey, p_name, avg_price, total_qty, RANK() OVER (ORDER BY avg_price DESC)  AS price_rank, RANK() OVER (ORDER
+  ERR: 1052 (23000): Column 'p_partkey' in field list is ambiguous
+
+[2026-03-10 17:38:09.982930] complex_queries_Q140
+  SQL: SELECT s_name, rank_1994, rank_1997, rank_1997 - rank_1994 AS rank_change FROM ( SELECT l_suppkey, RANK() OVER (ORDER BY
+  ERR: 1690 (22003): BIGINT UNSIGNED value is out of range in '(`ranked`.`rank_1997` - `ranked`.`rank_1994`)'
+

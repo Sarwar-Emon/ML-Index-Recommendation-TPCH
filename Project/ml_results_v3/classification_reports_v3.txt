@@ -1,0 +1,44 @@
+============================================================
+CLASSIFICATION REPORTS v2 (No Data Leakage)
+============================================================
+
+LABELING METHODOLOGY:
+Labels derived from EXPLAIN signals only (no runtime):
+  - Full table scan (type=ALL)
+  - No index + high rows examined
+  - Filesort/temp table + high rows examined
+  - Multi-table join with low index coverage
+
+
+Random Forest
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       0.98      0.98      0.98        43
+ Needs Index       0.99      0.99      0.99       139
+
+    accuracy                           0.99       182
+   macro avg       0.98      0.98      0.98       182
+weighted avg       0.99      0.99      0.99       182
+
+Gradient Boosting
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       1.00      0.98      0.99        43
+ Needs Index       0.99      1.00      1.00       139
+
+    accuracy                           0.99       182
+   macro avg       1.00      0.99      0.99       182
+weighted avg       0.99      0.99      0.99       182
+
+SVM
+----------------------------------------
+              precision    recall  f1-score   support
+
+    No Index       0.98      0.98      0.98        43
+ Needs Index       0.99      0.99      0.99       139
+
+    accuracy                           0.99       182
+   macro avg       0.98      0.98      0.98       182
+weighted avg       0.99      0.99      0.99       182

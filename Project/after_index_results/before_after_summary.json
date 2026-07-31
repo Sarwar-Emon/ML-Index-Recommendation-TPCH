@@ -1,0 +1,95 @@
+{
+  "indexes_applied": 25,
+  "total_queries_compared": 905,
+  "timeouts_skipped": 1,
+  "total_runtime_before_ms": 550090.98,
+  "total_runtime_after_ms": 401730.87,
+  "overall_speedup": 1.3693,
+  "avg_speedup": 2.5949,
+  "median_speedup": 0.9845,
+  "pct_improved": 22.1,
+  "per_category": [
+    {
+      "category": "aggregation",
+      "count": 199,
+      "avg_before": 550.7108628140703,
+      "avg_after": 251.56899648241208,
+      "avg_speedup": 4.16,
+      "max_speedup": 558.626096491228,
+      "pct_improved": 27.6
+    },
+    {
+      "category": "complex_queries",
+      "count": 196,
+      "avg_before": 1323.346913265306,
+      "avg_after": 828.3804448979591,
+      "avg_speedup": 3.85,
+      "max_speedup": 409.6320213069609,
+      "pct_improved": 19.4
+    },
+    {
+      "category": "single_table_filters",
+      "count": 111,
+      "avg_before": 151.02420720720718,
+      "avg_after": 151.48615495495494,
+      "avg_speedup": 1.62,
+      "max_speedup": 29.46389124893798,
+      "pct_improved": 21.6
+    },
+    {
+      "category": "three_table_joins",
+      "count": 200,
+      "avg_before": 661.882805,
+      "avg_after": 702.416501,
+      "avg_speedup": 1.18,
+      "max_speedup": 10.809944070150962,
+      "pct_improved": 20.5
+    },
+    {
+      "category": "two_table_joins",
+      "count": 199,
+      "avg_before": 160.7199889447236,
+      "avg_after": 160.8432472361809,
+      "avg_speedup": 1.76,
+      "max_speedup": 88.62519107306635,
+      "pct_improved": 21.1
+    }
+  ],
+  "top5": [
+    {
+      "category": "aggregation",
+      "query_id": "Q029",
+      "avg_runtime_ms": 101.89,
+      "avg_runtime_after": 0.18,
+      "speedup": 558.63
+    },
+    {
+      "category": "complex_queries",
+      "query_id": "Q157",
+      "avg_runtime_ms": 41188.21,
+      "avg_runtime_after": 100.55,
+      "speedup": 409.63
+    },
+    {
+      "category": "complex_queries",
+      "query_id": "Q147",
+      "avg_runtime_ms": 55.22,
+      "avg_runtime_after": 0.48,
+      "speedup": 114.07
+    },
+    {
+      "category": "two_table_joins",
+      "query_id": "Q177",
+      "avg_runtime_ms": 28.99,
+      "avg_runtime_after": 0.33,
+      "speedup": 88.63
+    },
+    {
+      "category": "aggregation",
+      "query_id": "Q122",
+      "avg_runtime_ms": 64041.66,
+      "avg_runtime_after": 2025.53,
+      "speedup": 31.62
+    }
+  ]
+}

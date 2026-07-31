@@ -1,0 +1,698 @@
+query_id,category,avg_runtime_ms,priority,priority_score,join_type,rows_examined,index_coverage,has_filesort,has_full_scan,reasons
+Q001,single_table_filters,333.08,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q100,aggregation,12.03,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q087,aggregation,526.3,HIGH,1.0,ALL,643,0.6,True,True,Full table scan detected; Slow query (526ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q088,aggregation,13.26,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q089,aggregation,273.3,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q090,aggregation,172.43,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q092,aggregation,31.12,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q094,aggregation,235.3,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q097,aggregation,4.75,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q102,aggregation,237.06,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q085,aggregation,24.81,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q103,aggregation,11.78,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q104,aggregation,38.94,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q105,aggregation,9.54,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q106,aggregation,307.51,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q107,aggregation,49.93,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q108,aggregation,0.58,HIGH,1.0,ALL,1000,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q109,aggregation,8.32,HIGH,1.0,ALL,29784,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q086,aggregation,150.85,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q083,aggregation,12.71,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q148,three_table_joins,470.12,HIGH,1.0,ALL,638,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q072,aggregation,7.0,HIGH,1.0,ALL,14892,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q064,aggregation,150.44,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q065,aggregation,8.19,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q066,aggregation,1041.25,HIGH,1.0,ALL,19948,0.5,True,True,Full table scan detected; Slow query (1041ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q067,aggregation,144.36,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q068,aggregation,243.68,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q070,aggregation,273.2,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q071,aggregation,46.04,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q073,aggregation,175.88,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q082,aggregation,339.15,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q074,aggregation,6.55,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q075,aggregation,382.06,HIGH,1.0,ALL,148469,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,469)"
+Q076,aggregation,167.94,HIGH,1.0,ALL,19924,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q078,aggregation,895.75,HIGH,1.0,ALL,19948,0.5,True,True,Full table scan detected; Slow query (896ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q079,aggregation,64.77,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q080,aggregation,351.97,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q081,aggregation,166.39,HIGH,1.0,ALL,19925,0.8,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q112,aggregation,57.68,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q114,aggregation,6.78,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q115,aggregation,278.21,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q160,aggregation,183.81,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q152,aggregation,1192.52,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Slow query (1193ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (594,745)"
+Q153,aggregation,261.33,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q155,aggregation,219.59,HIGH,1.0,ALL,221044,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (221,044)"
+Q156,aggregation,290.25,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q157,aggregation,1105.73,HIGH,1.0,ALL,615470,0.333,True,True,"Full table scan detected; Slow query (1106ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (615,470)"
+Q158,aggregation,102.37,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q159,aggregation,250.02,HIGH,1.0,ALL,296931,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q161,aggregation,183.98,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (148,465)"
+Q116,aggregation,27.37,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q162,aggregation,124.57,HIGH,1.0,ALL,164982,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,982)"
+Q163,aggregation,1694.95,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Slow query (1695ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (148,465)"
+Q164,aggregation,628.25,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Slow query (628ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q165,aggregation,197.12,HIGH,1.0,ALL,221044,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (221,044)"
+Q166,aggregation,405.02,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q168,aggregation,63.02,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q169,aggregation,297.34,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q147,aggregation,1.01,HIGH,1.0,ALL,1001,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q146,aggregation,69.01,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q143,aggregation,636.17,HIGH,1.0,ALL,757090,0.333,True,True,"Full table scan detected; Slow query (636ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,090)"
+Q140,aggregation,70.31,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q118,aggregation,7.53,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q119,aggregation,126.8,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q122,aggregation,64041.66,HIGH,1.0,ALL,39838,0.0,True,True,Full table scan detected; Slow query (64042ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q123,aggregation,208.64,HIGH,1.0,ALL,82493,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q125,aggregation,678.06,HIGH,1.0,ALL,595383,0.6,True,True,"Full table scan detected; Slow query (678ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (595,383)"
+Q126,aggregation,41.91,HIGH,1.0,ALL,19948,0.5,False,True,Full table scan detected
+Q127,aggregation,25.89,HIGH,1.0,ALL,163358,0.667,False,True,"Full table scan detected; High rows examined (163,358)"
+Q128,aggregation,54.2,HIGH,1.0,ALL,235316,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (235,316)"
+Q130,aggregation,118.21,HIGH,1.0,ALL,82492,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q131,aggregation,41.17,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q132,aggregation,942.8,HIGH,1.0,ALL,1189491,0.333,True,True,"Full table scan detected; Slow query (943ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,491)"
+Q133,aggregation,46.28,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q137,aggregation,152.34,HIGH,1.0,ALL,163375,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (163,375)"
+Q138,aggregation,285.88,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q139,aggregation,32.07,HIGH,1.0,ALL,39848,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q063,aggregation,292.59,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q062,aggregation,115.07,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q061,aggregation,152.84,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q188,three_table_joins,715.99,HIGH,1.0,ALL,148471,0.75,True,True,"Full table scan detected; Slow query (716ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q174,three_table_joins,190.49,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q176,three_table_joins,384.53,HIGH,1.0,ALL,638,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q178,three_table_joins,881.58,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (882ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q179,three_table_joins,227.07,HIGH,1.0,ALL,148467,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,467)"
+Q182,three_table_joins,162.11,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q183,three_table_joins,1011.15,HIGH,1.0,ALL,594748,0.75,True,True,"Full table scan detected; Slow query (1011ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,748)"
+Q185,three_table_joins,1026.44,HIGH,1.0,ALL,297380,0.8,True,True,"Full table scan detected; Slow query (1026ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (297,380)"
+Q002,single_table_filters,263.32,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q002,aggregation,123.77,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q191,three_table_joins,1190.37,HIGH,1.0,ALL,594750,0.833,True,True,"Full table scan detected; Slow query (1190ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,750)"
+Q192,three_table_joins,513.24,HIGH,1.0,ALL,643,0.6,True,True,Full table scan detected; Slow query (513ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q193,three_table_joins,488.22,HIGH,1.0,ALL,148470,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q194,three_table_joins,3422.91,HIGH,1.0,ALL,1215,0.667,True,True,Full table scan detected; Slow query (3423ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q196,three_table_joins,196.0,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q197,three_table_joins,1641.16,HIGH,1.0,ALL,1248967,0.667,True,True,"Full table scan detected; Slow query (1641ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,248,967)"
+Q199,three_table_joins,68.28,HIGH,1.0,ALL,297552,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (297,552)"
+Q172,three_table_joins,140.82,HIGH,1.0,ALL,19925,0.8,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q170,three_table_joins,165.08,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q169,three_table_joins,878.58,HIGH,1.0,ALL,148473,0.833,True,True,"Full table scan detected; Slow query (879ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q168,three_table_joins,161.23,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q150,three_table_joins,184.82,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q152,three_table_joins,108.18,HIGH,1.0,ALL,82498,0.6,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q153,three_table_joins,1643.62,HIGH,1.0,ALL,638,0.75,True,True,Full table scan detected; Slow query (1644ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q154,three_table_joins,99.68,HIGH,1.0,ALL,82521,0.25,True,True,Full table scan detected; Low index coverage (25%); Using filesort (ORDER BY not using index); Using temporary table
+Q155,three_table_joins,616.34,HIGH,1.0,ALL,148471,0.75,True,True,"Full table scan detected; Slow query (616ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q156,three_table_joins,6.04,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q157,three_table_joins,29.2,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q159,three_table_joins,220.92,HIGH,1.0,ALL,595380,0.6,False,True,"Full table scan detected; High rows examined (595,380)"
+Q161,three_table_joins,25.52,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q162,three_table_joins,756.07,HIGH,1.0,ALL,743218,0.667,True,True,"Full table scan detected; Slow query (756ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (743,218)"
+Q163,three_table_joins,12.46,HIGH,1.0,ALL,83492,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q164,three_table_joins,5.75,HIGH,1.0,ALL,15892,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q165,three_table_joins,220.85,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q166,three_table_joins,18.36,HIGH,1.0,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q167,three_table_joins,121.79,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected; Using temporary table
+Q200,three_table_joins,2627.88,HIGH,1.0,ALL,647,0.778,True,True,Full table scan detected; Slow query (2628ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q003,aggregation,2.19,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q058,aggregation,134.87,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q045,aggregation,39.0,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q038,aggregation,196.72,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q039,aggregation,196.75,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q040,aggregation,224.87,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); Using temporary table; High rows examined (594,745)"
+Q041,aggregation,0.68,HIGH,1.0,ALL,1000,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q042,aggregation,10.03,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q043,aggregation,40.24,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q044,aggregation,134.49,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); Using temporary table; High rows examined (594,745)"
+Q048,aggregation,3.96,HIGH,1.0,ALL,14892,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q004,aggregation,4.0,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q049,aggregation,5.1,HIGH,1.0,ALL,14892,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q050,aggregation,228.0,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q051,aggregation,5.03,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q052,aggregation,6.25,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q055,aggregation,182.06,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q056,aggregation,5.22,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q057,aggregation,48.0,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q037,aggregation,37.56,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q035,aggregation,26.21,HIGH,1.0,ALL,82490,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q034,aggregation,5.37,HIGH,1.0,ALL,19919,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q029,aggregation,101.89,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q005,aggregation,81.84,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q007,aggregation,83.13,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q009,aggregation,8.8,HIGH,1.0,ALL,82490,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q010,aggregation,9.82,HIGH,1.0,ALL,82490,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q012,aggregation,84.92,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q013,aggregation,81.27,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q014,aggregation,82.32,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q015,aggregation,3.41,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q016,aggregation,112.82,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q017,aggregation,2.2,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q020,aggregation,2.61,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q021,aggregation,32.15,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); Using temporary table; High rows examined (148,465)"
+Q022,aggregation,133.32,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q026,aggregation,25.56,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q028,aggregation,0.33,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q170,aggregation,1.15,HIGH,1.0,ALL,1000,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q171,aggregation,48.3,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q173,aggregation,68.64,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q128,complex_queries,1250.91,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Slow query (1251ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q119,complex_queries,1194.18,HIGH,1.0,ALL,19948,0.5,True,True,Full table scan detected; Slow query (1194ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q121,complex_queries,224.51,HIGH,1.0,ALL,1784236,0.25,True,True,"Full table scan detected; Low index coverage (25%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,236)"
+Q122,complex_queries,168.31,HIGH,1.0,ALL,296931,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q123,complex_queries,330.04,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q125,complex_queries,177.52,HIGH,1.0,ALL,148476,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,476)"
+Q126,complex_queries,170.44,HIGH,1.0,ALL,296931,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q127,complex_queries,191.68,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q129,complex_queries,1056.11,HIGH,1.0,ALL,615470,0.333,True,True,"Full table scan detected; Slow query (1056ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (615,470)"
+Q141,complex_queries,1410.82,HIGH,1.0,ALL,757090,0.667,True,True,"Full table scan detected; Slow query (1411ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,090)"
+Q131,complex_queries,1071.22,HIGH,1.0,ALL,757090,0.333,True,True,"Full table scan detected; Slow query (1071ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,090)"
+Q132,complex_queries,89.31,HIGH,1.0,ALL,164981,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,981)"
+Q133,complex_queries,253.3,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q134,complex_queries,867.53,HIGH,1.0,ALL,1784237,0.4,True,True,"Full table scan detected; Slow query (868ms > 500ms threshold); Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,237)"
+Q136,complex_queries,274.94,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q137,complex_queries,269.19,HIGH,1.0,ALL,296940,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,940)"
+Q138,complex_queries,268.16,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q116,complex_queries,184.5,HIGH,1.0,ALL,596339,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (596,339)"
+Q113,complex_queries,298.23,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q112,complex_queries,161.19,HIGH,1.0,ALL,445395,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (445,395)"
+Q110,complex_queries,991.72,HIGH,1.0,ALL,1189492,0.5,True,True,"Full table scan detected; Slow query (992ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,492)"
+Q086,complex_queries,113.26,HIGH,1.0,ALL,594766,0.667,False,True,"Full table scan detected; High rows examined (594,766)"
+Q088,complex_queries,0.9,HIGH,1.0,ALL,1622,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q093,complex_queries,425.03,HIGH,1.0,ALL,148479,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (148,479)"
+Q094,complex_queries,0.47,HIGH,1.0,ALL,1026,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index)
+Q095,complex_queries,202.81,HIGH,1.0,ALL,650,0.625,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q097,complex_queries,203.67,HIGH,1.0,ALL,1189491,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,491)"
+Q101,complex_queries,57.2,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q102,complex_queries,131.83,HIGH,1.0,ALL,164982,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,982)"
+Q103,complex_queries,142.01,HIGH,1.0,ALL,445395,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (445,395)"
+Q104,complex_queries,837.41,HIGH,1.0,ALL,759755,0.8,True,True,"Full table scan detected; Slow query (837ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (759,755)"
+Q105,complex_queries,251.79,HIGH,1.0,ALL,678911,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (678,911)"
+Q106,complex_queries,245.18,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q107,complex_queries,891.49,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Slow query (891ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q108,complex_queries,923.98,HIGH,1.0,ALL,1189491,0.667,True,True,"Full table scan detected; Slow query (924ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (1,189,491)"
+Q109,complex_queries,160.36,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q139,complex_queries,209.99,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q142,complex_queries,364.51,HIGH,1.0,ALL,593860,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (593,860)"
+Q079,complex_queries,0.4,HIGH,1.0,ALL,1026,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index)
+Q191,complex_queries,46.39,HIGH,1.0,ALL,445395,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (445,395)"
+Q182,complex_queries,1467.22,HIGH,1.0,ALL,452423,0.571,True,True,"Full table scan detected; Slow query (1467ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (452,423)"
+Q184,complex_queries,985.87,HIGH,1.0,ALL,1209438,0.5,True,True,"Full table scan detected; Slow query (986ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,209,438)"
+Q185,complex_queries,628.78,HIGH,1.0,ALL,891686,0.4,True,True,"Full table scan detected; Slow query (629ms > 500ms threshold); Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (891,686)"
+Q186,complex_queries,155.19,HIGH,1.0,ALL,164982,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,982)"
+Q188,complex_queries,1177.99,HIGH,1.0,ALL,757092,0.8,True,True,"Full table scan detected; Slow query (1178ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,092)"
+Q189,complex_queries,605.94,HIGH,1.0,ALL,452422,0.5,True,True,"Full table scan detected; Slow query (606ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (452,422)"
+Q190,complex_queries,372.71,HIGH,1.0,ALL,594748,0.75,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,748)"
+Q192,complex_queries,827.42,HIGH,1.0,ALL,759740,0.8,True,True,"Full table scan detected; Slow query (827ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (759,740)"
+Q143,complex_queries,240.23,HIGH,1.0,ALL,1784235,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,235)"
+Q193,complex_queries,188.92,HIGH,1.0,ALL,296931,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q194,complex_queries,967.16,HIGH,1.0,ALL,759755,0.8,True,True,"Full table scan detected; Slow query (967ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (759,755)"
+Q195,complex_queries,571.59,HIGH,1.0,ALL,148469,0.5,True,True,"Full table scan detected; Slow query (572ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,469)"
+Q196,complex_queries,4779.9,HIGH,1.0,ALL,440823240,0.333,True,True,"Full table scan detected; Slow query (4780ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (440,823,240)"
+Q197,complex_queries,642.43,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Slow query (642ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q198,complex_queries,3004.29,HIGH,1.0,ALL,763184,0.625,True,True,"Full table scan detected; Slow query (3004ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (763,184)"
+Q199,complex_queries,1479.87,HIGH,1.0,ALL,757091,0.75,True,True,"Full table scan detected; Slow query (1480ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,091)"
+Q180,complex_queries,320.23,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q179,complex_queries,1150.48,HIGH,1.0,ALL,759755,0.8,True,True,"Full table scan detected; Slow query (1150ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (759,755)"
+Q177,complex_queries,673.53,HIGH,1.0,ALL,757092,0.8,True,True,"Full table scan detected; Slow query (674ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,092)"
+Q176,complex_queries,1862.72,HIGH,1.0,ALL,757090,0.333,True,True,"Full table scan detected; Slow query (1863ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,090)"
+Q144,complex_queries,512.32,HIGH,1.0,ALL,1784245,0.25,True,True,"Full table scan detected; Slow query (512ms > 500ms threshold); Low index coverage (25%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,245)"
+Q145,complex_queries,261.04,HIGH,1.0,ALL,678912,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (678,912)"
+Q147,complex_queries,55.22,HIGH,1.0,ALL,39838,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q148,complex_queries,69.44,HIGH,1.0,ALL,2001,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q149,complex_queries,2648.11,HIGH,1.0,ALL,148479,0.5,True,True,"Full table scan detected; Slow query (2648ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,479)"
+Q151,complex_queries,3604.72,HIGH,1.0,ALL,1215,0.667,True,True,Full table scan detected; Slow query (3605ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q153,complex_queries,19.61,HIGH,1.0,ALL,39838,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q157,complex_queries,41188.21,HIGH,1.0,ALL,39838,0.0,True,True,Full table scan detected; Slow query (41188ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q164,complex_queries,136.84,HIGH,1.0,ALL,646,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q165,complex_queries,217.2,HIGH,1.0,ALL,19954,0.833,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q167,complex_queries,187.98,HIGH,1.0,ALL,165032,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (165,032)"
+Q168,complex_queries,179.48,HIGH,1.0,ALL,594746,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,746)"
+Q169,complex_queries,185.55,HIGH,1.0,ALL,235316,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (235,316)"
+Q173,complex_queries,19.62,HIGH,1.0,ALL,19977,0.667,False,True,Full table scan detected
+Q175,complex_queries,9.87,HIGH,1.0,ALL,19948,0.5,False,True,Full table scan detected
+Q084,complex_queries,5.12,HIGH,1.0,ALL,14893,0.5,False,True,Full table scan detected
+Q078,complex_queries,181.85,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q174,aggregation,7.78,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%); Using temporary table
+Q006,complex_queries,532.87,HIGH,1.0,ALL,452422,0.5,True,True,"Full table scan detected; Slow query (533ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (452,422)"
+Q199,aggregation,100.88,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q200,aggregation,1767.58,HIGH,1.0,ALL,643,0.6,True,True,Full table scan detected; Slow query (1768ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q001,complex_queries,159.61,HIGH,1.0,ALL,296931,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (296,931)"
+Q002,complex_queries,261.98,HIGH,1.0,ALL,678911,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (678,911)"
+Q003,complex_queries,300.14,HIGH,1.0,ALL,296932,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,932)"
+Q004,complex_queries,1040.06,HIGH,1.0,ALL,759755,0.8,True,True,"Full table scan detected; Slow query (1040ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (759,755)"
+Q005,complex_queries,181.93,HIGH,1.0,ALL,163367,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (163,367)"
+Q007,complex_queries,58.17,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q019,complex_queries,279.21,HIGH,1.0,ALL,1784235,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,235)"
+Q008,complex_queries,873.04,HIGH,1.0,ALL,1784238,0.333,True,True,"Full table scan detected; Slow query (873ms > 500ms threshold); Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,784,238)"
+Q010,complex_queries,2466.22,HIGH,1.0,ALL,615471,0.5,True,True,"Full table scan detected; Slow query (2466ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (615,471)"
+Q011,complex_queries,167.92,HIGH,1.0,ALL,445396,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (445,396)"
+Q013,complex_queries,233.55,HIGH,1.0,ALL,110844,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (110,844)"
+Q014,complex_queries,70.85,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q015,complex_queries,210.39,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q017,complex_queries,35.93,HIGH,1.0,ALL,29932,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q198,aggregation,165.55,HIGH,1.0,ALL,82493,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q197,aggregation,171.01,HIGH,1.0,ALL,296931,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q195,aggregation,1187.84,HIGH,1.0,ALL,594746,0.5,True,True,"Full table scan detected; Slow query (1188ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,746)"
+Q194,aggregation,542.61,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Slow query (543ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q175,aggregation,1655.22,HIGH,1.0,ALL,19948,0.5,True,True,Full table scan detected; Slow query (1655ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q176,aggregation,286.24,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q177,aggregation,89.66,HIGH,1.0,ALL,148465,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,465)"
+Q178,aggregation,317.55,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); Using temporary table; High rows examined (594,745)"
+Q179,aggregation,63.06,HIGH,1.0,ALL,235316,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (235,316)"
+Q180,aggregation,59.16,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q181,aggregation,657.25,HIGH,1.0,ALL,594745,0.0,True,True,"Full table scan detected; Slow query (657ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q183,aggregation,60.77,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q184,aggregation,119.82,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q185,aggregation,192.61,HIGH,1.0,ALL,296931,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,931)"
+Q186,aggregation,161.65,HIGH,1.0,ALL,82492,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q188,aggregation,195.67,HIGH,1.0,ALL,82492,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q190,aggregation,1308.49,HIGH,1.0,ALL,19948,0.5,True,True,Full table scan detected; Slow query (1308ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q191,aggregation,304.87,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q192,aggregation,273.26,HIGH,1.0,ALL,19925,0.8,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q018,complex_queries,1030.72,HIGH,1.0,ALL,904202,0.5,True,True,"Full table scan detected; Slow query (1031ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (904,202)"
+Q022,complex_queries,47.77,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q077,complex_queries,108.9,HIGH,1.0,ALL,595746,0.667,False,True,"Full table scan detected; High rows examined (595,746)"
+Q066,complex_queries,5024.88,HIGH,1.0,ALL,296958,0.4,True,True,"Full table scan detected; Slow query (5025ms > 500ms threshold); Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,958)"
+Q055,complex_queries,71.78,HIGH,1.0,ALL,296930,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q056,complex_queries,4.08,HIGH,1.0,ALL,1628,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q057,complex_queries,335.67,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q059,complex_queries,1572.8,HIGH,1.0,ALL,20600,0.615,True,True,Full table scan detected; Slow query (1573ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q060,complex_queries,1.31,HIGH,1.0,ALL,2060,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q062,complex_queries,1749.31,HIGH,1.0,ALL,39896,0.4,True,True,Full table scan detected; Slow query (1749ms > 500ms threshold); Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table
+Q064,complex_queries,56.01,HIGH,1.0,ALL,17170,0.6,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q068,complex_queries,3.66,HIGH,1.0,ALL,1655,0.143,True,True,Full table scan detected; Low index coverage (14%); Using filesort (ORDER BY not using index); Using temporary table
+Q023,complex_queries,824.4,HIGH,1.0,ALL,674139,0.5,True,True,"Full table scan detected; Slow query (824ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (674,139)"
+Q069,complex_queries,301.52,HIGH,1.0,ALL,1189490,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q071,complex_queries,53.73,HIGH,1.0,ALL,16145,0.5,False,True,Full table scan detected; Using temporary table
+Q072,complex_queries,105.62,HIGH,1.0,ALL,296934,0.571,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,934)"
+Q073,complex_queries,6.01,HIGH,1.0,ALL,19920,0.5,False,True,Full table scan detected; Using temporary table
+Q074,complex_queries,226.73,HIGH,1.0,ALL,1189491,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,491)"
+Q075,complex_queries,639.34,HIGH,1.0,ALL,148479,0.5,True,True,"Full table scan detected; Slow query (639ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,479)"
+Q076,complex_queries,52.82,HIGH,1.0,ALL,148466,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q054,complex_queries,97.07,HIGH,1.0,ALL,311824,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (311,824)"
+Q052,complex_queries,170.73,HIGH,1.0,ALL,178259,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (178,259)"
+Q051,complex_queries,29.45,HIGH,1.0,ALL,1621,0.4,True,True,Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table
+Q049,complex_queries,251.78,HIGH,1.0,ALL,594750,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,750)"
+Q024,complex_queries,618.15,HIGH,1.0,ALL,148471,0.75,True,True,"Full table scan detected; Slow query (618ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q026,complex_queries,21.51,HIGH,1.0,ALL,148532,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (148,532)"
+Q027,complex_queries,70688.32,HIGH,1.0,ALL,39838,0.0,True,True,Full table scan detected; Slow query (70688ms > 500ms threshold); Low index coverage (0%); Using filesort (ORDER BY not using index)
+Q030,complex_queries,15.01,HIGH,1.0,ALL,15512,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q032,complex_queries,306.68,HIGH,1.0,ALL,460298,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (460,298)"
+Q033,complex_queries,92.35,HIGH,1.0,ALL,164981,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,981)"
+Q034,complex_queries,24471.09,HIGH,1.0,ALL,594774,0.5,True,True,"Full table scan detected; Slow query (24471ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (594,774)"
+Q035,complex_queries,2890.25,HIGH,1.0,ALL,148479,0.5,True,True,"Full table scan detected; Slow query (2890ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (148,479)"
+Q036,complex_queries,2106.73,HIGH,1.0,ALL,635418,0.4,True,True,"Full table scan detected; Slow query (2107ms > 500ms threshold); Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (635,418)"
+Q038,complex_queries,149.89,HIGH,1.0,ALL,83494,0.5,False,True,Full table scan detected
+Q042,complex_queries,1620.46,HIGH,1.0,ALL,83129,0.667,True,True,Full table scan detected; Slow query (1620ms > 500ms threshold); Using filesort (ORDER BY not using index)
+Q044,complex_queries,2605.33,HIGH,1.0,ALL,148493,0.667,True,True,"Full table scan detected; Slow query (2605ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (148,493)"
+Q046,complex_queries,168.87,HIGH,1.0,ALL,311776,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (311,776)"
+Q047,complex_queries,471.85,HIGH,1.0,ALL,1192678,0.333,False,True,"Full table scan detected; Low index coverage (33%); Using temporary table; High rows examined (1,192,678)"
+Q048,complex_queries,5.57,HIGH,1.0,ALL,29785,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q149,three_table_joins,91.95,HIGH,1.0,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q189,three_table_joins,161.81,HIGH,1.0,ALL,82493,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q147,three_table_joins,36.24,HIGH,1.0,ALL,82492,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q064,two_table_joins,149.45,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q057,two_table_joins,132.62,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q058,two_table_joins,126.64,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q059,two_table_joins,119.48,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q060,two_table_joins,116.39,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q061,two_table_joins,111.13,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q062,two_table_joins,106.75,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q063,two_table_joins,169.77,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q065,two_table_joins,140.68,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q055,two_table_joins,139.21,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q066,two_table_joins,99.21,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q067,two_table_joins,83.98,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q068,two_table_joins,49.33,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q075,two_table_joins,5.69,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q076,two_table_joins,8.73,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q077,two_table_joins,16.41,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q095,two_table_joins,177.9,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q056,two_table_joins,136.29,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q054,two_table_joins,148.02,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q195,two_table_joins,218.16,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q033,two_table_joins,45.75,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q007,two_table_joins,71.67,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q010,two_table_joins,72.06,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q011,two_table_joins,150.04,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q012,two_table_joins,136.53,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q014,two_table_joins,136.35,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q030,two_table_joins,66.04,HIGH,1.0,ALL,19922,0.5,False,True,Full table scan detected
+Q032,two_table_joins,65.99,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q035,two_table_joins,59.95,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q053,two_table_joins,0.71,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q036,two_table_joins,172.06,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q039,two_table_joins,50.16,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q040,two_table_joins,185.99,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (148,466)"
+Q046,two_table_joins,120.32,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q047,two_table_joins,76.13,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q048,two_table_joins,0.37,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q049,two_table_joins,0.34,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q096,two_table_joins,177.47,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q097,two_table_joins,232.97,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q099,two_table_joins,221.19,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q174,two_table_joins,211.91,HIGH,1.0,ALL,594746,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (594,746)"
+Q157,two_table_joins,223.73,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q158,two_table_joins,151.68,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q163,two_table_joins,74.9,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected; Using temporary table
+Q164,two_table_joins,26.45,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected; Using temporary table
+Q167,two_table_joins,29.69,HIGH,1.0,ALL,19922,0.5,False,True,Full table scan detected; Using temporary table
+Q168,two_table_joins,58.17,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected; Using temporary table
+Q171,two_table_joins,82.02,HIGH,1.0,ALL,14906,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q175,two_table_joins,66.85,HIGH,1.0,ALL,19922,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q100,two_table_joins,170.51,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q176,two_table_joins,77.05,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q177,two_table_joins,28.99,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q179,two_table_joins,42.05,HIGH,1.0,ALL,163358,0.333,False,True,"Full table scan detected; Low index coverage (33%); High rows examined (163,358)"
+Q180,two_table_joins,32.19,HIGH,1.0,ALL,163358,0.333,False,True,"Full table scan detected; Low index coverage (33%); High rows examined (163,358)"
+Q187,two_table_joins,140.36,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q190,two_table_joins,55.93,HIGH,1.0,ALL,19922,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q192,two_table_joins,42.93,HIGH,1.0,ALL,14906,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q153,two_table_joins,67.33,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected; Using temporary table
+Q152,two_table_joins,69.99,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected; Using temporary table
+Q151,two_table_joins,68.04,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected; Using temporary table
+Q149,two_table_joins,56.23,HIGH,1.0,ALL,19922,0.5,False,True,Full table scan detected; Using temporary table
+Q123,two_table_joins,63.9,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q124,two_table_joins,33.31,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q125,two_table_joins,22.44,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q126,two_table_joins,48.99,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q127,two_table_joins,41.84,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q128,two_table_joins,57.9,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q129,two_table_joins,57.67,HIGH,1.0,ALL,82491,0.5,False,True,Full table scan detected
+Q130,two_table_joins,200.68,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q131,two_table_joins,248.15,HIGH,1.0,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q134,two_table_joins,286.31,HIGH,1.0,ALL,14906,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q137,two_table_joins,203.07,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q138,two_table_joins,213.81,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q139,two_table_joins,135.39,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q140,two_table_joins,135.66,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q146,three_table_joins,190.25,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q006,two_table_joins,79.97,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q005,two_table_joins,80.87,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q003,two_table_joins,134.25,HIGH,1.0,ALL,148466,0.5,False,True,"Full table scan detected; High rows examined (148,466)"
+Q052,single_table_filters,122.2,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q045,single_table_filters,230.78,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q046,single_table_filters,201.74,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q047,single_table_filters,143.99,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q048,single_table_filters,101.44,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q049,single_table_filters,121.62,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q050,single_table_filters,119.21,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q051,single_table_filters,229.6,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q053,single_table_filters,97.04,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q065,single_table_filters,2.93,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q054,single_table_filters,24.79,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q055,single_table_filters,21.28,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q057,single_table_filters,5.36,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q058,single_table_filters,10.36,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q060,single_table_filters,6.37,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q061,single_table_filters,3.17,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q062,single_table_filters,11.41,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q044,single_table_filters,259.89,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q043,single_table_filters,662.97,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (663ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q042,single_table_filters,479.01,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q041,single_table_filters,407.84,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q004,single_table_filters,172.45,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q010,single_table_filters,159.57,HIGH,1.0,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q027,single_table_filters,1620.06,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1620ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q028,single_table_filters,1124.84,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1125ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q029,single_table_filters,1139.03,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1139ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q030,single_table_filters,1198.59,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1199ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q031,single_table_filters,1055.06,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1055ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q032,single_table_filters,576.21,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (576ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q034,single_table_filters,820.23,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (820ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q035,single_table_filters,1452.32,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1452ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q036,single_table_filters,282.86,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q037,single_table_filters,648.45,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (648ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q038,single_table_filters,1193.47,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Slow query (1193ms > 500ms threshold); Low index coverage (0%); High rows examined (594,745)"
+Q039,single_table_filters,101.21,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q040,single_table_filters,172.62,HIGH,1.0,ALL,594745,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (594,745)"
+Q063,single_table_filters,5.62,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q066,single_table_filters,9.55,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q002,two_table_joins,115.89,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q104,single_table_filters,0.77,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q097,single_table_filters,0.57,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q098,single_table_filters,0.28,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q099,single_table_filters,0.68,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q100,single_table_filters,0.4,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q101,single_table_filters,1.35,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q102,single_table_filters,0.53,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q103,single_table_filters,0.32,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q105,single_table_filters,3.33,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q067,single_table_filters,7.01,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q106,single_table_filters,0.8,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q107,single_table_filters,1.47,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q108,single_table_filters,0.71,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q109,single_table_filters,0.31,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q110,single_table_filters,0.32,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q111,single_table_filters,0.32,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q001,two_table_joins,88.67,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected
+Q096,single_table_filters,1.53,HIGH,1.0,ALL,1000,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q094,single_table_filters,8.05,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q093,single_table_filters,13.26,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q092,single_table_filters,18.51,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q068,single_table_filters,6.94,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q069,single_table_filters,6.69,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q070,single_table_filters,6.24,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q071,single_table_filters,5.96,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q072,single_table_filters,3.03,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q073,single_table_filters,3.31,HIGH,1.0,ALL,14892,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q078,single_table_filters,34.08,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q079,single_table_filters,31.22,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q080,single_table_filters,6.94,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q081,single_table_filters,24.78,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q082,single_table_filters,3.83,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q084,single_table_filters,24.57,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q085,single_table_filters,3.12,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q086,single_table_filters,5.96,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q091,single_table_filters,18.17,HIGH,1.0,ALL,19919,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q194,two_table_joins,129.56,HIGH,1.0,ALL,19922,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q141,two_table_joins,144.51,HIGH,1.0,ALL,14906,0.5,False,True,Full table scan detected; Using temporary table
+Q200,complex_queries,1617.62,HIGH,1.0,ALL,905572,0.5,True,True,"Full table scan detected; Slow query (1618ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (905,572)"
+Q079,three_table_joins,0.47,HIGH,1.0,ALL,1002,0.667,False,True,Full table scan detected; Using temporary table
+Q072,three_table_joins,0.73,HIGH,1.0,ALL,1030,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q135,three_table_joins,663.77,HIGH,1.0,ALL,643,0.6,True,True,Full table scan detected; Slow query (664ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q074,three_table_joins,1.23,HIGH,1.0,ALL,1002,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q125,three_table_joins,132.91,HIGH,1.0,ALL,82493,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q075,three_table_joins,1.36,HIGH,1.0,ALL,1002,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q076,three_table_joins,1.63,HIGH,1.0,ALL,1006,0.333,False,True,Full table scan detected; Low index coverage (33%); Using temporary table
+Q077,three_table_joins,0.47,HIGH,1.0,ALL,1002,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index)
+Q078,three_table_joins,1.44,HIGH,1.0,ALL,1002,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q122,three_table_joins,1400.83,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (1401ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q139,three_table_joins,3.42,HIGH,1.0,ALL,625,0.333,False,True,Full table scan detected; Low index coverage (33%); Using temporary table
+Q041,three_table_joins,1781.86,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (1782ms > 500ms threshold)
+Q080,three_table_joins,1.37,HIGH,1.0,ALL,1030,0.0,True,True,Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table
+Q140,three_table_joins,758.99,HIGH,1.0,ALL,19949,0.667,True,True,Full table scan detected; Slow query (759ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q081,three_table_joins,13.76,HIGH,1.0,ALL,625,0.333,False,True,Full table scan detected; Low index coverage (33%)
+Q082,three_table_joins,2.91,HIGH,1.0,ALL,625,0.333,False,True,Full table scan detected; Low index coverage (33%)
+Q029,three_table_joins,1006.32,HIGH,1.0,ALL,19949,0.667,True,True,Full table scan detected; Slow query (1006ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q083,three_table_joins,2.83,HIGH,1.0,ALL,625,0.333,False,True,Full table scan detected; Low index coverage (33%)
+Q084,three_table_joins,3.38,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q120,three_table_joins,481.27,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q059,three_table_joins,666.7,HIGH,1.0,ALL,594748,0.75,True,True,"Full table scan detected; Slow query (667ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,748)"
+Q134,three_table_joins,163.75,HIGH,1.0,ALL,19925,0.8,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q042,three_table_joins,1381.49,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (1381ms > 500ms threshold)
+Q023,three_table_joins,274.31,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected
+Q052,three_table_joins,145.15,HIGH,1.0,ALL,19952,0.75,False,True,Full table scan detected
+Q127,three_table_joins,144.01,HIGH,1.0,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q128,three_table_joins,1424.5,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (1425ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q060,three_table_joins,1466.21,HIGH,1.0,ALL,594748,0.75,True,True,"Full table scan detected; Slow query (1466ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,748)"
+Q130,three_table_joins,161.33,HIGH,1.0,ALL,19925,0.8,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q056,three_table_joins,1546.81,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (1547ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q055,three_table_joins,636.87,HIGH,1.0,ALL,594748,0.75,False,True,"Full table scan detected; Slow query (637ms > 500ms threshold); High rows examined (594,748)"
+Q062,three_table_joins,178.33,HIGH,1.0,ALL,14910,0.667,False,True,Full table scan detected
+Q053,three_table_joins,2667.38,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (2667ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q131,three_table_joins,575.29,HIGH,1.0,ALL,148470,0.667,True,True,"Full table scan detected; Slow query (575ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q051,three_table_joins,1587.18,HIGH,1.0,ALL,19950,0.75,False,True,Full table scan detected; Slow query (1587ms > 500ms threshold)
+Q043,three_table_joins,1138.97,HIGH,1.0,ALL,19951,0.667,False,True,Full table scan detected; Slow query (1139ms > 500ms threshold)
+Q050,three_table_joins,1227.71,HIGH,1.0,ALL,19951,0.667,True,True,Full table scan detected; Slow query (1228ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q049,three_table_joins,606.9,HIGH,1.0,ALL,594747,0.667,True,True,"Full table scan detected; Slow query (607ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,747)"
+Q048,three_table_joins,1423.49,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (1423ms > 500ms threshold); Using temporary table
+Q047,three_table_joins,1518.47,HIGH,1.0,ALL,19949,0.667,True,True,Full table scan detected; Slow query (1518ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q068,three_table_joins,516.77,HIGH,1.0,ALL,148470,0.667,True,True,"Full table scan detected; Slow query (517ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q069,three_table_joins,102.44,HIGH,1.0,ALL,14910,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q045,three_table_joins,1335.22,HIGH,1.0,ALL,19949,0.667,True,True,Full table scan detected; Slow query (1335ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q044,three_table_joins,1437.54,HIGH,1.0,ALL,19949,0.667,True,True,Full table scan detected; Slow query (1438ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q071,three_table_joins,3.26,HIGH,1.0,ALL,1002,0.667,False,True,Full table scan detected
+Q024,three_table_joins,851.8,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (852ms > 500ms threshold)
+Q025,three_table_joins,1067.22,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (1067ms > 500ms threshold)
+Q022,three_table_joins,972.52,HIGH,1.0,ALL,19949,0.667,False,True,Full table scan detected; Slow query (973ms > 500ms threshold)
+Q011,three_table_joins,123.47,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q102,three_table_joins,309.61,HIGH,1.0,ALL,643,0.6,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q104,three_table_joins,609.07,HIGH,1.0,ALL,19951,0.8,False,True,Full table scan detected; Slow query (609ms > 500ms threshold)
+Q086,three_table_joins,11.89,HIGH,1.0,ALL,625,0.333,False,True,Full table scan detected; Low index coverage (33%); Using temporary table
+Q007,three_table_joins,5.15,HIGH,1.0,ALL,634,0.667,False,True,Full table scan detected
+Q006,three_table_joins,8.41,HIGH,1.0,ALL,634,0.667,False,True,Full table scan detected
+Q119,three_table_joins,1194.72,HIGH,1.0,ALL,148473,0.833,True,True,"Full table scan detected; Slow query (1195ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q004,three_table_joins,62.1,HIGH,1.0,ALL,14907,0.667,False,True,Full table scan detected
+Q105,three_table_joins,3768.32,HIGH,1.0,ALL,19953,0.8,True,True,Full table scan detected; Slow query (3768ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q108,three_table_joins,434.67,HIGH,1.0,ALL,148473,0.833,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q113,three_table_joins,1192.12,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Slow query (1192ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q002,three_table_joins,9.91,HIGH,1.0,ALL,634,0.667,False,True,Full table scan detected
+Q001,three_table_joins,105.56,HIGH,1.0,ALL,634,0.667,False,True,Full table scan detected
+Q114,three_table_joins,905.61,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Slow query (906ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q115,three_table_joins,4081.77,HIGH,1.0,ALL,19954,0.833,True,True,Full table scan detected; Slow query (4082ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q200,two_table_joins,98.1,HIGH,1.0,ALL,82491,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q116,three_table_joins,918.77,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Slow query (919ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q198,two_table_joins,375.36,HIGH,1.0,ALL,14906,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q118,three_table_joins,1129.11,HIGH,1.0,ALL,644,0.667,True,True,Full table scan detected; Slow query (1129ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q197,two_table_joins,1.14,HIGH,1.0,ALL,19923,0.667,False,True,Full table scan detected
+Q010,three_table_joins,41.35,HIGH,1.0,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q143,three_table_joins,101.18,HIGH,1.0,ALL,19923,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q012,three_table_joins,21.32,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q017,three_table_joins,261.97,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q087,three_table_joins,12.8,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q089,three_table_joins,10.5,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q090,three_table_joins,0.2,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q020,three_table_joins,1.28,HIGH,1.0,ALL,625,0.333,True,True,Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table
+Q019,three_table_joins,184.72,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected; Using temporary table
+Q101,three_table_joins,4129.47,HIGH,1.0,ALL,643,0.6,False,True,Full table scan detected; Slow query (4129ms > 500ms threshold); Using temporary table
+Q141,three_table_joins,89.96,HIGH,1.0,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q018,three_table_joins,185.07,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected; Using temporary table
+Q058,three_table_joins,3023.58,HIGH,1.0,ALL,19950,0.75,True,True,Full table scan detected; Slow query (3024ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q013,three_table_joins,41.14,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected
+Q016,three_table_joins,167.5,HIGH,1.0,ALL,639,0.5,False,True,Full table scan detected; Using temporary table
+Q142,three_table_joins,113.02,HIGH,1.0,ALL,82492,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q014,three_table_joins,166.35,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q015,three_table_joins,33.27,HIGH,1.0,ALL,639,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q099,three_table_joins,959.37,HIGH,1.0,ALL,148471,0.75,True,True,"Full table scan detected; Slow query (959ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q183,complex_queries,163.35,HIGH,0.9993,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q114,complex_queries,167.62,HIGH,0.9993,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q154,aggregation,192.64,HIGH,0.9993,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q178,complex_queries,258.01,HIGH,0.999,ALL,296932,0.75,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,932)"
+Q135,two_table_joins,415.23,HIGH,0.9986,ALL,594746,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (594,746)"
+Q023,two_table_joins,344.65,HIGH,0.9986,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q160,complex_queries,333.61,HIGH,0.9986,ALL,221688,0.4,True,True,"Full table scan detected; Low index coverage (40%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (221,688)"
+Q135,complex_queries,360.72,HIGH,0.9986,ALL,221044,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (221,044)"
+Q011,single_table_filters,117.15,HIGH,0.9986,ALL,148465,0.0,False,True,"Full table scan detected; Low index coverage (0%); High rows examined (148,465)"
+Q098,two_table_joins,329.46,HIGH,0.9986,ALL,594746,0.5,False,True,"Full table scan detected; High rows examined (594,746)"
+Q067,complex_queries,274.27,HIGH,0.9986,ALL,296938,0.8,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,938)"
+Q152,complex_queries,1291.29,HIGH,0.9983,ALL,154609,0.778,True,True,"Full table scan detected; Slow query (1291ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (154,609)"
+Q061,complex_queries,600.4,HIGH,0.9983,ALL,230963,0.75,True,True,"Full table scan detected; Slow query (600ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (230,963)"
+Q069,aggregation,191.62,HIGH,0.9983,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q129,three_table_joins,185.87,HIGH,0.9983,ALL,634,0.667,False,True,Full table scan detected; Using temporary table
+Q028,complex_queries,96.84,HIGH,0.9983,ALL,329962,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (329,962)"
+Q009,three_table_joins,167.66,HIGH,0.9983,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q189,aggregation,373.89,HIGH,0.9983,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q196,aggregation,1690.68,HIGH,0.9983,ALL,148473,0.833,True,True,"Full table scan detected; Slow query (1691ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q016,complex_queries,1316.72,HIGH,0.9983,ALL,757094,0.857,True,True,"Full table scan detected; Slow query (1317ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,094)"
+Q136,three_table_joins,173.15,HIGH,0.9983,ALL,634,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q193,aggregation,684.84,HIGH,0.9983,ALL,148471,0.75,True,True,"Full table scan detected; Slow query (685ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q031,three_table_joins,809.38,HIGH,0.9983,index,148470,1.0,False,False,"Slow query (809ms > 500ms threshold); High rows examined (148,470)"
+Q190,three_table_joins,1077.03,HIGH,0.9979,ALL,644,0.833,True,True,Full table scan detected; Slow query (1077ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q124,complex_queries,443.3,HIGH,0.9976,ALL,154581,0.8,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (154,581)"
+Q021,three_table_joins,1192.49,HIGH,0.9976,index,148470,1.0,False,False,"Slow query (1192ms > 500ms threshold); High rows examined (148,470)"
+Q061,three_table_joins,626.9,HIGH,0.9976,index,148470,1.0,False,False,"Slow query (627ms > 500ms threshold); High rows examined (148,470)"
+Q038,three_table_joins,923.32,HIGH,0.9975,index,148470,1.0,False,False,"Slow query (923ms > 500ms threshold); Using temporary table; High rows examined (148,470)"
+Q027,three_table_joins,965.78,HIGH,0.9975,index,148470,1.0,False,False,"Slow query (966ms > 500ms threshold); Using temporary table; High rows examined (148,470)"
+Q073,three_table_joins,0.82,HIGH,0.9975,ALL,1026,0.333,False,True,Full table scan detected; Low index coverage (33%)
+Q133,two_table_joins,10.57,HIGH,0.9975,ALL,82491,0.5,False,True,Full table scan detected
+Q181,three_table_joins,840.85,HIGH,0.9975,index,148471,1.0,True,False,"Slow query (841ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q094,three_table_joins,1097.31,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (1097ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q181,complex_queries,1407.41,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (1407ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q095,three_table_joins,908.13,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (908ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q133,three_table_joins,1126.5,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (1126ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q093,three_table_joins,2737.53,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (2738ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q100,three_table_joins,1661.22,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (1661ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q098,three_table_joins,890.2,HIGH,0.9973,index,148471,1.0,True,False,"Slow query (890ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q107,three_table_joins,770.57,HIGH,0.997,ALL,148472,0.8,False,True,"Full table scan detected; Slow query (771ms > 500ms threshold); Using temporary table; High rows examined (148,472)"
+Q112,three_table_joins,1359.1,HIGH,0.997,ALL,148473,0.833,True,True,"Full table scan detected; Slow query (1359ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q171,complex_queries,70.24,HIGH,0.9967,ALL,176633,0.6,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (176,633)"
+Q180,three_table_joins,387.06,HIGH,0.9967,ALL,148470,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q029,complex_queries,361.38,HIGH,0.9961,ALL,2378982,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (2,378,982)"
+Q150,aggregation,138.58,HIGH,0.9958,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (296,930)"
+Q025,complex_queries,146.09,HIGH,0.9958,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q035,three_table_joins,937.77,HIGH,0.9957,index,148470,1.0,True,False,"Slow query (938ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q036,three_table_joins,919.35,HIGH,0.9957,index,148470,1.0,True,False,"Slow query (919ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q037,three_table_joins,831.12,HIGH,0.9957,index,148470,1.0,True,False,"Slow query (831ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q135,aggregation,991.96,HIGH,0.9956,ALL,1190126,0.714,False,True,"Full table scan detected; Slow query (992ms > 500ms threshold); Using temporary table; High rows examined (1,190,126)"
+Q117,complex_queries,2409.98,HIGH,0.995,ALL,905577,0.929,True,True,"Full table scan detected; Slow query (2410ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (905,577)"
+Q065,complex_queries,307.71,HIGH,0.995,ALL,1784235,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); High rows examined (1,784,235)"
+Q121,aggregation,36.03,HIGH,0.995,ALL,445395,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (445,395)"
+Q186,three_table_joins,354.93,HIGH,0.995,ALL,645,0.714,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q186,two_table_joins,80.47,HIGH,0.995,ALL,148466,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,466)"
+Q163,complex_queries,53.99,HIGH,0.995,ALL,640,0.833,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q120,complex_queries,58.46,HIGH,0.995,ALL,296931,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); High rows examined (296,931)"
+Q005,three_table_joins,95.67,HIGH,0.995,ALL,148467,0.667,False,True,"Full table scan detected; High rows examined (148,467)"
+Q003,three_table_joins,149.62,HIGH,0.995,ALL,148467,0.667,False,True,"Full table scan detected; High rows examined (148,467)"
+Q184,three_table_joins,233.55,HIGH,0.995,ALL,14911,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q012,complex_queries,165.17,HIGH,0.995,ALL,320769,0.8,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (320,769)"
+Q165,two_table_joins,114.06,HIGH,0.995,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q099,aggregation,40.94,HIGH,0.995,ALL,164980,0.0,True,True,"Full table scan detected; Low index coverage (0%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (164,980)"
+Q091,complex_queries,21.39,HIGH,0.995,ALL,148486,0.667,False,True,"Full table scan detected; High rows examined (148,486)"
+Q155,complex_queries,178.62,HIGH,0.9943,ALL,82493,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q150,complex_queries,156.66,HIGH,0.9943,ALL,82493,0.5,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q020,complex_queries,176.89,HIGH,0.9943,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q141,aggregation,1.13,HIGH,0.9942,ALL,4001,0.2,True,True,Full table scan detected; Low index coverage (20%); Using filesort (ORDER BY not using index); Using temporary table
+Q134,aggregation,434.92,HIGH,0.9942,ALL,757090,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,090)"
+Q182,aggregation,82.49,HIGH,0.9936,ALL,14910,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q149,aggregation,481.19,HIGH,0.9932,ALL,757092,0.8,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (757,092)"
+Q096,three_table_joins,1038.75,HIGH,0.993,index,148471,1.0,False,False,"Slow query (1039ms > 500ms threshold); Using temporary table; High rows examined (148,471)"
+Q132,three_table_joins,891.02,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (891ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q198,three_table_joins,1533.64,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (1534ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q026,three_table_joins,914.97,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (915ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q126,three_table_joins,1092.65,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (1093ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q028,three_table_joins,1176.14,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (1176ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q138,three_table_joins,882.65,HIGH,0.9928,index,148470,1.0,True,False,"Slow query (883ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q106,three_table_joins,4113.5,HIGH,0.9925,index,19953,1.0,True,False,Slow query (4114ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q097,three_table_joins,286.02,HIGH,0.9921,ALL,14911,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q082,complex_queries,21110.92,HIGH,0.9917,ALL,40840,0.6,False,True,Full table scan detected; Slow query (21111ms > 500ms threshold)
+Q187,three_table_joins,234.25,HIGH,0.9917,ALL,148470,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q178,two_table_joins,37.51,HIGH,0.9912,ALL,163358,0.667,False,True,"Full table scan detected; High rows examined (163,358)"
+Q182,two_table_joins,189.01,HIGH,0.9912,ALL,743211,0.667,False,True,"Full table scan detected; High rows examined (743,211)"
+Q058,complex_queries,128.18,HIGH,0.9912,ALL,600301,0.333,True,True,"Full table scan detected; Low index coverage (33%); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (600,301)"
+Q154,complex_queries,62.7,HIGH,0.9911,ALL,148479,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (148,479)"
+Q103,three_table_joins,1796.01,HIGH,0.9911,index,148472,1.0,True,False,"Slow query (1796ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,472)"
+Q009,complex_queries,16.13,HIGH,0.9908,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q118,complex_queries,35.53,HIGH,0.9908,ALL,296930,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,930)"
+Q154,two_table_joins,99.05,HIGH,0.99,ALL,148466,0.5,False,True,"Full table scan detected; Using temporary table; High rows examined (148,466)"
+Q124,three_table_joins,1548.78,HIGH,0.9891,index,19951,1.0,True,False,Slow query (1549ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q174,complex_queries,144.24,HIGH,0.9885,ALL,743215,0.75,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (743,215)"
+Q145,three_table_joins,5.83,HIGH,0.9883,ALL,30409,0.6,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q064,three_table_joins,610.98,HIGH,0.9878,index,148470,1.0,True,False,"Slow query (611ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q065,three_table_joins,578.53,HIGH,0.9878,index,148470,1.0,True,False,"Slow query (579ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q196,two_table_joins,361.07,HIGH,0.9873,ALL,1337957,0.6,False,True,"Full table scan detected; High rows examined (1,337,957)"
+Q041,complex_queries,33.68,HIGH,0.9856,ALL,235563,0.667,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (235,563)"
+Q033,three_table_joins,787.92,HIGH,0.9846,index,148470,1.0,False,False,"Slow query (788ms > 500ms threshold); High rows examined (148,470)"
+Q091,three_table_joins,948.56,HIGH,0.9846,index,148471,1.0,False,False,"Slow query (949ms > 500ms threshold); High rows examined (148,471)"
+Q085,complex_queries,719.72,HIGH,0.9832,index,148471,1.0,True,False,"Slow query (720ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,471)"
+Q032,three_table_joins,706.62,HIGH,0.9825,index,148470,1.0,False,False,"Slow query (707ms > 500ms threshold); High rows examined (148,470)"
+Q187,complex_queries,1822.18,HIGH,0.9814,index,148470,1.0,True,False,"Slow query (1822ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q054,three_table_joins,1645.34,HIGH,0.9814,index,19950,1.0,True,False,Slow query (1645ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q039,three_table_joins,566.19,HIGH,0.9802,index,148470,1.0,False,False,"Slow query (566ms > 500ms threshold); High rows examined (148,470)"
+Q146,complex_queries,114.08,HIGH,0.9796,ALL,148479,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); High rows examined (148,479)"
+Q185,two_table_joins,17.26,HIGH,0.979,ALL,8956,0.75,False,True,Full table scan detected
+Q158,three_table_joins,18.77,HIGH,0.9773,ALL,8962,0.667,False,True,Full table scan detected
+Q021,complex_queries,17.46,HIGH,0.9762,ALL,157042,0.5,True,True,"Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table; High rows examined (157,042)"
+Q161,complex_queries,3.34,HIGH,0.975,ALL,420,0.778,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q085,three_table_joins,13.55,HIGH,0.975,ALL,625,0.667,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q088,three_table_joins,13.81,HIGH,0.974,ALL,625,0.667,False,True,Full table scan detected; Using temporary table
+Q011,aggregation,0.32,HIGH,0.97,ALL,0,0.0,False,True,Full table scan detected; Low index coverage (0%)
+Q172,complex_queries,20.91,HIGH,0.967,ALL,4136,0.75,True,True,Full table scan detected; Using filesort (ORDER BY not using index); Using temporary table
+Q111,complex_queries,1683.2,HIGH,0.9589,index,19949,1.0,True,False,Slow query (1683ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q172,aggregation,1658.58,HIGH,0.9576,index,19948,1.0,True,False,Slow query (1659ms > 500ms threshold); Using filesort (ORDER BY not using index)
+Q144,aggregation,939.44,HIGH,0.9536,index,19948,1.0,True,False,Slow query (939ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q084,aggregation,1192.0,HIGH,0.9418,index,148473,1.0,True,False,"Slow query (1192ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q117,three_table_joins,1375.84,HIGH,0.9401,index,148473,1.0,True,False,"Slow query (1376ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q057,three_table_joins,2669.23,HIGH,0.9389,index,19952,1.0,False,False,Slow query (2669ms > 500ms threshold); Using temporary table
+Q109,three_table_joins,730.35,HIGH,0.9365,index,148473,1.0,True,False,"Slow query (730ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,473)"
+Q046,three_table_joins,1577.65,HIGH,0.9263,index,19951,1.0,True,False,Slow query (1578ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q025,two_table_joins,552.78,HIGH,0.9126,range,74236,1.0,False,False,Slow query (553ms > 500ms threshold)
+Q018,two_table_joins,543.06,HIGH,0.9126,range,74236,1.0,False,False,Slow query (543ms > 500ms threshold)
+Q144,three_table_joins,573.69,HIGH,0.9059,index,148470,1.0,True,False,"Slow query (574ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q089,complex_queries,539.73,HIGH,0.9045,index,594746,1.0,False,False,"Slow query (540ms > 500ms threshold); High rows examined (594,746)"
+Q043,two_table_joins,1038.75,HIGH,0.8983,index,148469,1.0,True,False,"Slow query (1039ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,469)"
+Q041,two_table_joins,1049.54,HIGH,0.8983,index,148469,1.0,True,False,"Slow query (1050ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,469)"
+Q053,complex_queries,1554.15,HIGH,0.8956,index,1189490,1.0,True,False,"Slow query (1554ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (1,189,490)"
+Q043,complex_queries,1329.15,HIGH,0.8908,index,594749,1.0,False,False,"Slow query (1329ms > 500ms threshold); High rows examined (594,749)"
+Q016,two_table_joins,545.2,HIGH,0.8767,index,148469,1.0,False,False,"Slow query (545ms > 500ms threshold); High rows examined (148,469)"
+Q110,three_table_joins,1469.88,HIGH,0.8677,range,9991,1.0,True,False,Slow query (1470ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table
+Q092,complex_queries,800.25,HIGH,0.8659,index,594745,1.0,False,False,"Slow query (800ms > 500ms threshold); High rows examined (594,745)"
+Q130,complex_queries,2463.59,HIGH,0.8551,index,594745,1.0,True,False,"Slow query (2464ms > 500ms threshold); Using filesort (ORDER BY not using index); High rows examined (594,745)"
+Q034,three_table_joins,523.52,HIGH,0.8446,range,74237,1.0,False,False,Slow query (524ms > 500ms threshold)
+Q077,aggregation,508.52,HIGH,0.834,index,148470,1.0,True,False,"Slow query (509ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,470)"
+Q050,complex_queries,505.5,HIGH,0.8203,index,296934,1.0,True,False,"Slow query (506ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (296,934)"
+Q187,aggregation,527.08,MEDIUM,0.7631,index,148469,1.0,True,False,"Slow query (527ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (148,469)"
+Q047,aggregation,769.1,MEDIUM,0.7593,index,594745,1.0,True,False,"Slow query (769ms > 500ms threshold); Using filesort (ORDER BY not using index); Using temporary table; High rows examined (594,745)"
+Q144,two_table_joins,511.07,LOW,0.5448,range,74236,1.0,False,False,Slow query (511ms > 500ms threshold); Using temporary table

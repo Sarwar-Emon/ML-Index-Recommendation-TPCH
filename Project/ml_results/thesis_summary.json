@@ -1,0 +1,57 @@
+{
+  "dataset": {
+    "total_queries": 906,
+    "categories": [
+      "aggregation",
+      "complex_queries",
+      "single_table_filters",
+      "three_table_joins",
+      "two_table_joins"
+    ],
+    "needs_index_count": 699,
+    "needs_index_pct": 77.2,
+    "features_used": 28
+  },
+  "models": {
+    "Random Forest": {
+      "accuracy": 0.989,
+      "f1_score": 0.9891,
+      "roc_auc": 1.0,
+      "cv_f1_mean": 1.0,
+      "cv_f1_std": 0.0
+    },
+    "Gradient Boosting": {
+      "accuracy": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "cv_f1_mean": 1.0,
+      "cv_f1_std": 0.0
+    },
+    "SVM": {
+      "accuracy": 0.9725,
+      "f1_score": 0.9726,
+      "roc_auc": 0.9895,
+      "cv_f1_mean": 0.9858,
+      "cv_f1_std": 0.0051
+    }
+  },
+  "best_model": "Random Forest",
+  "recommendations": {
+    "total": 697,
+    "high_priority": 694,
+    "medium_priority": 2,
+    "low_priority": 1
+  },
+  "top_features": [
+    "index_coverage_ratio",
+    "has_full_scan",
+    "max_join_type_score",
+    "log_avg_runtime",
+    "runtime_ratio",
+    "log_rows_examined",
+    "total_rows_examined",
+    "num_tables",
+    "has_index_scan",
+    "has_range_scan"
+  ]
+}

@@ -1,0 +1,7 @@
+Feature Group,Num Features,Accuracy,F1,F1 Drop
+Full Model (All Features),26,0.956,0.9708,0.0
+Remove Scan Features,23,0.956,0.9708,-0.0
+Remove Row Estimates,22,0.956,0.971,-0.0002
+Remove Plan Flags,22,0.956,0.9708,-0.0
+Remove Coverage Features,22,0.9505,0.9673,0.0035
+Scan Features Only,3,0.9505,0.9668,0.004

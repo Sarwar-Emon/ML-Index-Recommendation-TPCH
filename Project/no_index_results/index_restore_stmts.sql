@@ -1,0 +1,34 @@
+-- Restore statements (auto-generated safety backup)
+
+CREATE INDEX idx_customer_acctbal ON customer (C_ACCTBAL);
+CREATE INDEX idx_customer_mktsegment ON customer (C_MKTSEGMENT);
+CREATE INDEX idx_customer_nationkey ON customer (C_NATIONKEY);
+CREATE INDEX idx_lineitem_discount ON lineitem (L_DISCOUNT);
+CREATE INDEX idx_lineitem_extendedprice ON lineitem (L_EXTENDEDPRICE);
+CREATE INDEX idx_lineitem_orderkey ON lineitem (L_ORDERKEY);
+CREATE INDEX idx_lineitem_partkey ON lineitem (L_PARTKEY);
+CREATE INDEX idx_lineitem_quantity ON lineitem (L_QUANTITY);
+CREATE INDEX idx_lineitem_returnflag ON lineitem (L_RETURNFLAG);
+CREATE INDEX idx_lineitem_ship_qty ON lineitem (L_SHIPDATE, L_QUANTITY);
+CREATE INDEX idx_lineitem_shipdate ON lineitem (L_SHIPDATE);
+CREATE INDEX idx_lineitem_shipmode ON lineitem (L_SHIPMODE);
+CREATE INDEX idx_lineitem_suppkey ON lineitem (L_SUPPKEY);
+CREATE INDEX auto_idx_nation_n_name ON nation (N_NAME);
+CREATE INDEX auto_idx_nation_n_regionkey ON nation (N_REGIONKEY);
+CREATE INDEX idx_orders_custkey ON orders (O_CUSTKEY);
+CREATE INDEX idx_orders_date_price ON orders (O_ORDERDATE, O_TOTALPRICE);
+CREATE INDEX idx_orders_orderdate ON orders (O_ORDERDATE);
+CREATE INDEX idx_orders_orderpriority ON orders (O_ORDERPRIORITY);
+CREATE INDEX idx_orders_orderstatus ON orders (O_ORDERSTATUS);
+CREATE INDEX idx_orders_totalprice ON orders (O_TOTALPRICE);
+CREATE INDEX idx_part_brand ON part (P_BRAND);
+CREATE INDEX idx_part_retailprice ON part (P_RETAILPRICE);
+CREATE INDEX idx_part_size ON part (P_SIZE);
+CREATE INDEX idx_part_type ON part (P_TYPE);
+CREATE INDEX idx_partsupp_partkey ON partsupp (PS_PARTKEY);
+CREATE INDEX idx_partsupp_suppkey ON partsupp (PS_SUPPKEY);
+CREATE INDEX idx_partsupp_supplycost ON partsupp (PS_SUPPLYCOST);
+CREATE INDEX auto_idx_region_r_name ON region (R_NAME);
+CREATE INDEX auto_idx_supplier_s_name ON supplier (S_NAME);
+CREATE INDEX idx_supplier_acctbal ON supplier (S_ACCTBAL);
+CREATE INDEX idx_supplier_nationkey ON supplier (S_NATIONKEY);

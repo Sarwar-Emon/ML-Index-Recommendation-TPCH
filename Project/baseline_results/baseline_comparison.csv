@@ -1,0 +1,5 @@
+Method,Accuracy,Precision,Recall,F1,FP,FN
+Rule-Based Baseline,0.9505,1.0,0.9357,0.9668,0,9
+Frequency-Based Baseline,0.7802,0.9902,0.7214,0.8347,1,39
+Join-Only Heuristic,0.6703,0.7857,0.7857,0.7857,30,30
+Gradient Boosting (Ours),0.956,0.9925,0.95,0.9708,1,7

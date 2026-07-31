@@ -1,0 +1,4 @@
+model,accuracy,f1_score,roc_auc,cv_f1_mean,cv_f1_std
+Random Forest,0.989,0.9891,1.0,1.0,0.0
+Gradient Boosting,1.0,1.0,1.0,1.0,0.0
+SVM,0.9725,0.9726,0.9895,0.9858,0.0051

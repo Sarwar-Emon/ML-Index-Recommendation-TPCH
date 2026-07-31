@@ -1,0 +1,88 @@
+{
+  "baseline_comparison": [
+    {
+      "Method": "Rule-Based Baseline",
+      "Accuracy": 0.9505,
+      "Precision": 1.0,
+      "Recall": 0.9357,
+      "F1": 0.9668,
+      "FP": 0,
+      "FN": 9
+    },
+    {
+      "Method": "Frequency-Based Baseline",
+      "Accuracy": 0.7802,
+      "Precision": 0.9902,
+      "Recall": 0.7214,
+      "F1": 0.8347,
+      "FP": 1,
+      "FN": 39
+    },
+    {
+      "Method": "Join-Only Heuristic",
+      "Accuracy": 0.6703,
+      "Precision": 0.7857,
+      "Recall": 0.7857,
+      "F1": 0.7857,
+      "FP": 30,
+      "FN": 30
+    },
+    {
+      "Method": "Gradient Boosting (Ours)",
+      "Accuracy": 0.956,
+      "Precision": 0.9925,
+      "Recall": 0.95,
+      "F1": 0.9708,
+      "FP": 1,
+      "FN": 7
+    }
+  ],
+  "ablation_study": [
+    {
+      "Feature Group": "Full Model (All Features)",
+      "Num Features": 26,
+      "Accuracy": 0.956,
+      "F1": 0.9708,
+      "F1 Drop": 0.0
+    },
+    {
+      "Feature Group": "Remove Scan Features",
+      "Num Features": 23,
+      "Accuracy": 0.956,
+      "F1": 0.9708,
+      "F1 Drop": -0.0
+    },
+    {
+      "Feature Group": "Remove Row Estimates",
+      "Num Features": 22,
+      "Accuracy": 0.956,
+      "F1": 0.971,
+      "F1 Drop": -0.0002
+    },
+    {
+      "Feature Group": "Remove Plan Flags",
+      "Num Features": 22,
+      "Accuracy": 0.956,
+      "F1": 0.9708,
+      "F1 Drop": -0.0
+    },
+    {
+      "Feature Group": "Remove Coverage Features",
+      "Num Features": 22,
+      "Accuracy": 0.9505,
+      "F1": 0.9673,
+      "F1 Drop": 0.0035
+    },
+    {
+      "Feature Group": "Scan Features Only",
+      "Num Features": 3,
+      "Accuracy": 0.9505,
+      "F1": 0.9668,
+      "F1 Drop": 0.004
+    }
+  ],
+  "test_set_size": 182,
+  "row_threshold_used": 539688.8779487901,
+  "noise_level": 0.08,
+  "random_seed": 42
+}

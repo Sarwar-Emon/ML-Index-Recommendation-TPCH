@@ -1,0 +1,77 @@
+{
+  "version": "v3 - no data leakage + gaussian noise",
+  "environment": {
+    "python": "3.13.2",
+    "platform": "macOS-15.7.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "database": "MySQL 8.0.40",
+    "scale_factor": "TPC-H SF-1"
+  },
+  "dataset": {
+    "total_queries": 906,
+    "needs_index": 693,
+    "no_index": 213,
+    "features": 30,
+    "feature_set": "EXPLAIN-based only (no runtime)",
+    "label_strategy": "EXPLAIN signals: full_scan, no_index+high_rows, filesort+high_rows, low_coverage_joins"
+  },
+  "label_validation": {
+    "avg_runtime_needs_index": 726.6,
+    "avg_runtime_no_index": 225.97,
+    "runtime_ratio": 3.22,
+    "mannwhitney_p_value": 0.0,
+    "statistically_significant": true
+  },
+  "models": {
+    "Random Forest": {
+      "accuracy": 0.989,
+      "precision": 0.989,
+      "recall": 0.989,
+      "f1_score": 0.989,
+      "roc_auc": 0.9998,
+      "cv_f1_mean": 0.9927,
+      "cv_f1_std": 0.0047
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.9945,
+      "precision": 0.9945,
+      "recall": 0.9945,
+      "f1_score": 0.9945,
+      "roc_auc": 0.9997,
+      "cv_f1_mean": 0.9973,
+      "cv_f1_std": 0.0022
+    },
+    "SVM": {
+      "accuracy": 0.989,
+      "precision": 0.989,
+      "recall": 0.989,
+      "f1_score": 0.989,
+      "roc_auc": 0.997,
+      "cv_f1_mean": 0.9901,
+      "cv_f1_std": 0.0034
+    }
+  },
+  "model_selection": {
+    "criterion": "5-fold CV F1 score (test set not used for selection)",
+    "best_model": "Gradient Boosting",
+    "best_cv_f1": 0.9973
+  },
+  "recommendations": {
+    "total": 694,
+    "high": 694,
+    "medium": 0,
+    "low": 0
+  },
+  "top_features": [
+    "max_join_type_score",
+    "has_full_scan",
+    "full_scan_table_count",
+    "index_coverage_ratio",
+    "log_rows_examined",
+    "has_temp_table",
+    "has_filesort",
+    "num_tables",
+    "has_index_scan",
+    "has_range_scan"
+  ]
+}
