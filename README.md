@@ -1,171 +1,357 @@
-# ML-Index-Recommendation-TPCH
+# ML-Based Automated Database Index Recommendation
 
-**Workload-Driven Automated Index Recommendation Using Machine Learning: A Comprehensive TPC-H Benchmark Evaluation**
+A workload-driven machine learning system for automatically identifying index opportunities, ranking candidate indexes, and evaluating their impact on database performance.
 
-An end-to-end system that recommends and applies database indexes automatically — using machine learning on structural query-plan features instead of manual DBA analysis, cost models, or pre-enumerated candidate sets.
-
-[![MySQL](https://img.shields.io/badge/MySQL-9.1.0-blue)]()
-[![Python](https://img.shields.io/badge/Python-3.x-blue)]()
-[![scikit--learn](https://img.shields.io/badge/scikit--learn-ML-orange)]()
-[![License](https://img.shields.io/badge/license-MIT-green)]()
-
----
+This project investigates whether structural query-plan information can be used to automate database index recommendation without relying on query runtime as an input feature. The system is evaluated on multi-scale TPC-H workloads using MySQL and further validated on PostgreSQL.
 
 ## Overview
 
-Selecting the right database indexes is traditionally a manual, reactive process handled by experienced DBAs. This project automates that process end-to-end: it profiles a SQL workload, extracts structural features from MySQL `EXPLAIN` output only (no runtime data, no leakage), trains a classifier to predict which queries genuinely need index support, and automatically generates and applies the resulting indexes.
+Database index selection is traditionally performed by database administrators through workload analysis, query-plan inspection, and manual experimentation.
 
-Evaluated on a 911-query TPC-H SF-1 benchmark — 40× larger than the standard 22-query TPC-H suite — the system achieves:
+This project develops an automated pipeline that:
 
-- **99.45% accuracy** / **CV F1 = 0.9973 ± 0.0022** (Gradient Boosting)
-- **1.37× overall runtime reduction**, **2.59× mean per-query speedup**
-- A maximum single-query improvement of **558.6×**
-- Outperforms three non-ML baselines, including a rule-based baseline that directly encodes the same labeling logic
+1. Parses SQL workloads
+2. Extracts structural features from `EXPLAIN`
+3. Predicts whether queries need additional index support
+4. Identifies candidate columns from SQL predicates and joins
+5. Ranks candidate indexes using workload-level signals
+6. Automatically creates selected indexes
+7. Measures actual before/after query performance
 
-## Research Questions
+The goal is not simply to achieve high classification accuracy, but to determine whether ML-driven recommendations translate into measurable database performance improvements.
 
-1. **RQ1** — Can structural features from MySQL `EXPLAIN` accurately predict index necessity without runtime leakage?
-2. **RQ2** — Does an ML-guided pipeline produce measurable performance improvements on TPC-H?
-3. **RQ3** — How does performance impact vary across query complexity categories?
+## System Architecture
 
-## Key Contributions
+The pipeline follows a two-stage design:
 
-- **911-query TPC-H workload** across 5 complexity categories (single-table, two-table join, three-table join, aggregation, complex) — 40× larger than the standard TPC-H suite
-- **Leakage-free feature extraction**: 30 structural features derived exclusively from `EXPLAIN` output, with runtime deliberately excluded
-- **Rigorous ML evaluation**: Gradient Boosting vs. Random Forest vs. SVM, plus 3 non-ML baselines and a full ablation study
-- **Fully automated pipeline**: SQL parsing → candidate generation → composite scoring → `CREATE INDEX` application, with no DBA input, no cost model, and no pre-enumerated candidates
-- **Empirical before/after evaluation** on 905 queries with case-study analysis
+### Stage 1 — ML Query Filtering
 
-## Method Summary
+Execution-plan features are extracted from database `EXPLAIN` output.
 
-### Feature Extraction
-30 structural features are aggregated from `EXPLAIN` output across 5 groups:
+The classifier determines whether a query is likely to benefit from additional index support.
 
-| Group | Example Features |
-|---|---|
-| Scan type | `has_full_scan`, `max_join_type_score` |
-| Index coverage | `index_coverage_ratio`, `num_indexes_used`, `has_no_index` |
-| Row estimates | `total_rows_examined`, `log_rows_examined` |
-| Execution flags | `has_filesort`, `has_temp_table`, `has_using_index` |
-| Query structure | `num_tables`, `has_subquery`, `has_union` |
+The evaluated models include:
 
-### Label Generation
-Queries are labeled `needs_index=1` based on `EXPLAIN` signals (full scans, low index coverage, filesort/temp-table usage on high-row queries). Labels are heuristic, not ground truth — validity is confirmed empirically: labeled queries run **3.22× slower** on average (Mann-Whitney U test, p < 0.001).
+- Gradient Boosting
+- Random Forest
+- Support Vector Machine (SVM)
 
-### Models
+Gradient Boosting was selected as the primary model.
 
-| Model | Accuracy | F1 | CV F1 (±std) |
-|---|---|---|---|
-| Random Forest | 98.90% | 98.90% | 0.9927 ± 0.0047 |
-| **Gradient Boosting** ✅ | **99.45%** | **99.45%** | **0.9973 ± 0.0022** |
-| SVM | 98.90% | 98.90% | 0.9901 ± 0.0034 |
+### Stage 2 — Index Candidate Ranking
 
-### Baseline Comparison
+For queries flagged by the ML model, candidate columns are extracted from:
+
+- `WHERE`
+- `JOIN ON`
+- `GROUP BY`
+- `ORDER BY`
+
+Candidates are ranked using a composite workload score incorporating:
+
+- Column reference frequency
+- ML prediction confidence
+- SQL clause importance
+- Full-scan frequency
+
+Existing indexes are checked before new indexes are created.
+
+## Dataset and Workload
+
+Experiments use the TPC-H decision-support benchmark.
+
+Two database scales are evaluated:
+
+| Scale | Approximate Size | Workload |
+|---|---:|---:|
+| TPC-H SF-0.1 | ~1 GB | 906 usable queries |
+| TPC-H SF-10 | ~10 GB | 860 queries |
+
+The original workload contains 911 parameterized SQL queries covering five categories:
+
+- Single-table filters
+- Two-table joins
+- Three-table joins
+- Aggregation queries
+- Complex queries and correlated subqueries
+
+The workload is substantially larger than the standard 22-query TPC-H reference suite and is designed to expose the models to diverse query structures.
+
+## Feature Engineering
+
+The system extracts 30 structural attributes from `EXPLAIN`.
+
+After near-zero-variance filtering, 26 active features are retained for model training.
+
+Feature groups include:
+
+### Scan Type
+Examples:
+- Maximum join/access type score
+- Full-scan indicator
+- Number of full-scan tables
+
+### Index Coverage
+Examples:
+- Index coverage ratio
+- Number of indexes used
+- No-index indicator
+
+### Row Estimates
+Examples:
+- Total estimated rows examined
+- Maximum estimated rows
+- Log-transformed row estimates
+
+### Execution-Plan Flags
+Examples:
+- Filesort
+- Temporary-table usage
+- Covering-index usage
+
+### Query Structure
+Examples:
+- Number of tables
+- Subquery presence
+- UNION presence
+- SELECT-type information
+
+Query runtime is deliberately excluded from the ML feature set.
+
+## Machine Learning Results
+
+### MySQL — TPC-H SF-0.1
+
+| Model | Accuracy | F1 | Random CV-F1 | GroupKFold F1 |
+|---|---:|---:|---:|---:|
+| Random Forest | 98.90% | 98.90% | 0.9927 | 0.9634 |
+| **Gradient Boosting** | **99.45%** | **99.45%** | **0.9973** | **0.9701** |
+| SVM | 98.90% | 98.90% | 0.9901 | 0.9512 |
+
+GroupKFold evaluation groups parameter variations of the same query template together, providing a stricter estimate of generalization to unseen query structures.
+
+## Baseline Comparison
+
+The ML system is compared against several non-ML approaches.
 
 | Method | Accuracy | F1 | Recall | False Negatives |
-|---|---|---|---|---|
+|---|---:|---:|---:|---:|
 | Rule-Based | 95.05% | 0.9668 | 93.57% | 9 |
 | Frequency-Based | 78.02% | 0.8347 | 72.14% | 39 |
-| Join-Only Heuristic | 67.03% | 0.7857 | 78.57% | 30 |
-| **Gradient Boosting (Ours)** | **95.60%** | **0.9708** | **95.00%** | **7** |
+| Join-Only | 67.03% | 0.7857 | 78.57% | 30 |
+| **Gradient Boosting** | **95.60%** | **0.9708** | **95.00%** | **7** |
 
-### Results: Before vs. After Indexing
+The strong rule-based baseline also highlights an important finding: structural database heuristics already provide substantial predictive power, while the ML model provides a modest additional improvement.
 
-| Configuration | Avg Time | Total Runtime | Speedup |
-|---|---|---|---|
-| Before ML Indexes | 607.2 ms | 550,091 ms (9.2 min) | 1.00× |
-| After ML Indexes | 443.9 ms | 401,731 ms (6.7 min) | **1.37×** |
+## Index Budget Analysis
 
-22.1% of queries improved by >5%, 74.9% unchanged, 3.0% slightly degraded (max regression 1.5×, capped below 900ms).
+The system evaluates different index deployment budgets.
 
-## Pipeline
+| Top-k | Overall Speedup | Queries Improved | Storage |
+|---:|---:|---:|---:|
+| 5 | 1.26× | 61.1% | 19.1 MB |
+| **10** | **2.65×** | **61.1%** | **51.2 MB** |
+| 15 | 2.23× | 66.7% | 83.6 MB |
+| 20 | 2.74× | 72.2% | 96.3 MB |
 
-```
-1. Parse queries → extract WHERE / JOIN / GROUP BY / ORDER BY columns
-2. Run EXPLAIN → detect full scans and structural features
-3. Cross-reference columns with ML relevance scores
-4. Compute composite score per index candidate
-5. Rank candidates
-6. Assign HIGH / MEDIUM / LOW priority tiers
-7. Auto-apply HIGH and MEDIUM indexes to MySQL
-```
+On the evaluated 18-query subset, Top-10 provides the best observed balance between performance improvement and storage cost.
 
-**Composite Score** = `(query_freq × 3.0) + (avg_ml_score × 2.0) + (clause_weight × 1.5) + (full_scan_count × 4.0)`
+The results also demonstrate that adding more indexes does not necessarily produce monotonic performance improvements.
 
-## Tech Stack
+## End-to-End Performance
 
-- **Database**: MySQL 9.1.0 (InnoDB), TPC-H SF-1 (~1.59M rows across 8 tables)
-- **ML**: scikit-learn — Gradient Boosting, Random Forest, SVM
-- **Language**: Python
-- **Validation**: Mann-Whitney U test, paired t-tests, 5-fold stratified cross-validation
+### TPC-H SF-0.1
 
-## Repository Structure
+Across 905 comparable queries:
 
-```
-├── data/                  # TPC-H workload queries and benchmarking scripts
-├── feature_extraction/    # EXPLAIN-based structural feature extraction
-├── models/                # Model training, evaluation, ablation study
-├── pipeline/              # Automated index generation and application
-├── results/               # Benchmark results, figures, case studies
-└── README.md
-```
+- Total workload speedup: **1.37×**
+- Total runtime reduction: **26.97%**
+- Mean per-query speedup: **2.59×**
+- Median per-query speedup: **0.98×**
+- Best individual speedup: **558.6×**
 
-*(Update this section to match your actual folder layout.)*
+Most queries remain approximately unchanged, while a smaller set of expensive queries accounts for much of the aggregate performance improvement.
 
-## Getting Started
+## Scalability Experiment — SF-10
 
-```bash
-# Clone the repository
-git clone https://github.com/Sarwar-Emon/ML-Index-Recommendation-TPCH.git
-cd ML-Index-Recommendation-TPCH
+The pipeline was also evaluated at TPC-H SF-10.
 
-# Install dependencies
-pip install -r requirements.txt
+The larger-scale experiment reveals an important limitation.
 
-# Run the pipeline
-python run_pipeline.py
-```
+Although many individual queries benefit from indexing, aggregate workload performance does not improve:
 
-*(Update install/run instructions to match your actual scripts.)*
+**Overall SF-10 speedup: 0.86×**
+
+This negative result is intentionally reported.
+
+At larger data volumes, indexes on low-selectivity columns can cause the optimizer to choose index scans that are more expensive than sequential scans.
+
+This demonstrates that:
+
+> More indexes do not automatically mean better performance.
+
+The result motivates selectivity-aware candidate scoring as an important future extension of the system.
+
+## Write Overhead
+
+Indexes improve read performance at the cost of additional write operations and storage.
+
+A controlled INSERT experiment measured approximately:
+
+**133% additional INSERT time**
+
+for the indexed configuration evaluated in the study.
+
+This trade-off makes the current approach most appropriate for read-heavy analytical workloads rather than write-intensive transactional systems.
+
+## Cross-DBMS Validation
+
+To evaluate portability, the methodology was replicated on PostgreSQL 16.
+
+The PostgreSQL experiment required DBMS-specific adaptation of execution-plan features.
+
+Gradient Boosting achieved:
+
+**CV-F1 ≈ 0.9868**
+
+The experiment suggests that the underlying feature-engineering methodology can be adapted across database systems, although plan representations and optimizer behavior remain DBMS-specific.
+
+## Key Findings
+
+The experiments highlight several practical findings:
+
+- Structural `EXPLAIN` features contain strong signals for identifying index opportunities.
+- Gradient Boosting performs strongly across both random and template-grouped evaluation.
+- Simple database heuristics remain highly competitive with ML.
+- Automated recommendations can produce measurable end-to-end workload improvements.
+- Index utility is non-monotonic: adding more indexes can sometimes reduce performance.
+- Index recommendations that work at small scale may not remain beneficial at larger data volumes.
+- Predicate selectivity becomes increasingly important as table cardinality grows.
+- Cross-DBMS deployment requires platform-specific adaptation.
+
+## Project Structure
+
+A typical repository organization is:
+
+    .
+    ├── data/
+    │   └── workloads/
+    │
+    ├── queries/
+    │   ├── single_table/
+    │   ├── two_table/
+    │   ├── three_table/
+    │   ├── aggregation/
+    │   └── complex/
+    │
+    ├── src/
+    │   ├── feature_extraction/
+    │   ├── ml/
+    │   ├── index_recommendation/
+    │   └── benchmarking/
+    │
+    ├── results/
+    │   ├── sf01/
+    │   ├── sf10/
+    │   └── postgresql/
+    │
+    ├── figures/
+    │
+    ├── requirements.txt
+    └── README.md
+
+Adjust this structure to match the actual repository before publishing.
+
+## Technologies
+
+- Python
+- MySQL
+- PostgreSQL
+- TPC-H
+- scikit-learn
+- pandas
+- NumPy
+- SQL
+- Gradient Boosting
+- Random Forest
+- Support Vector Machine
+
+## Reproducibility
+
+The experiments use fixed random seeds where applicable.
+
+The main experimental workflow is:
+
+    TPC-H Database
+          ↓
+      SQL Workload
+          ↓
+        EXPLAIN
+          ↓
+    Feature Extraction
+          ↓
+     ML Classification
+          ↓
+    Candidate Extraction
+          ↓
+     Candidate Ranking
+          ↓
+      Index Creation
+          ↓
+    Before/After Benchmark
+          ↓
+      Result Analysis
+
+Exact commands and environment setup should be added based on the scripts included in this repository.
 
 ## Limitations
 
-- Results are specific to TPC-H SF-1 on MySQL 9.1.0; generalization to larger scale factors (SF-10/SF-100) or other DBMSs is not yet empirically validated.
-- Labels are heuristic (derived from `EXPLAIN` signals), not ground-truth runtime measurements.
-- Generates single-column indexes only; composite multi-column indexing is future work.
-- Static offline recommender — does not adapt to workload drift without retraining.
+The current implementation has several limitations:
+
+- Training labels are proxy labels derived from EXPLAIN signals rather than externally provided ground truth.
+- Some features used for classification also contribute to label generation.
+- Cross-template generalization is lower than random cross-validation performance.
+- Candidate-ranking weights are heuristic.
+- Selectivity is not explicitly modeled in the current ranking formula.
+- Composite-index exploration is limited.
+- Experiments were performed on local hardware rather than production database infrastructure.
+- Cross-DBMS deployment requires DBMS-specific feature adaptation.
 
 ## Future Work
 
-- SF-10 / SF-100 evaluation on server-grade hardware
-- Composite (multi-column) index recommendation
-- Cross-DBMS validation (PostgreSQL, SQL Server)
-- Online adaptive index tuning via reinforcement learning
+Future development will focus on:
 
-## Authors
+- Selectivity-aware index scoring
+- Automated optimization of ranking weights
+- Composite-index recommendation
+- Workload-aware index budget optimization
+- Larger-scale database evaluation
+- Additional DBMS platforms
+- Production workload validation
+- Dynamic index maintenance as workloads evolve
 
-- **Sayem Sarwar** — Computer Science, Troy University (Corresponding Author)
-- **Majharul Islam Shanto** — Computer Science, Troy University
+## Research Paper
+
+This repository contains the implementation and experimental artifacts associated with:
+
+**Workload-Driven Automated Index Recommendation Using Machine Learning: A Comprehensive Multi-Scale TPC-H Benchmark Evaluation with Cross-DBMS Validation**
+
+**Authors:**
+- Sayem Sarwar
+- Majharul Islam Shanto
+- Alberto Arteta
+
+Department of Computer Science  
+Troy University, Alabama, USA
 
 ## Citation
 
-If you use this work, please cite:
+If you use this work, please cite the associated paper after publication.
 
 ```bibtex
-@inproceedings{sarwar2026indexrecommendation,
-  title     = {Workload-Driven Automated Index Recommendation Using Machine Learning: A Comprehensive TPC-H Benchmark Evaluation},
-  author    = {Sarwar, Sayem and Shanto, Majharul Islam},
-  year      = {2026},
-  note      = {Troy University}
+@article{sarwar2026index,
+  title={Workload-Driven Automated Index Recommendation Using Machine Learning: A Comprehensive Multi-Scale TPC-H Benchmark Evaluation with Cross-DBMS Validation},
+  author={Sarwar, Sayem and Shanto, Majharul Islam and Arteta, Alberto},
+  year={2026},
+  note={Manuscript}
 }
-```
-
-*(Update with full venue/publication details once finalized.)*
-
-## Acknowledgments
-
-The authors thank the Department of Computer Science at Troy University for lab resources and support, and Professor Arteta for guidance throughout this research project.
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
