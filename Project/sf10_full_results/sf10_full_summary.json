@@ -1,0 +1,22 @@
+{
+  "scale_factor": 10,
+  "total_queries": 78,
+  "successful": 61,
+  "skipped": 17,
+  "success_rate_pct": 78.2,
+  "total_runtime_ms": 272336.59,
+  "categories": {
+    "complex_queries": {
+      "count": 31,
+      "avg_ms": 8778.0,
+      "min_ms": 0.1,
+      "max_ms": 198129.2
+    },
+    "single_table_filters": {
+      "count": 30,
+      "avg_ms": 7.3,
+      "min_ms": 0.1,
+      "max_ms": 197.5
+    }
+  }
+}

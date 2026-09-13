@@ -1,0 +1,58 @@
+{
+  "5": {
+    "k": 5,
+    "indexes_applied": 5,
+    "storage_mb": 19.11,
+    "write_orders_ms": 4.25,
+    "write_lineitem_ms": 3.75,
+    "total_before_ms": 3473.27,
+    "total_after_ms": 2765.49,
+    "overall_speedup": 1.2559,
+    "mean_speedup": 1.9561,
+    "pct_improved": 61.1,
+    "best_query": "TWO_orders_lineitem",
+    "best_speedup": 5.8
+  },
+  "10": {
+    "k": 10,
+    "indexes_applied": 10,
+    "storage_mb": 51.22,
+    "write_orders_ms": 2.87,
+    "write_lineitem_ms": 3.87,
+    "total_before_ms": 3473.27,
+    "total_after_ms": 1311.6,
+    "overall_speedup": 2.6481,
+    "mean_speedup": 2.5466,
+    "pct_improved": 61.1,
+    "best_query": "AGG_lineitem_discount",
+    "best_speedup": 11.41
+  },
+  "15": {
+    "k": 15,
+    "indexes_applied": 15,
+    "storage_mb": 83.63,
+    "write_orders_ms": 3.71,
+    "write_lineitem_ms": 4.2,
+    "total_before_ms": 3473.27,
+    "total_after_ms": 1554.45,
+    "overall_speedup": 2.2344,
+    "mean_speedup": 2.5083,
+    "pct_improved": 66.7,
+    "best_query": "TWO_orders_lineitem",
+    "best_speedup": 10.96
+  },
+  "20": {
+    "k": 20,
+    "indexes_applied": 20,
+    "storage_mb": 96.32,
+    "write_orders_ms": 3.13,
+    "write_lineitem_ms": 4.27,
+    "total_before_ms": 3473.27,
+    "total_after_ms": 1269.57,
+    "overall_speedup": 2.7358,
+    "mean_speedup": 2.9562,
+    "pct_improved": 72.2,
+    "best_query": "AGG_lineitem_discount",
+    "best_speedup": 13.83
+  }
+}

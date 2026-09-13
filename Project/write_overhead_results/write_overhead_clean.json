@@ -1,0 +1,26 @@
+{
+  "orders": {
+    "n_secondary_indexes": 6,
+    "n_rows": 5000,
+    "baseline_avg_ms": 30.12,
+    "baseline_std_ms": 2.76,
+    "indexed_avg_ms": 69.11,
+    "indexed_std_ms": 2.98,
+    "overhead_pct": 129.5,
+    "overhead_ms": 38.99,
+    "baseline_per_row_ms": 0.006,
+    "indexed_per_row_ms": 0.0138
+  },
+  "lineitem": {
+    "n_secondary_indexes": 5,
+    "n_rows": 5000,
+    "baseline_avg_ms": 38.37,
+    "baseline_std_ms": 1.57,
+    "indexed_avg_ms": 91.02,
+    "indexed_std_ms": 46.73,
+    "overhead_pct": 137.2,
+    "overhead_ms": 52.65,
+    "baseline_per_row_ms": 0.0077,
+    "indexed_per_row_ms": 0.0182
+  }
+}

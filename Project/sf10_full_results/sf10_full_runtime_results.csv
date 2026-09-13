@@ -1,0 +1,790 @@
+query_id,category,avg_runtime_ms,min_runtime_ms,max_runtime_ms,runs,status,has_full_scan,full_scan_table_count,max_join_type_score,index_coverage_ratio,num_indexes_used,has_no_index,has_filesort,has_temp_table,num_tables,total_rows_examined,max_rows_examined,sql_preview
+Q002,complex_queries,0.1,0.0901,0.1171,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,USE tpch
+Q003,complex_queries,2.3506,0.1519,6.5908,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,CREATE DATABASE IF NOT EXISTS tpch
+Q004,complex_queries,0.0649,0.0548,0.073,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,USE tpch
+Q013,complex_queries,0.129,0.062,0.2608,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,SET GLOBAL local_infile = 1
+Q014,complex_queries,7.4274,1.8001,17.5209,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,SHOW VARIABLES LIKE 'local_infile'
+Q015,complex_queries,0.9696,0.8829,1.1079,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,SHOW VARIABLES LIKE 'secure_file_priv'
+Q016,complex_queries,21.9754,0.262,65.3279,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/region.tbl'
+INTO T"
+Q017,complex_queries,0.7187,0.2291,1.6849,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/nation.tbl'
+INTO T"
+Q018,complex_queries,4815.2657,4267.1762,5845.124,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/part.tbl'
+INTO TAB"
+Q019,complex_queries,244.2203,199.9769,330.816,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/supplier.tbl'
+INTO"
+Q020,complex_queries,4070.767,3403.8029,5404.247,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/customer.tbl'
+INTO"
+Q021,complex_queries,37885.085,33101.7098,47425.3314,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/orders.tbl'
+INTO T"
+Q022,complex_queries,20820.8443,16480.994,29218.7362,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/partsupp.tbl'
+INTO"
+Q023,complex_queries,198129.1749,183186.2509,225540.8831,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"LOAD DATA LOCAL INFILE '/Users/sayememon/Downloads/tpch/dbgen/lineitem.tbl'
+INTO"
+Q024,complex_queries,1.7684,0.4301,3.818,3,OK,0,0,7,1.0,1,0,0,0,1,5,5,SELECT COUNT(*) AS region_rows FROM REGION
+Q025,complex_queries,0.8232,0.3738,1.132,3,OK,0,0,7,1.0,1,0,0,0,1,25,25,SELECT COUNT(*) AS nation_rows FROM NATION
+Q026,complex_queries,108.7979,98.2838,128.8271,3,OK,0,0,7,1.0,1,0,0,0,1,1484038,1484038,SELECT COUNT(*) AS customer_rows FROM CUSTOMER
+Q027,complex_queries,1073.7746,969.0309,1263.145,3,OK,0,0,7,1.0,1,0,0,0,1,14901233,14901233,SELECT COUNT(*) AS orders_rows FROM ORDERS
+Q028,complex_queries,4478.3955,3991.1618,5432.981,3,OK,0,0,7,1.0,1,0,0,0,1,59459928,59459928,SELECT COUNT(*) AS lineitem_rows FROM LINEITEM
+Q029,complex_queries,0.8025,0.1841,2.0332,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,USE tpch
+Q030,complex_queries,2.4323,0.7617,5.6169,3,OK,0,0,7,1.0,1,0,0,0,1,5,5,SELECT COUNT(*) AS region_rows FROM REGION
+Q031,complex_queries,0.6065,0.2449,1.271,3,OK,0,0,7,1.0,1,0,0,0,1,25,25,SELECT COUNT(*) AS nation_rows FROM NATION
+Q032,complex_queries,1.8682,1.435,2.5849,3,OK,0,0,7,1.0,1,0,0,0,1,19919,19919,SELECT COUNT(*) AS part_rows FROM PART
+Q033,complex_queries,0.4452,0.1879,0.7598,3,OK,0,0,7,1.0,1,0,0,0,1,1000,1000,SELECT COUNT(*) AS supplier_rows FROM SUPPLIER
+Q034,complex_queries,6.8831,5.78,8.8162,3,OK,0,0,7,1.0,1,0,0,0,1,82490,82490,SELECT COUNT(*) AS partsupp_rows FROM PARTSUPP
+Q035,complex_queries,1.68,1.1339,2.6922,3,OK,0,0,7,1.0,1,0,0,0,1,14892,14892,SELECT COUNT(*) AS customer_rows FROM CUSTOMER
+Q036,complex_queries,11.6084,10.1571,14.2989,3,OK,0,0,7,1.0,1,0,0,0,1,148465,148465,SELECT COUNT(*) AS orders_rows FROM ORDERS
+Q037,complex_queries,45.911,41.065,55.3792,3,OK,0,0,7,1.0,1,0,0,0,1,594745,594745,SELECT COUNT(*) AS lineitem_rows FROM LINEITEM
+Q038,complex_queries,0.1434,0.108,0.211,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,USE tpch
+Q039,single_table_filters,2.9177,0.752,7.0961,3,OK,0,0,3,1.0,1,0,0,0,1,24,24,"SELECT *
+FROM ORDERS
+WHERE O_CUSTKEY = 100"
+Q040,single_table_filters,2.12,0.3569,5.5811,3,OK,0,0,3,1.0,1,0,0,0,1,27,27,"SELECT *
+FROM LINEITEM
+WHERE L_PARTKEY = 500"
+Q041,single_table_filters,4.0641,1.43,8.6901,3,OK,0,0,3,1.0,1,0,0,0,1,630,630,"SELECT *
+FROM CUSTOMER
+WHERE C_NATIONKEY = 10"
+Q042,single_table_filters,197.489,191.7908,200.9251,3,OK,1,1,11,0.0,0,1,0,0,1,148465,148465,"SELECT *
+FROM ORDERS
+WHERE O_ORDERDATE >= '1995-01-01'"
+Q043,single_table_filters,0.384,0.2708,0.6099,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN SELECT *
+FROM ORDERS
+WHERE O_CUSTKEY = 100"
+Q045,single_table_filters,0.4984,0.133,1.2109,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM ORDERS
+WHERE O_CUSTKEY = 100"
+Q046,single_table_filters,0.1376,0.1249,0.1609,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM LINEITEM WHERE L_PARTKEY = 500
+Q047,single_table_filters,0.3076,0.149,0.5429,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM CUSTOMER WHERE C_NATIONKEY = 10
+Q048,single_table_filters,0.2197,0.1209,0.376,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM ORDERS WHERE O_ORDERDATE = '1995-03-15'
+Q049,single_table_filters,0.3294,0.102,0.7701,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM PARTSUPP WHERE PS_PARTKEY = 100
+Q054,single_table_filters,1.9976,0.2401,5.4281,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM LINEITEM WHERE L_PARTKEY = 500
+Q055,single_table_filters,0.6417,0.1149,1.6823,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM CUSTOMER WHERE C_NATIONKEY = 10
+Q056,single_table_filters,0.5806,0.133,1.4641,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM ORDERS WHERE O_ORDERDATE = '1995-03-15'
+Q057,single_table_filters,0.2356,0.139,0.4199,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM PARTSUPP WHERE PS_PARTKEY = 100
+Q058,single_table_filters,0.1367,0.1311,0.1471,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM ORDERS WHERE O_ORDERDATE = '1995-03-15'
+Q059,single_table_filters,0.1262,0.1249,0.1268,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM PARTSUPP WHERE PS_PARTKEY = 100
+Q060,single_table_filters,0.821,0.17,2.0871,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM ORDERS WHERE O_TOTALPRICE > 10000
+Q061,single_table_filters,0.9233,0.1669,2.4221,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM LINEITEM WHERE L_SHIPDATE > '1996-01-01'
+Q062,single_table_filters,0.1288,0.1199,0.1338,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM CUSTOMER WHERE C_ACCTBAL > 500
+Q063,single_table_filters,0.1764,0.1111,0.2522,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM PART WHERE P_SIZE = 10
+Q064,single_table_filters,0.492,0.1111,1.2441,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM SUPPLIER WHERE S_NATIONKEY = 3
+Q066,single_table_filters,0.3815,0.216,0.6909,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM ORDERS
+WHERE O_TOTALPRICE > 10000"
+Q067,single_table_filters,0.5929,0.21,1.3549,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM ORDERS
+WHERE O_TOTALPRICE > 50000"
+Q068,single_table_filters,0.2715,0.1612,0.4261,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM ORDERS
+WHERE O_TOTALPRICE = 250000"
+Q069,single_table_filters,0.1827,0.1223,0.278,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM LINEITEM WHERE L_SHIPDATE > '1996-01-01'
+Q070,single_table_filters,0.1124,0.0982,0.139,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,EXPLAIN SELECT * FROM PART WHERE P_SIZE = 10
+Q072,single_table_filters,0.5007,0.222,1.0409,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM LINEITEM
+WHERE L_SHIPDATE > '1996-01-01'"
+Q073,single_table_filters,0.4263,0.1991,0.8788,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM LINEITEM
+WHERE L_SHIPDATE = '1996-01-01'"
+Q074,single_table_filters,0.1708,0.119,0.2642,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM PART
+WHERE P_SIZE = 10"
+Q076,single_table_filters,0.1935,0.1297,0.314,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,"EXPLAIN
+SELECT *
+FROM PART
+WHERE P_SIZE = 10"
+Q077,complex_queries,0.0799,0.0792,0.0813,3,OK,0,0,0,0.0,0,0,0,0,0,0,0,USE tpch
+Q078,complex_queries,383.9127,365.9723,415.1039,3,OK,1,1,11,0.0,0,1,0,0,1,148465,148465,"SELECT * 
+FROM ORDERS"
+AGG_Q001,aggregation,1227.1251,967.2811,1725.8911,3,OK,SELECT COUNT(*) AS total_orders FROM orders
+AGG_Q002,aggregation,18998.5607,14832.7191,26439.6882,3,OK,SELECT SUM(l_extendedprice * (1 - l_discount)) AS total_revenue FROM lineitem
+AGG_Q003,aggregation,518.5268,201.7803,1147.4371,3,OK,SELECT AVG(c_acctbal) AS avg_account_balance FROM customer
+AGG_Q004,aggregation,990.1271,331.4672,2306.6652,3,OK,"SELECT MIN(p_retailprice) AS min_price, MAX(p_retailprice) AS max_price FROM par"
+AGG_Q005,aggregation,8416.4511,5947.2132,13253.3491,3,OK,SELECT SUM(l_quantity) AS total_quantity FROM lineitem
+AGG_Q006,aggregation,981.769,672.914,1598.4688,3,OK,SELECT COUNT(DISTINCT o_custkey) AS distinct_customers FROM orders
+AGG_Q007,aggregation,8345.5043,6271.7679,12429.904,3,OK,SELECT AVG(l_discount) AS avg_discount FROM lineitem
+AGG_Q008,aggregation,11.2621,7.2341,17.7481,3,OK,SELECT COUNT(*) AS total_suppliers FROM supplier
+AGG_Q009,aggregation,3797.4033,855.5431,9661.567,3,OK,SELECT SUM(ps_availqty) AS total_available_qty FROM partsupp
+AGG_Q010,aggregation,1007.9567,1002.223,1018.2559,3,OK,SELECT AVG(ps_supplycost) AS avg_supply_cost FROM partsupp
+AGG_Q011,aggregation,1.1617,0.2627,2.9492,3,OK,"SELECT MIN(o_totalprice) AS min_order_price, MAX(o_totalprice) AS max_order_pric"
+AGG_Q012,aggregation,3084.6645,3024.9763,3173.7881,3,OK,SELECT COUNT(*) AS high_discount_items FROM lineitem WHERE l_discount > 0.05
+AGG_Q013,aggregation,21431.5221,13848.881,35893.4491,3,OK,SELECT SUM(l_extendedprice) AS total_gross_revenue FROM lineitem
+AGG_Q014,aggregation,7671.0096,6085.036,10825.4368,3,OK,SELECT AVG(l_quantity) AS avg_quantity FROM lineitem
+AGG_Q015,aggregation,669.4877,326.263,1353.77,3,OK,SELECT COUNT(*) AS total_parts FROM part WHERE p_container LIKE '%BOX%'
+AGG_Q016,aggregation,16946.7863,16529.016,17572.8247,3,OK,SELECT SUM(l_extendedprice * l_tax) AS total_tax FROM lineitem
+AGG_Q017,aggregation,514.0838,207.8731,1119.7083,3,OK,SELECT COUNT(*) AS customers_positive_balance FROM customer WHERE c_acctbal > 0
+AGG_Q018,aggregation,1727.1023,1548.2798,2052.6829,3,OK,SELECT AVG(o_totalprice) AS avg_order_total FROM orders
+AGG_Q019,aggregation,148.869,134.7072,177.1059,3,OK,SELECT COUNT(*) AS total_parts FROM part
+AGG_Q020,aggregation,242.2097,241.8089,242.5621,3,OK,"SELECT MIN(c_acctbal) AS min_balance, MAX(c_acctbal) AS max_balance FROM custome"
+AGG_Q021,aggregation,1702.6573,1610.9922,1842.2358,3,OK,"SELECT o_orderstatus, COUNT(*) AS order_count FROM orders GROUP BY o_orderstatus"
+AGG_Q022,aggregation,19138.2666,18602.2389,19943.913,3,OK,SELECT SUM(l_extendedprice * (1 - l_discount)) AS shipped_revenue FROM lineitem 
+AGG_Q023,aggregation,1.5619,0.2267,4.1718,3,OK,SELECT COUNT(DISTINCT n_nationkey) AS total_nations FROM nation
+AGG_Q024,aggregation,201.7507,179.3308,243.557,3,OK,SELECT AVG(p_size) AS avg_part_size FROM part
+AGG_Q025,aggregation,4615.5323,4076.5178,5686.7414,3,OK,SELECT COUNT(*) AS total_lineitems FROM lineitem
+AGG_Q026,aggregation,3803.2384,2960.8369,5411.7422,3,OK,SELECT SUM(o_totalprice) AS urgent_order_total FROM orders WHERE o_orderpriority
+AGG_Q027,aggregation,108.4833,106.3161,112.2119,3,OK,SELECT COUNT(*) AS large_parts FROM part WHERE p_size > 20
+AGG_Q028,aggregation,18.515,12.9011,29.202,3,OK,SELECT AVG(s_acctbal) AS avg_supplier_balance FROM supplier
+AGG_Q029,aggregation,0.5844,0.2329,1.2751,3,OK,"SELECT MIN(l_quantity) AS min_qty, MAX(l_quantity) AS max_qty FROM lineitem"
+AGG_Q030,aggregation,0.6057,0.1831,1.4269,3,OK,SELECT COUNT(*) AS total_regions FROM region
+AGG_Q031,aggregation,2320.4156,2176.3229,2527.7801,3,OK,"SELECT o_custkey, COUNT(*) AS order_count FROM orders GROUP BY o_custkey ORDER B"
+AGG_Q032,aggregation,69479.9303,60928.148,84640.4891,3,OK,"SELECT l_orderkey, SUM(l_extendedprice * (1 - l_discount)) AS order_revenue FROM"
+AGG_Q033,aggregation,2033.1555,1671.3009,2756.6237,3,OK,"SELECT c_nationkey, AVG(c_acctbal) AS avg_balance FROM customer GROUP BY c_natio"
+AGG_Q034,aggregation,801.5212,461.405,1471.7038,3,OK,"SELECT p_mfgr, COUNT(*) AS part_count FROM part GROUP BY p_mfgr ORDER BY part_co"
+AGG_Q035,aggregation,3823.7906,2522.913,6236.2299,3,OK,"SELECT ps_suppkey, SUM(ps_availqty) AS total_qty FROM partsupp GROUP BY ps_suppk"
+AGG_Q036,aggregation,5047.9023,5029.8979,5072.5012,3,OK,"SELECT ps_partkey, AVG(ps_supplycost) AS avg_cost FROM partsupp GROUP BY ps_part"
+AGG_Q037,aggregation,2705.9337,2398.284,3301.733,3,OK,"SELECT o_orderpriority, COUNT(*) AS order_count FROM orders GROUP BY o_orderprio"
+AGG_Q038,aggregation,124197.9973,121532.6011,128886.26,3,OK,"SELECT l_shipmode, SUM(l_quantity) AS total_quantity FROM lineitem GROUP BY l_sh"
+AGG_Q039,aggregation,123791.641,120749.5401,128142.4029,3,OK,"SELECT l_shipmode, AVG(l_discount) AS avg_discount FROM lineitem GROUP BY l_ship"
+AGG_Q040,aggregation,86348.2737,85929.2061,86820.658,3,OK,"SELECT l_returnflag, SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM lin"
+AGG_Q041,aggregation,14.2241,11.5149,18.3592,3,OK,"SELECT s_nationkey, COUNT(*) AS supplier_count FROM supplier GROUP BY s_nationke"
+AGG_Q042,aggregation,3569.8141,3159.2138,4367.3453,3,OK,"SELECT p_type, AVG(p_retailprice) AS avg_price FROM part GROUP BY p_type ORDER B"
+AGG_Q043,aggregation,6204.7,3965.363,10669.5309,3,OK,"SELECT YEAR(o_orderdate) AS order_year, SUM(o_totalprice) AS total_value FROM or"
+AGG_Q044,aggregation,7738.986,7321.2543,8539.9299,3,OK,"SELECT l_linestatus, COUNT(*) AS lineitem_count FROM lineitem GROUP BY l_linesta"
+AGG_Q045,aggregation,4103.3603,3926.8727,4439.3022,3,OK,"SELECT YEAR(o_orderdate) AS order_year, AVG(o_totalprice) AS avg_order_value FRO"
+AGG_Q046,aggregation,5403.2701,4046.3412,8058.1319,3,OK,"SELECT ps_partkey, MIN(ps_supplycost) AS min_cost, MAX(ps_supplycost) AS max_cos"
+AGG_Q048,aggregation,366.0547,240.89,616.302,3,OK,"SELECT c_mktsegment, COUNT(*) AS customer_count FROM customer GROUP BY c_mktsegm"
+AGG_Q049,aggregation,1981.5623,1420.917,3097.7321,3,OK,"SELECT c_mktsegment, AVG(c_acctbal) AS avg_balance FROM customer GROUP BY c_mkts"
+AGG_Q050,aggregation,36125.861,32264.832,38514.8759,3,OK,"SELECT l_suppkey, SUM(l_extendedprice * (1 - l_discount)) AS supplier_revenue FR"
+AGG_Q051,aggregation,382.436,300.694,542.537,3,OK,"SELECT p_brand, COUNT(*) AS part_count FROM part GROUP BY p_brand ORDER BY part_"
+AGG_Q052,aggregation,2932.495,2300.503,4188.1971,3,OK,"SELECT p_brand, AVG(p_size) AS avg_size FROM part GROUP BY p_brand ORDER BY avg_"
+AGG_Q053,aggregation,11632.5665,11363.6911,12044.8101,3,OK,"SELECT DATE_FORMAT(o_orderdate, '%Y-%m') AS order_month, COUNT(*) AS order_count"
+AGG_Q054,aggregation,65102.5752,63944.7899,67066.2627,3,OK,"SELECT l_orderkey, SUM(l_extendedprice * l_tax) AS total_tax FROM lineitem GROUP"
+AGG_Q055,aggregation,33902.8917,29531.8022,40050.73,3,OK,"SELECT l_suppkey, AVG(l_quantity) AS avg_quantity FROM lineitem GROUP BY l_suppk"
+AGG_Q056,aggregation,880.5757,507.3049,1625.9301,3,OK,"SELECT p_container, COUNT(*) AS part_count FROM part GROUP BY p_container ORDER "
+AGG_Q057,aggregation,18868.892,14254.4179,27718.344,3,OK,"SELECT o_orderpriority, SUM(o_totalprice) AS total_revenue FROM orders GROUP BY "
+AGG_Q058,aggregation,33157.4491,25644.212,45985.9662,3,OK,"SELECT l_suppkey, COUNT(*) AS lineitem_count FROM lineitem GROUP BY l_suppkey OR"
+AGG_Q059,aggregation,35165.055,31357.07,41921.5341,3,OK,"SELECT o_custkey, MIN(o_orderdate) AS first_order_date FROM orders GROUP BY o_cu"
+AGG_Q060,aggregation,32081.5562,31553.386,32901.5861,3,OK,"SELECT o_custkey, MAX(o_orderdate) AS last_order_date FROM orders GROUP BY o_cus"
+AGG_Q061,aggregation,37355.045,36843.6201,37870.039,3,OK,"SELECT c_nationkey, YEAR(o_orderdate) AS order_year, SUM(o_totalprice) AS total_"
+AGG_Q062,aggregation,73065.1504,72099.7062,73662.231,3,OK,"SELECT o_custkey, o_orderpriority, COUNT(*) AS order_count FROM orders GROUP BY "
+AGG_Q063,aggregation,43845.0227,34183.301,63029.736,3,OK,"SELECT l_shipmode, l_returnflag, SUM(l_extendedprice * (1 - l_discount)) AS reve"
+AGG_Q064,aggregation,42330.296,35665.7553,55049.0329,3,OK,"SELECT ps_suppkey, ps_partkey, AVG(ps_supplycost) AS avg_cost FROM partsupp GROU"
+AGG_Q065,aggregation,1307.0761,695.8401,2527.436,3,OK,"SELECT p_brand, p_container, COUNT(*) AS part_count FROM part GROUP BY p_brand, "
+AGG_Q067,aggregation,33959.4274,29974.381,41534.121,3,OK,"SELECT c_mktsegment, YEAR(o_orderdate) AS order_year, COUNT(*) AS order_count FR"
+AGG_Q068,aggregation,33314.0102,27387.4109,45071.2829,3,OK,"SELECT l_shipmode, l_linestatus, AVG(l_discount) AS avg_discount FROM lineitem G"
+AGG_Q069,aggregation,36966.0598,33896.481,42992.0051,3,OK,"SELECT n_name, c_mktsegment, SUM(o_totalprice) AS total_revenue FROM orders JOIN"
+AGG_Q071,aggregation,4683.3554,4499.7671,5048.7931,3,OK,"SELECT YEAR(o_orderdate) AS order_year, o_orderpriority, COUNT(*) AS order_count"
+AGG_Q072,aggregation,592.9819,575.9678,625.7529,3,OK,"SELECT c_nationkey, c_mktsegment, AVG(c_acctbal) AS avg_balance FROM customer GR"
+AGG_Q073,aggregation,32255.4512,32157.9447,32421.4611,3,OK,"SELECT r_name, YEAR(o_orderdate) AS order_year, SUM(o_totalprice) AS total_reven"
+AGG_Q074,aggregation,1306.2157,616.3831,2684.5009,3,OK,"SELECT p_mfgr, p_brand, COUNT(*) AS part_count FROM part GROUP BY p_mfgr, p_bran"
+AGG_Q075,aggregation,46885.1089,43950.5837,51674.8068,3,OK,"SELECT YEAR(o_orderdate) AS order_year, l_shipmode, AVG(o_totalprice) AS avg_ord"
+AGG_Q076,aggregation,47173.3025,38727.1831,63903.3082,3,OK,"SELECT n_name, p_type, SUM(ps_supplycost * ps_availqty) AS total_supply_cost FRO"
+AGG_Q077,aggregation,100508.4736,69203.4709,145862.164,3,OK,"SELECT c_mktsegment, l_returnflag, SUM(l_extendedprice * (1 - l_discount)) AS re"
+AGG_Q079,aggregation,9563.8833,6034.384,16488.3289,3,OK,"SELECT o_clerk, YEAR(o_orderdate) AS order_year, COUNT(*) AS order_count FROM or"
+AGG_Q081,aggregation,26662.2121,20162.322,39604.815,3,OK,"SELECT r_name, p_brand, AVG(ps_supplycost) AS avg_supply_cost FROM partsupp JOIN"
+AGG_Q082,aggregation,39759.7767,34199.877,49931.9711,3,OK,"SELECT DATE_FORMAT(l_shipdate, '%Y-%m') AS ship_month, l_returnflag, SUM(l_exten"
+AGG_Q083,aggregation,1194.2389,664.191,2239.5759,3,OK,"SELECT p_size, p_container, COUNT(*) AS part_count FROM part GROUP BY p_size, p_"
+AGG_Q085,aggregation,1401.578,1183.0189,1816.9951,3,OK,"SELECT p_type, p_size, AVG(p_retailprice) AS avg_price FROM part GROUP BY p_type"
+AGG_Q086,aggregation,34630.1816,30600.6308,42341.996,3,OK,"SELECT c_mktsegment, o_orderpriority, COUNT(*) AS order_count FROM orders JOIN c"
+AGG_Q087,aggregation,109516.2153,92707.2799,133133.9672,3,OK,"SELECT r_name, c_mktsegment, SUM(l_extendedprice * (1 - l_discount)) AS revenue "
+AGG_Q088,aggregation,2114.1563,2104.6939,2120.8169,3,OK,"SELECT r_name, c_mktsegment, AVG(c_acctbal) AS avg_balance FROM customer JOIN na"
+AGG_Q089,aggregation,29994.765,29251.6248,30530.7121,3,OK,"SELECT YEAR(l_shipdate) AS ship_year, l_shipmode, SUM(l_extendedprice * l_discou"
+AGG_Q090,aggregation,17939.9076,17118.3338,19305.512,3,OK,"SELECT YEAR(l_shipdate) AS ship_year, l_returnflag, COUNT(*) AS item_count FROM "
+AGG_Q091,aggregation,2222.5357,2065.2409,2395.612,3,OK,"SELECT o_custkey, COUNT(*) AS order_count FROM orders GROUP BY o_custkey HAVING "
+AGG_Q092,aggregation,6321.3523,2923.6469,13111.3431,3,OK,"SELECT ps_suppkey, SUM(ps_availqty) AS total_qty FROM partsupp GROUP BY ps_suppk"
+AGG_Q093,aggregation,3691.0136,3518.3079,3791.0349,3,OK,"SELECT ps_partkey, AVG(ps_supplycost) AS avg_cost FROM partsupp GROUP BY ps_part"
+AGG_Q094,aggregation,81717.4304,73249.9642,98045.8987,3,OK,"SELECT l_shipmode, AVG(l_discount) AS avg_discount FROM lineitem GROUP BY l_ship"
+AGG_Q095,aggregation,191.7036,146.4179,277.1029,3,OK,"SELECT c_nationkey, COUNT(*) AS customer_count FROM customer GROUP BY c_nationke"
+AGG_Q096,aggregation,35442.4087,33683.5532,38902.689,3,OK,"SELECT l_orderkey, SUM(l_extendedprice * (1 - l_discount)) AS order_revenue FROM"
+AGG_Q097,aggregation,886.978,466.1367,1703.3262,3,OK,"SELECT p_mfgr, COUNT(*) AS part_count FROM part GROUP BY p_mfgr HAVING COUNT(*) "
+AGG_Q098,aggregation,37616.2116,29680.737,53098.2039,3,OK,"SELECT o_custkey, AVG(o_totalprice) AS avg_order_value FROM orders GROUP BY o_cu"
+AGG_Q099,aggregation,7625.6076,4050.2009,14732.259,3,OK,"SELECT ps_suppkey, AVG(ps_supplycost) AS avg_cost FROM partsupp GROUP BY ps_supp"
+AGG_Q100,aggregation,1036.5653,1033.3869,1041.5769,3,OK,"SELECT ps_partkey, ps_suppkey, ps_availqty FROM partsupp WHERE ps_availqty < 100"
+AGG_Q101,aggregation,2529.8286,1756.9349,4034.662,3,OK,"SELECT c_nationkey, AVG(c_acctbal) AS avg_balance FROM customer GROUP BY c_natio"
+AGG_Q103,aggregation,1499.2814,1491.998,1509.0921,3,OK,"SELECT p_brand, COUNT(DISTINCT p_partkey) AS distinct_parts FROM part GROUP BY p"
+AGG_Q104,aggregation,6303.3759,3945.0278,10966.4168,3,OK,"SELECT o_clerk, COUNT(*) AS order_count FROM orders GROUP BY o_clerk HAVING COUN"
+AGG_Q105,aggregation,3647.5281,3176.1532,4575.6261,3,OK,"SELECT p_type, MAX(p_retailprice) AS max_price FROM part GROUP BY p_type HAVING "
+AGG_Q106,aggregation,54923.2213,54212.2419,56013.006,3,OK,"SELECT l_suppkey, SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM lineit"
+AGG_Q107,aggregation,5139.8524,4983.057,5446.7351,3,OK,"SELECT YEAR(o_orderdate) AS order_year, SUM(o_totalprice) AS total_value FROM or"
+AGG_Q108,aggregation,12.1624,10.016,16.4459,3,OK,"SELECT s_nationkey, COUNT(*) AS supplier_count FROM supplier GROUP BY s_nationke"
+AGG_Q109,aggregation,1747.4084,1632.869,1975.6851,3,OK,"SELECT c_mktsegment, AVG(c_acctbal) AS avg_balance FROM customer GROUP BY c_mkts"
+AGG_Q110,aggregation,6789.851,6213.877,7880.2211,3,OK,"SELECT l_partkey, COUNT(*) AS order_times FROM lineitem GROUP BY l_partkey HAVIN"
+AGG_Q111,aggregation,3488.6771,3306.6561,3725.8623,3,OK,"SELECT ps_suppkey, COUNT(DISTINCT ps_partkey) AS distinct_parts FROM partsupp GR"
+AGG_Q112,aggregation,14379.4583,13958.4708,15183.5432,3,OK,"SELECT o_orderpriority, AVG(o_totalprice) AS avg_total FROM orders GROUP BY o_or"
+AGG_Q113,aggregation,28576.6889,28354.6708,29003.1312,3,OK,"SELECT o_custkey, COUNT(DISTINCT YEAR(o_orderdate)) AS active_years FROM orders "
+AGG_Q114,aggregation,991.3528,656.374,1660.3053,3,OK,"SELECT p_container, AVG(p_size) AS avg_size FROM part GROUP BY p_container HAVIN"
+AGG_Q115,aggregation,116237.6076,111645.025,125216.939,3,OK,"SELECT l_returnflag, SUM(l_extendedprice * l_discount) AS total_discount FROM li"
+AGG_Q116,aggregation,4095.0093,2688.4079,6887.913,3,OK,"SELECT ps_suppkey, MIN(ps_supplycost) AS min_cost FROM partsupp GROUP BY ps_supp"
+AGG_Q117,aggregation,14740.5875,13633.9898,16061.5764,3,OK,"SELECT c_nationkey, COUNT(*) AS customer_count, COUNT(DISTINCT o_orderkey) AS to"
+AGG_Q118,aggregation,2373.7698,2305.162,2508.2171,3,OK,"SELECT p_brand, AVG(p_retailprice) AS avg_retail_price FROM part GROUP BY p_bran"
+AGG_Q119,aggregation,33426.3184,32130.7061,35972.8661,3,OK,"SELECT l_shipmode, COUNT(*) AS returned_count FROM lineitem WHERE l_returnflag ="
+AGG_Q121,aggregation,3445.5165,3385.5927,3513.1178,3,OK,"SELECT o_custkey, COUNT(*) AS order_count FROM orders GROUP BY o_custkey HAVING "
+AGG_Q123,aggregation,23339.6172,22686.1358,24588.0389,3,OK,"SELECT ps_suppkey, ps_partkey, ps_supplycost FROM partsupp ps WHERE ps_supplycos"
+AGG_Q124,aggregation,31920.2366,26832.3929,42093.787,3,OK,"SELECT o_custkey, SUM(o_totalprice) AS total_value FROM orders GROUP BY o_custke"
+AGG_Q125,aggregation,125361.1797,100127.393,175204.1428,3,OK,"SELECT n_name, SUM(l_extendedprice * (1 - l_discount)) AS nation_revenue, SUM(l_"
+AGG_Q126,aggregation,7056.9427,4791.6739,11558.4922,3,OK,"SELECT p_partkey, p_name FROM part WHERE p_partkey NOT IN ( SELECT DISTINCT l_pa"
+AGG_Q127,aggregation,3251.2457,2345.66,5053.1301,3,OK,"SELECT c_custkey, c_name FROM customer WHERE c_custkey NOT IN ( SELECT DISTINCT "
+AGG_Q128,aggregation,65751.8133,65173.589,66786.4528,3,OK,"SELECT c_mktsegment, AVG(order_count) AS avg_orders_per_customer FROM ( SELECT c"
+AGG_Q129,aggregation,102407.239,84106.5741,135069.4761,3,OK,"SELECT n_name, SUM(l_extendedprice * (1 - l_discount)) AS total_revenue, RANK() "
+AGG_Q130,aggregation,59989.2875,56720.144,66197.4447,3,OK,"SELECT n_name, s_name, MAX(ps_supplycost) AS max_supply_cost FROM partsupp JOIN "
+AGG_Q131,aggregation,5038.9246,3925.0638,7262.5091,3,OK,"SELECT order_year, total_revenue, LAG(total_revenue) OVER (ORDER BY order_year) "
+AGG_Q133,aggregation,4679.7059,4496.357,5042.5699,3,OK,"SELECT order_year, o_orderpriority, order_count, order_count / SUM(order_count) "
+AGG_Q135,aggregation,145478.8247,136955.596,153169.0581,3,OK,"SELECT n_name FROM ( SELECT n_name, SUM(l_extendedprice * (1 - l_discount)) AS n"
+AGG_Q136,aggregation,17534.3239,14189.6489,24176.8029,3,OK,"SELECT ps_partkey, ps_suppkey, ps_availqty FROM partsupp ps WHERE ps_availqty = "
+AGG_Q137,aggregation,31867.7849,30340.302,34815.6879,3,OK,"SELECT c_custkey, c_name, c_acctbal, total_spend FROM customer JOIN ( SELECT o_c"
+AGG_Q138,aggregation,40965.3754,32794.8771,57031.8992,3,OK,"SELECT ship_year, l_shipmode, mode_revenue, mode_revenue / SUM(mode_revenue) OVE"
+AGG_Q139,aggregation,6006.8252,5350.0612,7314.9676,3,OK,"SELECT p_partkey, p_type, p_retailprice, ABS(p_retailprice - avg_type_price) AS "
+AGG_Q140,aggregation,6599.4131,5837.841,8119.7252,3,OK,"SELECT o_orderdate, SUM(o_totalprice) AS daily_revenue, SUM(SUM(o_totalprice)) O"
+AGG_Q141,aggregation,27.0547,24.4799,32.1691,3,OK,"SELECT n_name, supplier_count FROM ( SELECT n_name, COUNT(*) AS supplier_count F"
+AGG_Q142,aggregation,111739.211,92129.003,141410.351,3,OK,"SELECT c_mktsegment, SUM(l_extendedprice * l_discount) AS total_discount_savings"
+AGG_Q145,aggregation,71116.359,69567.45,74152.493,3,OK,"SELECT YEAR(o_orderdate) AS order_year, AVG(DATEDIFF(l_shipdate, o_orderdate)) A"
+AGG_Q146,aggregation,38159.6218,33871.5997,45565.2509,3,OK,"SELECT o_custkey, SUM(o_totalprice) AS total_spend, RANK() OVER (ORDER BY SUM(o_"
+AGG_Q147,aggregation,34.0076,21.9319,51.3291,3,OK,"SELECT n_name, COUNT(*) AS supplier_count, DENSE_RANK() OVER (ORDER BY COUNT(*) "
+AGG_Q148,aggregation,2772.1547,2467.8752,3376.791,3,OK,"SELECT YEAR(o_orderdate) AS order_year, COUNT(*) AS yearly_orders, SUM(COUNT(*))"
+AGG_Q149,aggregation,106352.332,88316.4821,133560.7982,3,OK,"SELECT n_name, nation_revenue, PERCENT_RANK() OVER (ORDER BY nation_revenue) AS "
+AGG_Q150,aggregation,27536.8834,24597.3341,33141.3591,3,OK,"SELECT o_orderdate, daily_total, AVG(daily_total) OVER (ORDER BY o_orderdate ROW"
+AGG_Q151,aggregation,31038.8634,29931.3343,32345.0823,3,OK,"SELECT o_custkey, MIN(o_orderdate) AS first_order, MAX(o_orderdate) AS last_orde"
+AGG_Q153,aggregation,33602.6926,26101.6059,48328.5508,3,OK,"SELECT l_shipmode, ship_year, yearly_qty, SUM(yearly_qty) OVER (PARTITION BY l_s"
+AGG_Q154,aggregation,40305.342,32208.03,56271.8692,3,OK,"SELECT o_custkey, total_spend, NTILE(4) OVER (ORDER BY total_spend) AS spend_qua"
+AGG_Q155,aggregation,32692.0155,32514.54,32889.9016,3,OK,"SELECT n_name, order_year, nation_revenue, LAG(nation_revenue) OVER (PARTITION B"
+AGG_Q156,aggregation,36909.0637,30992.4371,48671.1791,3,OK,"SELECT ship_year, l_shipmode, mode_revenue, MAX(mode_revenue) OVER (PARTITION BY"
+AGG_Q158,aggregation,17024.7509,12694.0582,25507.3318,3,OK,"SELECT ps_partkey, ps_suppkey, ps_availqty, RANK() OVER (PARTITION BY ps_partkey"
+AGG_Q159,aggregation,84639.974,77188.163,99014.9419,3,OK,"SELECT o_custkey, c_mktsegment, customer_spend, AVG(customer_spend) OVER (PARTIT"
+AGG_Q160,aggregation,33077.4503,32397.9897,34300.204,3,OK,"SELECT r_name, order_year, yearly_revenue, SUM(yearly_revenue) OVER (PARTITION B"
+AGG_Q161,aggregation,61566.4605,61406.3222,61706.3413,3,OK,"SELECT DISTINCT o_custkey, FIRST_VALUE(o_orderkey) OVER ( PARTITION BY o_custkey"
+AGG_Q162,aggregation,57812.0697,57625.7331,58079.6511,3,OK,"SELECT n_name, s_name, total_supply_value, RANK() OVER (PARTITION BY n_name ORDE"
+AGG_Q164,aggregation,107625.3653,97788.583,126974.5221,3,OK,"SELECT p_type, ps_partkey, ps_supplycost, AVG(ps_supplycost) OVER (PARTITION BY "
+AGG_Q165,aggregation,32782.6526,32478.5521,33355.1807,3,OK,"SELECT n_name, order_year, nation_revenue, LEAD(nation_revenue) OVER (PARTITION "
+AGG_Q167,aggregation,29891.9381,29297.0388,30942.9703,3,OK,"SELECT o_custkey, COUNT(CASE WHEN o_totalprice > 200000 THEN 1 END) AS high_valu"
+AGG_Q168,aggregation,6233.0535,6197.6922,6296.6661,3,OK,SELECT CASE WHEN o_orderpriority = '1-URGENT' THEN 'Urgent' ELSE 'Non-Urgent' EN
+AGG_Q169,aggregation,39441.0747,39303.344,39696.8529,3,OK,SELECT CASE WHEN l_discount < 0.02 THEN 'Low (< 2%)' WHEN l_discount < 0.05 THEN
+AGG_Q170,aggregation,53.4026,43.52,71.7158,3,OK,SELECT CASE WHEN s_acctbal < 0 THEN 'Negative' WHEN s_acctbal < 2500 THEN 'Low' 
+AGG_Q171,aggregation,4979.613,4740.0088,5441.4201,3,OK,"SELECT YEAR(o_orderdate) AS order_year, QUARTER(o_orderdate) AS order_quarter, C"
+AGG_Q173,aggregation,9053.9412,6687.9628,13732.985,3,OK,"SELECT CASE WHEN DAYOFWEEK(o_orderdate) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' "
+AGG_Q174,aggregation,1020.7522,653.8796,1750.572,3,OK,SELECT CASE WHEN c_acctbal >= 0 THEN 'Positive' ELSE 'Negative' END AS balance_t
+AGG_Q176,aggregation,28778.196,27939.2371,29705.0769,3,OK,"SELECT CASE WHEN DATEDIFF(l_receiptdate, l_shipdate) <= 3 THEN 'Fast (<=3 days)'"
+AGG_Q177,aggregation,9599.5963,7382.9839,14029.4521,3,OK,"SELECT CASE WHEN DATEDIFF('1998-12-31', o_orderdate) <= 365 THEN 'Recent' WHEN D"
+AGG_Q178,aggregation,74674.8118,69157.6183,83232.6131,3,OK,"SELECT l_returnflag, SUM(CASE WHEN l_discount >= 0.05 THEN l_extendedprice * l_d"
+AGG_Q179,aggregation,37361.1581,35792.4101,40358.098,3,OK,"SELECT c_mktsegment, COUNT(CASE WHEN order_count = 0            THEN 1 END) AS n"
+AGG_Q180,aggregation,7911.5474,5568.9621,12510.0641,3,OK,"SELECT order_month, monthly_revenue, LAG(monthly_revenue) OVER (ORDER BY order_m"
+AGG_Q181,aggregation,65193.7538,60104.9762,73650.2762,3,OK,"SELECT l_returnflag, l_linestatus, SUM(l_quantity)                              "
+AGG_Q182,aggregation,18327.8581,14365.0312,22131.1779,3,OK,"SELECT l_orderkey, SUM(l_extendedprice * (1 - l_discount)) AS revenue, o_orderda"
+AGG_Q183,aggregation,14499.9866,12075.1419,17449.6861,3,OK,"SELECT n_name, SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM customer "
+AGG_Q184,aggregation,30248.9266,25465.5221,37876.0028,3,OK,SELECT SUM(l_extendedprice * l_discount) AS revenue_change FROM lineitem WHERE l
+AGG_Q185,aggregation,36039.8959,32683.924,41774.0698,3,OK,"SELECT c_mktsegment, SUM(o_totalprice) AS segment_revenue, SUM(o_totalprice) / ("
+AGG_Q186,aggregation,23449.0361,18798.331,32624.758,3,OK,"SELECT s_name, n_name, COUNT(DISTINCT ps_partkey) AS parts_supplied, AVG(ps_supp"
+AGG_Q187,aggregation,92517.7379,70255.7557,126762.8462,3,OK,"SELECT o_custkey, COUNT(DISTINCT o_orderkey) AS total_orders, COUNT(l_linenumber"
+AGG_Q188,aggregation,27821.3684,26400.8121,30515.3,3,OK,"SELECT s_name, n_name AS nation, COUNT(DISTINCT ps_partkey) AS unique_parts, SUM"
+AGG_Q189,aggregation,67125.2973,56627.758,86562.1719,3,OK,"SELECT c_custkey, c_name, c_mktsegment, n_name AS nation, COUNT(DISTINCT o_order"
+AGG_Q191,aggregation,59189.817,51966.6631,68205.992,3,OK,"SELECT r_name, c_mktsegment, YEAR(o_orderdate) AS order_year, COUNT(DISTINCT o_o"
+AGG_Q192,aggregation,42034.1874,32119.3562,60884.9959,3,OK,"SELECT r_name AS region, n_name AS nation, p_type AS part_type, COUNT(DISTINCT p"
+AGG_Q193,aggregation,106948.5766,86719.8629,131019.413,3,OK,"SELECT n_name, AVG(DATEDIFF(l_shipdate, o_orderdate)) AS avg_days_to_ship, AVG(D"
+AGG_Q194,aggregation,56094.232,56077.6038,56115.401,3,OK,"SELECT l_shipmode, YEAR(l_shipdate) AS ship_year, COUNT(*) AS item_count, SUM(l_"
+AGG_Q197,aggregation,30376.2679,29755.83,31483.52,3,OK,"SELECT c_mktsegment, order_year, segment_revenue, segment_revenue / SUM(segment_"
+AGG_Q198,aggregation,21392.9013,17089.9792,29982.6019,3,OK,"SELECT n_name, p_brand, SUM(ps_availqty) AS total_stock, AVG(ps_supplycost) AS a"
+AGG_Q199,aggregation,9977.4723,9826.6811,10273.36,3,OK,"SELECT o_orderpriority, o_orderstatus, YEAR(o_orderdate) AS order_year, COUNT(*)"
+COM_Q001,complex_queries,4566.7609,4295.5949,5061.0569,3,OK,"SELECT c_custkey, c_name, o_orderkey, o_totalprice FROM customer JOIN orders ON "
+COM_Q003,complex_queries,12291.1735,11335.3958,14153.5168,3,OK,"SELECT s_suppkey, s_name, s_nationkey, part_count FROM supplier JOIN ( SELECT ps"
+COM_Q004,complex_queries,144320.4027,138834.2319,153896.0872,3,OK,"SELECT o_orderkey, o_custkey, o_totalprice, item_count FROM orders JOIN ( SELECT"
+COM_Q005,complex_queries,2604.919,1995.7111,3818.5179,3,OK,"SELECT n_name, AVG(c_acctbal) AS avg_balance FROM customer JOIN nation ON c_nati"
+COM_Q006,complex_queries,19364.7187,15242.4099,27591.2349,3,OK,"SELECT ps1.ps_partkey, ps1.ps_suppkey, ps1.ps_supplycost FROM partsupp ps1 WHERE"
+COM_Q007,complex_queries,57984.6607,57506.9742,58274.5118,3,OK,"SELECT c_custkey, c_name, c_mktsegment, total_spend FROM customer JOIN ( SELECT "
+COM_Q008,complex_queries,26888.6471,26668.123,27268.779,3,OK,"SELECT s_suppkey, s_name, MIN(ps_supplycost) AS cheapest_part_cost FROM supplier"
+COM_Q012,complex_queries,32498.7666,29274.085,38809.85,3,OK,"SELECT o_custkey, COUNT(DISTINCT YEAR(o_orderdate)) AS active_years FROM orders "
+COM_Q013,complex_queries,20496.547,15761.441,29905.695,3,OK,"SELECT s_suppkey, s_name FROM supplier WHERE NOT EXISTS ( SELECT 1 FROM partsupp"
+COM_Q014,complex_queries,3.7882,0.54,10.2563,3,OK,SELECT DISTINCT o_orderkey FROM orders WHERE NOT EXISTS ( SELECT 1 FROM lineitem
+COM_Q015,complex_queries,29648.0306,29320.0769,30247.5998,3,OK,"SELECT o_custkey, MAX(o_totalprice)  AS best_order, AVG(o_totalprice)  AS avg_or"
+COM_Q016,complex_queries,3773.7466,3377.8648,4349.231,3,OK,"SELECT ps_partkey, COUNT(DISTINCT ps_suppkey) AS supplier_count FROM partsupp GR"
+COM_Q018,complex_queries,144939.2006,143017.3199,148694.659,3,OK,"SELECT l_orderkey, l_linenumber, l_shipdate FROM lineitem l WHERE l_shipdate = ("
+COM_Q020,complex_queries,6172.0529,2845.906,12820.7917,3,OK,"SELECT ps_partkey, MAX(ps_supplycost) - MIN(ps_supplycost) AS cost_spread, MAX(p"
+COM_Q021,complex_queries,28088.8297,26745.2271,30745.415,3,OK,"SELECT o_orderkey, o_orderpriority, o_totalprice FROM orders o WHERE o_totalpric"
+COM_Q022,complex_queries,108152.4043,96523.9041,130879.549,3,OK,"SELECT DISTINCT s_suppkey, s_name FROM supplier s JOIN ( SELECT l_suppkey, SUM(l"
+COM_Q023,complex_queries,619.9894,539.0348,773.5603,3,OK,"SELECT n_name, c_custkey, c_name, c_acctbal FROM customer JOIN nation ON c_natio"
+COM_Q024,complex_queries,39420.463,38211.8289,41342.845,3,OK,SELECT DISTINCT o_orderkey FROM orders WHERE EXISTS ( SELECT 1 FROM lineitem l1 
+COM_Q025,complex_queries,100792.0574,84259.0892,133489.1739,3,OK,SELECT l_partkey FROM lineitem JOIN orders ON l_orderkey = o_orderkey GROUP BY l
+COM_Q026,complex_queries,4943.9576,4008.393,6721.7789,3,OK,"SELECT 'Customer' AS entity_type, c_name     AS entity_name, n_name     AS natio"
+COM_Q027,complex_queries,35925.5232,32965.219,41521.246,3,OK,"SELECT c_custkey, c_name, 'High Spender' AS tag FROM customer JOIN ( SELECT o_cu"
+COM_Q028,complex_queries,36755.6763,36595.969,36863.43,3,OK,"SELECT c_custkey, c_name, 0 AS order_count FROM customer WHERE c_custkey NOT IN "
+COM_Q029,complex_queries,8979.7233,8603.8609,9563.787,3,OK,"SELECT o_orderkey, o_custkey, o_totalprice, '1-URGENT' AS priority_label FROM or"
+COM_Q030,complex_queries,243.9785,240.8578,249.4228,3,OK,"SELECT n_name FROM ( SELECT n_name, COUNT(*) AS cnt FROM customer JOIN nation ON"
+COM_Q031,complex_queries,43599.2795,29212.1162,59050.163,3,OK,"SELECT l_orderkey, l_linenumber, 'Returned' AS issue FROM lineitem WHERE l_retur"
+COM_Q032,complex_queries,35627.1911,18838.3532,69064.132,3,OK,"SELECT o_orderkey, o_totalprice, o_orderpriority, 'Order' AS source FROM orders "
+COM_Q034,complex_queries,133.8902,58.7652,280.1123,3,OK,"SELECT s_suppkey, s_name, s_acctbal, r_name FROM supplier JOIN nation ON s_natio"
+COM_Q035,complex_queries,124703.1384,104679.6222,154580.7211,3,OK,"SELECT n_name, 'Revenue' AS type, SUM(l_extendedprice * (1 - l_discount)) AS amo"
+COM_Q036,complex_queries,6.6032,0.7479,18.1768,3,OK,SELECT DISTINCT l1.l_orderkey FROM lineitem l1 WHERE l1.l_shipmode = 'MAIL' AND 
+COM_Q037,complex_queries,13986.935,13186.3861,14942.497,3,OK,"SELECT n_name, cust_count, supp_count, order_count, cust_count + supp_count + or"
+COM_Q038,complex_queries,39664.4424,30436.579,57284.2481,3,OK,"SELECT l_orderkey, l_linenumber, l_discount, l_tax FROM lineitem WHERE l_discoun"
+COM_Q040,complex_queries,90584.142,66699.5299,116140.6488,3,OK,"SELECT DISTINCT l_partkey, 'Q1' AS quarter FROM lineitem JOIN orders ON l_orderk"
+COM_Q041,complex_queries,921.2193,488.1859,1781.8549,3,OK,"SELECT 'Customer' AS role, c_name AS name, c_acctbal AS balance FROM customer JO"
+COM_Q042,complex_queries,26490.531,22289.3512,32968.035,3,OK,"SELECT l_orderkey, l_linenumber, l_discount AS value, 'High Discount' AS flag FR"
+COM_Q043,complex_queries,2.5923,0.855,5.7249,3,OK,SELECT o_orderkey FROM orders WHERE o_orderpriority = '1-URGENT' AND o_orderkey 
+COM_Q044,complex_queries,7687.9244,6632.1902,9738.3339,3,OK,SELECT n_name FROM ( SELECT n_name FROM customer JOIN nation ON c_nationkey = n_
+COM_Q045,complex_queries,18530.6315,15499.9387,24227.284,3,OK,"SELECT '1994' AS yr, n_name, SUM(o_totalprice) AS revenue FROM orders JOIN custo"
+COM_Q046,complex_queries,1135.8634,547.569,2299.1319,3,OK,SELECT DISTINCT p_partkey FROM part WHERE p_type LIKE 'STANDARD%' AND p_partkey 
+COM_Q047,complex_queries,35093.7277,25455.992,52875.9501,3,OK,SELECT DISTINCT l_shipmode FROM lineitem WHERE YEAR(l_shipdate) = 1994 AND l_shi
+COM_Q048,complex_queries,127755.8287,124545.722,133917.254,3,OK,SELECT DISTINCT o1.o_custkey FROM orders o1 JOIN orders o2 ON o1.o_custkey = o2.
+COM_Q049,complex_queries,16877.1266,16332.8309,17702.879,3,OK,"SELECT c_custkey, c_name FROM customer WHERE EXISTS ( SELECT 1 FROM orders WHERE"
+COM_Q050,complex_queries,28288.1529,20212.6648,44202.5151,3,OK,"SELECT s_suppkey, s_name FROM supplier WHERE NOT EXISTS ( SELECT 1 FROM lineitem"
+COM_Q051,complex_queries,99128.0344,91867.0709,106028.9042,3,OK,"SELECT DISTINCT p_partkey, p_name FROM part WHERE EXISTS ( SELECT 1 FROM lineite"
+COM_Q052,complex_queries,7.48,2.0249,17.369,3,OK,SELECT n_name FROM nation WHERE NOT EXISTS ( SELECT 1 FROM supplier WHERE s_nati
+COM_Q053,complex_queries,34501.4203,27060.3127,49241.6391,3,OK,SELECT o_custkey FROM orders WHERE YEAR(o_orderdate) = 1996 GROUP BY o_custkey H
+COM_Q054,complex_queries,1511.0434,1297.5209,1932.4911,3,OK,SELECT ps_partkey FROM partsupp GROUP BY ps_partkey HAVING COUNT(DISTINCT ps_sup
+COM_Q056,complex_queries,3.1374,1.4663,6.3081,3,OK,SELECT o_orderkey FROM orders WHERE EXISTS ( SELECT l_shipmode FROM lineitem WHE
+COM_Q057,complex_queries,901.466,314.6081,2064.8758,3,OK,SELECT c_custkey FROM customer WHERE c_mktsegment = 'BUILDING' AND c_custkey IN 
+COM_Q059,complex_queries,1278.544,781.5711,2180.259,3,OK,"SELECT p_partkey, p_name FROM part WHERE NOT EXISTS ( SELECT 1 FROM lineitem WHE"
+COM_Q060,complex_queries,35087.472,27449.0299,50341.192,3,OK,SELECT o_custkey FROM orders GROUP BY o_custkey HAVING COUNT(DISTINCT YEAR(o_ord
+COM_Q061,complex_queries,3.4093,0.566,8.594,3,OK,SELECT r_name FROM region WHERE EXISTS ( SELECT 1 FROM supplier JOIN nation ON s
+COM_Q062,complex_queries,65684.4771,62622.041,71808.4662,3,OK,SELECT l_orderkey FROM lineitem JOIN part ON l_partkey = p_partkey GROUP BY l_or
+COM_Q063,complex_queries,15018.0099,13248.2789,17446.5718,3,OK,"SELECT s_suppkey, s_name, COUNT(DISTINCT ps_partkey) AS part_count FROM supplier"
+COM_Q064,complex_queries,2290.4569,2133.9979,2594.6722,3,OK,"SELECT c_custkey, c_name FROM customer WHERE c_acctbal >= 0 AND NOT EXISTS ( SEL"
+COM_Q066,complex_queries,82635.2983,79865.9639,88173.579,3,OK,SELECT o_custkey FROM orders o WHERE YEAR(o_orderdate) = 1997 AND o_totalprice =
+COM_Q067,complex_queries,37.0847,16.036,78.964,3,OK,SELECT n_name FROM nation WHERE NOT EXISTS ( SELECT 1 FROM supplier WHERE s_nati
+COM_Q068,complex_queries,43181.1732,32963.7859,56629.8859,3,OK,SELECT DISTINCT l_partkey FROM lineitem JOIN orders   ON l_orderkey = o_orderkey
+COM_Q069,complex_queries,30424.2209,29078.0959,32708.4637,3,OK,SELECT o_custkey FROM orders GROUP BY o_custkey HAVING COUNT(DISTINCT o_orderpri
+COM_Q070,complex_queries,34542.6679,29011.7159,42217.236,3,OK,SELECT DISTINCT l_suppkey FROM lineitem WHERE YEAR(l_shipdate) = 1993 AND l_supp
+COM_Q071,complex_queries,8449.6514,5096.0252,15112.6609,3,OK,"SELECT ps_partkey, MAX(ps_supplycost) - MIN(ps_supplycost) AS cost_range FROM pa"
+COM_Q072,complex_queries,71893.9611,61245.8711,80080.5271,3,OK,"SELECT o_custkey, SUM(l_extendedprice * l_discount) AS discount_savings FROM lin"
+COM_Q074,complex_queries,39899.1919,35137.6228,48450.3551,3,OK,"SELECT decile, COUNT(*)          AS customers, SUM(total_spend)  AS decile_reven"
+COM_Q075,complex_queries,20133.042,16603.3092,26742.2299,3,OK,"SELECT n_name, total_parts, total_stock, avg_cost, RANK() OVER (ORDER BY total_s"
+COM_Q077,complex_queries,39531.7883,35671.0758,47141.408,3,OK,"SELECT s_suppkey, s_name, revenue, cost, ROUND(revenue / NULLIF(cost, 0), 4) AS "
+COM_Q078,complex_queries,51091.6123,43648.1919,65670.0878,3,OK,"SELECT r_name, n_name, orders_count, total_revenue, total_revenue / SUM(total_re"
+COM_Q079,complex_queries,142975.3747,137593.3361,151656.534,3,OK,"SELECT o_orderkey, o_custkey, YEAR(o_orderdate) AS order_year, o_totalprice, pct"
+COM_Q081,complex_queries,33853.1103,30733.958,39343.606,3,OK,"SELECT c_mktsegment, MONTH(o_orderdate) AS order_month, COUNT(*)           AS or"
+COM_Q084,complex_queries,28512.7286,27623.4052,30175.004,3,OK,"SELECT order_month, new_customers, SUM(new_customers) OVER ( ORDER BY order_mont"
+COM_Q085,complex_queries,92045.4106,67974.9548,123198.6182,3,OK,"SELECT l_shipmode, total_revenue, total_qty, ROUND(total_revenue / total_qty, 2)"
+COM_Q086,complex_queries,44101.8457,38507.643,55280.5512,3,OK,"SELECT o_custkey, recency_days, order_frequency, total_value, NTILE(3) OVER (ORD"
+COM_Q088,complex_queries,33100.921,26112.756,45725.1551,3,OK,"SELECT l_suppkey, s_name, total_shipments, on_time_shipments, ROUND(on_time_ship"
+COM_Q090,complex_queries,3621.2873,3304.2691,4242.1057,3,OK,"SELECT order_year, order_week, order_count, AVG(order_count) OVER ( PARTITION BY"
+COM_Q092,complex_queries,8678.036,5672.2271,14624.7339,3,OK,"SELECT o_orderkey, o_custkey, o_totalprice, global_mean, global_std, (o_totalpri"
+COM_Q093,complex_queries,37143.9721,32667.6731,45763.5281,3,OK,"SELECT l_suppkey, s_name, supplier_revenue, cumulative_revenue, cumulative_reven"
+COM_Q094,complex_queries,35127.5991,32378.9968,39996.7482,3,OK,"SELECT c_mktsegment, order_year, segment_revenue, ROUND( (segment_revenue - LAG("
+COM_Q095,complex_queries,36048.9114,34857.5349,38030.7052,3,OK,"SELECT discount_bracket, AVG(l_quantity)                          AS avg_quantit"
+COM_Q096,complex_queries,79520.6553,70858.3529,86923.2459,3,OK,"SELECT n_name, late_count, total_count, ROUND(late_count / NULLIF(total_count, 0"
+COM_Q097,complex_queries,37140.8466,34242.363,42918.1478,3,OK,"SELECT c_mktsegment, best_month, max_revenue FROM ( SELECT c_mktsegment, DATE_FO"
+COM_Q098,complex_queries,35240.9809,34305.7029,36840.1527,3,OK,"SELECT o_custkey, c_mktsegment, total_spend, PERCENT_RANK() OVER ( PARTITION BY "
+COM_Q099,complex_queries,34313.2117,34145.915,34603.7092,3,OK,"SELECT r_name, order_month, monthly_orders, SUM(monthly_orders) OVER ( PARTITION"
+COM_Q104,complex_queries,17430.2437,14908.303,22460.7952,3,OK,"SELECT p_brand, ps_partkey, avg_cost, PERCENT_RANK() OVER ( PARTITION BY p_brand"
+COM_Q105,complex_queries,77946.2216,73987.9231,85601.6903,3,OK,"SELECT o_orderpriority, MIN(o_totalprice)                          AS q0_min, MA"
+COM_Q107,complex_queries,110192.114,107280.808,114487.6051,3,OK,"SELECT o_custkey, n_name, order_year, yearly_spend, RANK() OVER ( PARTITION BY n"
+COM_Q108,complex_queries,32808.6917,31481.9889,35385.421,3,OK,"SELECT l_shipmode, ship_week, weekly_qty, AVG(weekly_qty) OVER ( PARTITION BY l_"
+COM_Q109,complex_queries,67315.2282,66906.909,67951.0579,3,OK,"SELECT o_orderkey, o_custkey, o_totalprice, customer_avg, customer_std, ROUND((o"
+COM_Q110,complex_queries,93232.3097,92870.538,93729.1641,3,OK,"SELECT o_custkey, o_orderdate, o_totalprice, prev_price, o_totalprice - prev_pri"
+COM_Q111,complex_queries,35722.264,35138.2058,36641.9442,3,OK,"SELECT r_name, order_month, monthly_revenue, SUM(monthly_revenue) OVER ( PARTITI"
+COM_Q114,complex_queries,104144.5707,97411.202,116757.1502,3,OK,"SELECT o_custkey, MAX(streak) AS longest_streak_months FROM ( SELECT o_custkey, "
+COM_Q115,complex_queries,43597.1702,32245.0104,62245.2271,3,OK,"SELECT top_n, supplier_count, cumulative_revenue, total_revenue, ROUND(cumulativ"
+COM_Q116,complex_queries,53858.1717,50781.949,55403.62,3,OK,"SELECT curr.ship_week, curr.weekly_revenue AS this_year, prev.weekly_revenue AS "
+COM_Q117,complex_queries,36216.7598,32196.528,42004.1602,3,OK,"SELECT s_name, n_name, annual_revenue, inventory_cost, ROUND(annual_revenue / NU"
+COM_Q118,complex_queries,16186.4661,13326.2808,21290.7588,3,OK,"SELECT o1.o_custkey, o1.o_orderkey  AS order1, o2.o_orderkey  AS order2, o1.o_or"
+COM_Q119,complex_queries,8514.9783,8118.7961,9284.2588,3,OK,"SELECT p1.p_partkey AS part1, p2.p_partkey AS part2, p1.p_retailprice, p1.p_bran"
+COM_Q120,complex_queries,65024.2351,64880.1563,65137.2628,3,OK,"SELECT s1.s_suppkey AS supp1, s2.s_suppkey AS supp2, n_name        AS nation FRO"
+COM_Q122,complex_queries,18147.7439,16419.0416,21595.623,3,OK,"SELECT ps1.ps_partkey, ps1.ps_suppkey   AS supplier_a, ps1.ps_supplycost AS cost"
+COM_Q125,complex_queries,1882.7596,1285.0568,3076.766,3,OK,"SELECT p1.p_partkey AS part_a, p2.p_partkey AS part_b, p1.p_brand, p1.p_containe"
+COM_Q126,complex_queries,18267.4378,15993.238,22494.7352,3,OK,"SELECT o1.o_custkey, o1.o_orderkey AS earlier_order, o1.o_totalprice AS earlier_"
+COM_Q127,complex_queries,21556.5683,18070.2109,28491.59,3,OK,"SELECT ps1.ps_partkey, ps1.ps_suppkey AS supp_low, ps1.ps_supplycost AS cost_low"
+COM_Q128,complex_queries,122.7,96.3178,174.6919,3,OK,"SELECT o1.o_custkey, o1.o_totalprice AS first_order_value, o2.o_totalprice AS se"
+COM_Q130,complex_queries,19127.2923,18791.9378,19638.9289,3,OK,"SELECT a.ps_suppkey AS supp_a, b.ps_suppkey AS supp_b, COUNT(DISTINCT a.ps_partk"
+COM_Q131,complex_queries,4.7412,2.2802,9.165,3,OK,"SELECT o1.o_custkey, o1.o_orderdate AS month1_order, o2.o_orderdate AS month2_or"
+COM_Q132,complex_queries,63305.1356,62533.879,64229.8779,3,OK,"SELECT r1.r_name AS region_a, r2.r_name AS region_b, rev_a, rev_b, ROUND(rev_a /"
+COM_Q133,complex_queries,392.2667,347.327,479.6031,3,OK,"SELECT s_acctbal, s_name, n_name, p_partkey, p_mfgr, s_address, s_phone, s_comme"
+COM_Q134,complex_queries,15008.979,3589.8669,34366.2181,3,OK,"SELECT o_orderpriority, COUNT(*) AS order_count FROM orders WHERE o_orderdate >="
+COM_Q135,complex_queries,17948.1497,8836.8399,34660.9027,3,OK,"SELECT supp_nation, cust_nation, l_year, SUM(volume) AS revenue FROM ( SELECT n1"
+COM_Q136,complex_queries,7953.6591,3565.655,15981.3371,3,OK,"SELECT o_year, SUM(CASE WHEN nation = 'BRAZIL' THEN volume ELSE 0 END) / SUM(vol"
+COM_Q137,complex_queries,155634.519,140847.4061,166036.4196,3,OK,"SELECT nation, o_year, SUM(amount) AS sum_profit FROM ( SELECT n_name AS nation,"
+COM_Q138,complex_queries,25239.8609,16109.215,40940.8038,3,OK,"SELECT c_custkey, c_name, SUM(l_extendedprice * (1 - l_discount)) AS revenue, c_"
+COM_Q139,complex_queries,17868.2389,13678.0651,26164.0799,3,OK,"SELECT ps_partkey, SUM(ps_supplycost * ps_availqty) AS part_value FROM partsupp,"
+COM_Q140,complex_queries,35452.881,26175.21,50854.162,3,OK,"SELECT l_shipmode, SUM(CASE WHEN o_orderpriority = '1-URGENT' OR o_orderpriority"
+COM_Q141,complex_queries,35393.5421,33368.0229,39177.6907,3,OK,"SELECT c_count, COUNT(*) AS custdist FROM ( SELECT c_custkey, COUNT(o_orderkey) "
+COM_Q142,complex_queries,6705.2933,2811.0149,13111.4869,3,OK,SELECT ROUND( 100.00 * SUM(CASE WHEN p_type LIKE 'PROMO%' THEN l_extendedprice *
+COM_Q143,complex_queries,18857.1642,13057.8928,26164.0589,3,OK,"SELECT s_suppkey, s_name, s_address, s_phone, total_revenue FROM supplier JOIN ("
+COM_Q144,complex_queries,7720.114,1957.4099,19231.355,3,OK,"SELECT p_brand, p_type, p_size, COUNT(DISTINCT ps_suppkey) AS supplier_cnt FROM "
+COM_Q145,complex_queries,2584.7029,2052.2079,3622.6199,3,OK,"SELECT ROUND(SUM(l_extendedprice) / 7.0, 2) AS avg_yearly FROM lineitem, part WH"
+COM_Q146,complex_queries,38906.3117,26230.5179,58603.58,3,OK,"SELECT c_name, c_custkey, o_orderkey, o_orderdate, o_totalprice, SUM(l_quantity)"
+COM_Q147,complex_queries,2376.7773,764.262,5528.9528,3,OK,"SELECT SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM lineitem, part WH"
+COM_Q148,complex_queries,53095.0286,50677.778,57734.4069,3,OK,"SELECT r_name    AS region, n_name    AS nation, order_year, order_count, total_"
+COM_Q150,complex_queries,32016.8053,30622.483,32799.2778,3,OK,"SELECT first_order_year, COUNT(DISTINCT o_custkey)  AS cohort_size, AVG(lifetime"
+COM_Q153,complex_queries,75261.0215,73154.9289,78092.9217,3,OK,"SELECT r_name, l_shipmode, shipment_count, total_qty, total_revenue, ROUND(total"
+COM_Q154,complex_queries,91037.0803,83653.4281,94961.9458,3,OK,"SELECT n_name, c_mktsegment, COUNT(*)                                         AS"
+COM_Q155,complex_queries,77693.3583,75574.2159,81467.4339,3,OK,"SELECT c_mktsegment, wallet_tier, COUNT(*) AS customers, AVG(wallet_share_pct) A"
+COM_Q157,complex_queries,90626.9093,67491.8182,103152.0259,3,OK,"SELECT o_orderpriority, l_shipmode, ROUND(AVG(DATEDIFF(l_shipdate,    o_orderdat"
+COM_Q158,complex_queries,67506.7944,66738.9863,68969.909,3,OK,"SELECT price_tier, discount_tier, COUNT(*)                                      "
+SIN_Q001,single_table_filters,55638.1667,50754.3619,61951.7202,3,OK,SELECT * FROM ORDERS WHERE O_TOTALPRICE > 10000
+SIN_Q002,single_table_filters,43215.8449,40669.7829,44500.6258,3,OK,SELECT * FROM ORDERS WHERE O_TOTALPRICE > 50000
+SIN_Q003,single_table_filters,2618.8287,2498.292,2769.8972,3,OK,SELECT * FROM ORDERS WHERE O_TOTALPRICE BETWEEN 20000 AND 40000
+SIN_Q004,single_table_filters,23488.6288,23250.9751,23737.026,3,OK,SELECT * FROM ORDERS WHERE O_ORDERDATE > '1995-01-01'
+SIN_Q005,single_table_filters,7641.6277,7563.9689,7691.5331,3,OK,SELECT * FROM ORDERS WHERE O_ORDERDATE BETWEEN '1995-01-01' AND '1996-01-01'
+SIN_Q006,single_table_filters,5749.8747,5738.3401,5765.044,3,OK,"SELECT O_ORDERKEY, O_ORDERDATE FROM ORDERS WHERE O_ORDERDATE > '1996-01-01'"
+SIN_Q007,single_table_filters,0.7897,0.3021,1.6952,3,OK,"SELECT O_ORDERKEY, O_CUSTKEY FROM ORDERS WHERE O_CUSTKEY = 1000"
+SIN_Q008,single_table_filters,14.9091,9.5842,25.1713,3,OK,SELECT * FROM ORDERS WHERE O_CUSTKEY BETWEEN 100 AND 500
+SIN_Q009,single_table_filters,138.5583,137.4788,139.4522,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE < 5000"
+SIN_Q010,single_table_filters,21372.8844,20908.237,21680.9521,3,OK,SELECT * FROM ORDERS WHERE O_ORDERSTATUS = 'O'
+SIN_Q011,single_table_filters,16282.8314,16125.0429,16562.1471,3,OK,SELECT * FROM ORDERS WHERE O_TOTALPRICE > 15000 AND O_ORDERDATE > '1996-01-01'
+SIN_Q012,single_table_filters,19136.5264,18865.324,19405.4542,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE >= 30000"
+SIN_Q013,single_table_filters,492.8429,492.6069,493.0317,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE <= 15000"
+SIN_Q014,single_table_filters,2244.1795,2234.5171,2258.3382,3,OK,"SELECT O_ORDERKEY, O_ORDERDATE FROM ORDERS WHERE O_ORDERDATE BETWEEN '1994-01-01"
+SIN_Q015,single_table_filters,5.7223,4.2682,7.412,3,OK,"SELECT O_ORDERKEY, O_CUSTKEY FROM ORDERS WHERE O_CUSTKEY BETWEEN 500 AND 1000"
+SIN_Q016,single_table_filters,18.1711,11.5583,29.7651,3,OK,SELECT * FROM ORDERS WHERE O_TOTALPRICE > 20000 AND O_CUSTKEY < 500
+SIN_Q017,single_table_filters,7580.0206,7562.9408,7597.8379,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 5000
+SIN_Q018,single_table_filters,7389.056,7380.7161,7396.4479,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 15000
+SIN_Q019,single_table_filters,7187.0867,7176.9619,7197.2711,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 25000
+SIN_Q020,single_table_filters,7045.7429,6984.621,7086.2968,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 35000
+SIN_Q021,single_table_filters,6713.2804,6703.6519,6719.1331,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 45000
+SIN_Q022,single_table_filters,6434.6801,6413.2721,6458.8618,3,OK,SELECT O_ORDERKEY FROM ORDERS WHERE O_TOTALPRICE > 55000
+SIN_Q023,single_table_filters,386.2123,384.12,388.3049,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE BETWEEN 5000 AND "
+SIN_Q024,single_table_filters,829.2213,799.4969,861.2411,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE BETWEEN 15000 AND"
+SIN_Q025,single_table_filters,2262.6925,2203.7868,2349.3719,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE BETWEEN 30000 AND"
+SIN_Q026,single_table_filters,2502.9096,2408.8311,2557.8358,3,OK,"SELECT O_ORDERKEY, O_TOTALPRICE FROM ORDERS WHERE O_TOTALPRICE BETWEEN 10000 AND"
+SIN_Q032,single_table_filters,159991.9615,151213.773,169466.9361,3,OK,SELECT * FROM LINEITEM WHERE L_QUANTITY BETWEEN 5 AND 15
+SIN_Q033,single_table_filters,1.8851,0.2422,4.6909,3,OK,"SELECT L_ORDERKEY, L_PARTKEY FROM LINEITEM WHERE L_PARTKEY = 500"
+SIN_Q036,single_table_filters,41459.3256,39590.9128,42528.471,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY >= 25"
+SIN_Q039,single_table_filters,13559.0936,12203.373,14624.0079,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY < 10"
+SIN_Q040,single_table_filters,25986.3334,25472.4951,26554.2679,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY >= 35"
+SIN_Q042,single_table_filters,145888.0794,138629.7269,156818.3632,3,OK,SELECT * FROM LINEITEM WHERE L_DISCOUNT < 0.02
+SIN_Q044,single_table_filters,27809.4613,27583.3769,28160.0118,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY > 5
+SIN_Q045,single_table_filters,24578.0873,24520.443,24659.2331,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY > 10
+SIN_Q046,single_table_filters,21535.2643,21515.7759,21549.9761,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY > 15
+SIN_Q047,single_table_filters,15312.4356,15270.592,15335.0148,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY > 25
+SIN_Q048,single_table_filters,9207.0533,9203.743,9212.4932,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY > 35
+SIN_Q049,single_table_filters,15887.512,15207.34,16609.7269,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY BETWEEN 1 AND 10"
+SIN_Q050,single_table_filters,17620.8633,17377.773,18001.148,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY BETWEEN 10 AND 20"
+SIN_Q051,single_table_filters,37125.9723,32925.8633,42780.7999,3,OK,"SELECT L_ORDERKEY, L_QUANTITY FROM LINEITEM WHERE L_QUANTITY BETWEEN 20 AND 40"
+SIN_Q052,single_table_filters,12865.4382,12834.065,12921.2189,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_QUANTITY BETWEEN 30 AND 50
+SIN_Q053,single_table_filters,5626.8837,5557.621,5688.493,3,OK,SELECT L_ORDERKEY FROM LINEITEM WHERE L_DISCOUNT > 0.08
+SIN_Q054,single_table_filters,2413.3201,2339.5493,2556.0248,3,OK,SELECT * FROM CUSTOMER WHERE C_ACCTBAL > 1000
+SIN_Q055,single_table_filters,2709.7986,2454.5529,3032.9397,3,OK,SELECT * FROM CUSTOMER WHERE C_ACCTBAL > 500
+SIN_Q056,single_table_filters,118.2457,109.5259,127.022,3,OK,SELECT * FROM CUSTOMER WHERE C_NATIONKEY = 10
+SIN_Q057,single_table_filters,510.9055,510.2048,511.9238,3,OK,SELECT * FROM CUSTOMER WHERE C_ACCTBAL BETWEEN 200 AND 800
+SIN_Q058,single_table_filters,1340.7533,1316.102,1356.427,3,OK,SELECT * FROM CUSTOMER WHERE C_NATIONKEY BETWEEN 1 AND 10
+SIN_Q059,single_table_filters,82.5868,77.9583,91.723,3,OK,"SELECT C_CUSTKEY, C_NAME FROM CUSTOMER WHERE C_NATIONKEY = 5"
+SIN_Q060,single_table_filters,613.1604,596.9789,629.494,3,OK,SELECT * FROM CUSTOMER WHERE C_MKTSEGMENT = 'BUILDING'
+SIN_Q061,single_table_filters,275.2951,273.5202,277.22,3,OK,"SELECT C_CUSTKEY, C_NAME FROM CUSTOMER WHERE C_ACCTBAL < 300"
+SIN_Q062,single_table_filters,1553.9837,1508.877,1589.3519,3,OK,"SELECT C_CUSTKEY, C_ACCTBAL FROM CUSTOMER WHERE C_ACCTBAL >= 1200"
+SIN_Q063,single_table_filters,545.8434,532.788,571.034,3,OK,SELECT * FROM CUSTOMER WHERE C_ACCTBAL < 200
+SIN_Q064,single_table_filters,111.9709,111.1968,112.6072,3,OK,SELECT * FROM CUSTOMER WHERE C_NATIONKEY = 3
+SIN_Q065,single_table_filters,279.2412,274.6608,282.0818,3,OK,"SELECT C_CUSTKEY, C_NAME FROM CUSTOMER WHERE C_ACCTBAL BETWEEN 400 AND 900"
+SIN_Q066,single_table_filters,640.3959,637.815,643.4398,3,OK,"SELECT C_CUSTKEY, C_NAME FROM CUSTOMER WHERE C_NAME LIKE 'Customer#000%'"
+SIN_Q067,single_table_filters,681.2313,680.6669,681.725,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_ACCTBAL > 100
+SIN_Q068,single_table_filters,667.197,665.576,669.2839,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_ACCTBAL > 300
+SIN_Q069,single_table_filters,640.9607,639.8871,643.101,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_ACCTBAL > 700
+SIN_Q070,single_table_filters,583.293,582.48,584.1131,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_ACCTBAL > 1500
+SIN_Q071,single_table_filters,550.2929,548.758,551.698,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_ACCTBAL > 2000
+SIN_Q072,single_table_filters,246.1901,241.447,250.349,3,OK,"SELECT C_CUSTKEY, C_ACCTBAL FROM CUSTOMER WHERE C_ACCTBAL BETWEEN 100 AND 500"
+SIN_Q073,single_table_filters,247.3893,244.6549,252.5401,3,OK,"SELECT C_CUSTKEY, C_ACCTBAL FROM CUSTOMER WHERE C_ACCTBAL BETWEEN 500 AND 1000"
+SIN_Q074,single_table_filters,212.5398,208.308,220.9191,3,OK,SELECT C_CUSTKEY FROM CUSTOMER WHERE C_NATIONKEY BETWEEN 6 AND 12
+SIN_Q075,single_table_filters,492.4711,78.347,1311.9283,3,OK,SELECT * FROM PART WHERE P_SIZE = 10
+SIN_Q076,single_table_filters,98.5646,77.7259,139.6401,3,OK,SELECT * FROM PART WHERE P_SIZE = 20
+SIN_Q077,single_table_filters,998.4234,984.1161,1017.6492,3,OK,SELECT * FROM PART WHERE P_SIZE BETWEEN 5 AND 15
+SIN_Q078,single_table_filters,5099.1983,5077.07,5130.657,3,OK,SELECT * FROM PART WHERE P_RETAILPRICE > 500
+SIN_Q079,single_table_filters,4819.7991,4675.674,4937.4812,3,OK,SELECT * FROM PART WHERE P_RETAILPRICE > 1000
+SIN_Q080,single_table_filters,682.9261,675.7102,695.8799,3,OK,SELECT * FROM PART WHERE P_RETAILPRICE BETWEEN 200 AND 800
+SIN_Q081,single_table_filters,3554.5402,3525.8489,3580.5449,3,OK,SELECT * FROM PART WHERE P_SIZE >= 15
+SIN_Q082,single_table_filters,391.1909,373.328,426.182,3,OK,"SELECT P_PARTKEY, P_NAME FROM PART WHERE P_RETAILPRICE < 300"
+SIN_Q083,single_table_filters,107.2209,95.319,130.2719,3,OK,"SELECT P_PARTKEY, P_SIZE FROM PART WHERE P_SIZE < 5"
+SIN_Q084,single_table_filters,3965.1796,3883.23,4095.4559,3,OK,SELECT * FROM PART WHERE P_RETAILPRICE >= 1200
+SIN_Q085,single_table_filters,313.1117,294.209,346.5309,3,OK,"SELECT P_PARTKEY, P_RETAILPRICE FROM PART WHERE P_RETAILPRICE <= 300"
+SIN_Q086,single_table_filters,566.938,564.0459,568.4443,3,OK,"SELECT P_PARTKEY, P_NAME FROM PART WHERE P_NAME LIKE '%green%'"
+SIN_Q087,single_table_filters,907.9278,906.383,909.642,3,OK,SELECT P_PARTKEY FROM PART WHERE P_SIZE > 5
+SIN_Q088,single_table_filters,810.8334,807.2171,813.1819,3,OK,SELECT P_PARTKEY FROM PART WHERE P_SIZE > 10
+SIN_Q089,single_table_filters,714.4794,712.1701,719.0208,3,OK,SELECT P_PARTKEY FROM PART WHERE P_SIZE > 15
+SIN_Q090,single_table_filters,607.7024,604.1129,611.0997,3,OK,SELECT P_PARTKEY FROM PART WHERE P_SIZE > 20
+SIN_Q091,single_table_filters,2727.529,2717.8919,2740.66,3,OK,"SELECT P_PARTKEY, P_RETAILPRICE FROM PART WHERE P_RETAILPRICE > 200"
+SIN_Q092,single_table_filters,2709.5554,2698.7681,2721.3681,3,OK,"SELECT P_PARTKEY, P_RETAILPRICE FROM PART WHERE P_RETAILPRICE > 600"
+SIN_Q093,single_table_filters,2128.9508,2057.394,2187.768,3,OK,"SELECT P_PARTKEY, P_RETAILPRICE FROM PART WHERE P_RETAILPRICE > 1200"
+SIN_Q094,single_table_filters,1310.3541,1256.5942,1358.6559,3,OK,"SELECT P_PARTKEY, P_RETAILPRICE FROM PART WHERE P_RETAILPRICE > 1500"
+SIN_Q095,single_table_filters,432.8515,422.0729,450.4063,3,OK,SELECT P_PARTKEY FROM PART WHERE P_SIZE BETWEEN 10 AND 30
+SIN_Q096,single_table_filters,144.1374,137.5651,155.988,3,OK,SELECT * FROM SUPPLIER WHERE S_ACCTBAL > 1000
+SIN_Q097,single_table_filters,33.8899,32.9998,34.9839,3,OK,SELECT * FROM SUPPLIER WHERE S_ACCTBAL BETWEEN 500 AND 1500
+SIN_Q098,single_table_filters,4.9702,4.24,5.8112,3,OK,"SELECT S_SUPPKEY, S_NAME FROM SUPPLIER WHERE S_NATIONKEY = 3"
+SIN_Q099,single_table_filters,34.8735,33.7839,36.0677,3,OK,SELECT * FROM SUPPLIER WHERE S_ACCTBAL < 500
+SIN_Q100,single_table_filters,18.3327,18.1589,18.5342,3,OK,"SELECT S_SUPPKEY, S_PHONE FROM SUPPLIER WHERE S_NATIONKEY BETWEEN 5 AND 10"
+SIN_Q101,single_table_filters,124.8713,123.5621,127.0547,3,OK,SELECT * FROM SUPPLIER WHERE S_ACCTBAL >= 2000
+SIN_Q102,single_table_filters,8.6567,7.355,9.67,3,OK,SELECT * FROM SUPPLIER WHERE S_NATIONKEY = 7
+SIN_Q103,single_table_filters,18.8986,18.4219,19.738,3,OK,"SELECT S_SUPPKEY, S_ACCTBAL FROM SUPPLIER WHERE S_ACCTBAL BETWEEN 200 AND 800"
+SIN_Q104,single_table_filters,46.2056,45.0969,47.838,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_ACCTBAL > 100
+SIN_Q105,single_table_filters,43.3269,42.803,44.0378,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_ACCTBAL > 500
+SIN_Q106,single_table_filters,41.5683,41.3339,42.0198,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_ACCTBAL > 1000
+SIN_Q107,single_table_filters,39.1536,39.0799,39.233,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_ACCTBAL > 1500
+SIN_Q108,single_table_filters,37.7687,37.3781,38.348,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_ACCTBAL > 1800
+SIN_Q109,single_table_filters,16.8591,16.6702,17.1771,3,OK,"SELECT S_SUPPKEY, S_ACCTBAL FROM SUPPLIER WHERE S_ACCTBAL BETWEEN 100 AND 600"
+SIN_Q110,single_table_filters,16.6744,16.5339,16.8509,3,OK,"SELECT S_SUPPKEY, S_ACCTBAL FROM SUPPLIER WHERE S_ACCTBAL BETWEEN 600 AND 1200"
+SIN_Q111,single_table_filters,10.7469,10.4899,11.019,3,OK,SELECT S_SUPPKEY FROM SUPPLIER WHERE S_NATIONKEY BETWEEN 1 AND 5
+THR_Q001,three_table_joins,12042.0111,11690.6638,12283.6983,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q002,three_table_joins,8918.0233,1546.7689,23655.653,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, o.O_TOTALPRICE FROM   ORDERS   o JOIN   CUSTOMER "
+THR_Q003,three_table_joins,38313.0628,37026.489,39654.5942,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q004,three_table_joins,5418.9881,5357.6713,5467.9742,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q005,three_table_joins,37539.813,37404.521,37749.3732,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q006,three_table_joins,1471.2591,1434.9167,1531.7657,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, o.O_TOTALPRICE FROM   ORDERS   o JOIN   CUSTOMER "
+THR_Q007,three_table_joins,895.161,893.028,898.1171,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, c.C_ACCTBAL FROM   ORDERS   o JOIN   CUSTOMER c O"
+THR_Q008,three_table_joins,0.8038,0.226,1.9493,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation, o.O_TOTALPRICE FROM   "
+THR_Q009,three_table_joins,34510.9796,33304.6,35998.2898,3,OK,"SELECT n.N_NAME        AS nation, COUNT(o.O_ORDERKEY)  AS order_count, SUM(o.O_T"
+THR_Q010,three_table_joins,4221.6677,4217.0889,4229.6901,3,OK,"SELECT n.N_NAME        AS nation, COUNT(o.O_ORDERKEY)  AS order_count FROM   ORD"
+THR_Q011,three_table_joins,14042.3329,13984.9329,14081.6088,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation, r.R_NAME        AS reg"
+THR_Q012,three_table_joins,2301.1616,2292.9459,2316.6389,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q013,three_table_joins,7479.2324,7229.851,7910.816,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, o.O_TOTALPRICE FROM   ORDERS   o JOIN   CUSTOMER "
+THR_Q014,three_table_joins,34407.4817,32098.0701,36045.9361,3,OK,"SELECT r.R_NAME        AS region, SUM(o.O_TOTALPRICE)  AS total_revenue, COUNT(o"
+THR_Q015,three_table_joins,6438.5857,6387.7311,6475.43,3,OK,"SELECT r.R_NAME        AS region, n.N_NAME        AS nation, SUM(o.O_TOTALPRICE)"
+THR_Q016,three_table_joins,31987.485,31919.4241,32052.738,3,OK,"SELECT r.R_NAME        AS region, AVG(o.O_TOTALPRICE)  AS avg_order_value FROM  "
+THR_Q017,three_table_joins,93161.5764,91496.7561,94342.638,3,OK,"SELECT r.R_NAME        AS region, c.C_NAME, SUM(o.O_TOTALPRICE)  AS total_spent "
+THR_Q018,three_table_joins,35706.1277,35631.2709,35777.2732,3,OK,"SELECT r.R_NAME        AS region, SUM(o.O_TOTALPRICE)  AS revenue FROM   ORDERS "
+THR_Q019,three_table_joins,36688.3631,36613.3912,36816.5641,3,OK,"SELECT r.R_NAME        AS region, SUM(o.O_TOTALPRICE)  AS total_revenue FROM   O"
+THR_Q020,three_table_joins,10.0336,8.6842,12.3978,3,OK,"SELECT DISTINCT r.R_NAME   AS region, n.N_NAME             AS nation FROM   CUST"
+THR_Q029,three_table_joins,105242.3314,87743.8982,139114.0881,3,OK,SELECT DISTINCT p.P_BRAND FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l
+THR_Q030,three_table_joins,142003.092,119089.669,160687.3469,3,OK,"SELECT o.O_ORDERKEY, s.S_NAME, l.L_EXTENDEDPRICE FROM   ORDERS   o JOIN   LINEIT"
+THR_Q035,three_table_joins,168401.6662,163452.2669,175257.0119,3,OK,"SELECT s.S_NATIONKEY, AVG(l.L_DISCOUNT)    AS avg_discount FROM   ORDERS   o JOI"
+THR_Q037,three_table_joins,115563.6411,103704.5631,132722.455,3,OK,"SELECT o.O_ORDERKEY, s.S_NAME, l.L_SHIPDATE FROM   ORDERS   o JOIN   LINEITEM l "
+THR_Q038,three_table_joins,128733.3586,115074.2309,141498.1189,3,OK,"SELECT DISTINCT s.S_SUPPKEY, s.S_NAME FROM   ORDERS   o JOIN   LINEITEM l ON o.O"
+AGG_Q102,aggregation,85321.6556,71409.05,101825.7599,3,OK,"SELECT l_shipmode, SUM(l_quantity) AS total_qty FROM lineitem GROUP BY l_shipmod"
+AGG_Q166,aggregation,98336.9381,75966.4209,131037.8382,3,OK,"SELECT l_shipmode, SUM(CASE WHEN l_returnflag = 'R' THEN l_extendedprice * (1 - "
+SIN_Q037,single_table_filters,162081.2633,158344.3301,164501.7118,3,OK,SELECT * FROM LINEITEM WHERE L_RETURNFLAG = 'R'
+THR_Q050,three_table_joins,149342.4213,107020.915,173559.1149,3,OK,"SELECT l.L_ORDERKEY, p.P_NAME, s.S_NAME FROM   LINEITEM l JOIN   PART     p  ON "
+THR_Q059,three_table_joins,88188.1076,50606.6239,136551.1942,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, l.L_QUANTITY FROM   ORDERS   o JOIN   CUSTOMER c "
+THR_Q060,three_table_joins,19084.0586,5774.452,45061.512,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, l.L_DISCOUNT FROM   ORDERS   o JOIN   CUSTOMER c "
+THR_Q063,three_table_joins,79367.5307,71465.9579,86232.8062,3,OK,"SELECT c.C_NATIONKEY, AVG(l.L_QUANTITY)    AS avg_quantity FROM   ORDERS   o JOI"
+THR_Q065,three_table_joins,89804.7447,73211.3936,108109.5648,3,OK,"SELECT c.C_NATIONKEY, YEAR(o.O_ORDERDATE)  AS order_year, SUM(l.L_EXTENDEDPRICE "
+THR_Q066,three_table_joins,29556.8252,27037.9372,32754.4613,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, l.L_DISCOUNT, l.L_EXTENDEDPRICE FROM   ORDERS   o"
+THR_Q067,three_table_joins,57673.3643,53705.003,65494.1449,3,OK,SELECT DISTINCT c.C_NATIONKEY FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY
+THR_Q068,three_table_joins,204.3502,97.9588,416.976,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation, r.R_NAME        AS regi"
+THR_Q069,three_table_joins,19.6543,18.7469,21.426,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation FROM   SUPPLIER s JOIN  "
+THR_Q070,three_table_joins,4.9774,4.2882,6.1429,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, s.S_ACCTBAL FROM   SUPPLIER s JOIN   NATION   n ON"
+THR_Q071,three_table_joins,20.2018,19.8133,20.6149,3,OK,"SELECT r.R_NAME        AS region, COUNT(s.S_SUPPKEY) AS supplier_count FROM   SU"
+THR_Q072,three_table_joins,100.0717,97.8291,102.2491,3,OK,"SELECT n.N_NAME        AS nation, AVG(s.S_ACCTBAL) AS avg_balance, COUNT(s.S_SUP"
+THR_Q073,three_table_joins,87.7264,86.5452,88.923,3,OK,"SELECT r.R_NAME        AS region, MAX(s.S_ACCTBAL) AS max_balance FROM   SUPPLIE"
+THR_Q074,three_table_joins,92.5813,92.3979,92.89,3,OK,"SELECT s.S_NAME, n.N_NAME        AS nation, r.R_NAME        AS region, s.S_ACCTB"
+THR_Q075,three_table_joins,27.3413,27.123,27.734,3,OK,"SELECT n.N_NAME        AS nation, COUNT(s.S_SUPPKEY) AS supplier_count FROM   SU"
+THR_Q076,three_table_joins,6.2273,6.1407,6.3391,3,OK,SELECT DISTINCT r.R_NAME   AS region FROM   SUPPLIER s JOIN   NATION   n ON s.S_
+THR_Q077,three_table_joins,41.0249,33.8018,48.6619,3,OK,"SELECT s.S_NAME, n.N_NAME        AS nation, s.S_ACCTBAL FROM   SUPPLIER s JOIN  "
+THR_Q078,three_table_joins,2032.503,1903.3108,2282.6121,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation, r.R_NAME        AS regi"
+THR_Q079,three_table_joins,369.6742,367.2099,372.7028,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation FROM   CUSTOMER c JOIN  "
+THR_Q080,three_table_joins,358.2892,356.2927,361.1119,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, c.C_ACCTBAL FROM   CUSTOMER c JOIN   NATION   n ON"
+THR_Q081,three_table_joins,294.7346,294.421,295.264,3,OK,"SELECT r.R_NAME        AS region, COUNT(c.C_CUSTKEY) AS customer_count FROM   CU"
+THR_Q082,three_table_joins,1969.0324,1966.5182,1972.7981,3,OK,"SELECT n.N_NAME        AS nation, AVG(c.C_ACCTBAL) AS avg_balance FROM   CUSTOME"
+THR_Q083,three_table_joins,1866.5884,1866.0131,1867.4841,3,OK,"SELECT r.R_NAME        AS region, SUM(c.C_ACCTBAL) AS total_balance, COUNT(c.C_C"
+THR_Q084,three_table_joins,1947.0557,1946.5659,1947.8021,3,OK,"SELECT c.C_NAME, n.N_NAME        AS nation, r.R_NAME        AS region, c.C_ACCTB"
+THR_Q085,three_table_joins,2087.5639,2077.6148,2100.6799,3,OK,"SELECT n.N_NAME        AS nation, AVG(c.C_ACCTBAL) AS avg_balance FROM   CUSTOME"
+THR_Q086,three_table_joins,1753.4952,1736.5768,1771.1718,3,OK,"SELECT r.R_NAME        AS region, COUNT(c.C_CUSTKEY) AS high_balance_count FROM "
+THR_Q087,three_table_joins,0.495,0.3119,0.8409,3,OK,"SELECT DISTINCT r.R_NAME   AS region, n.N_NAME             AS nation FROM   CUST"
+THR_Q088,three_table_joins,13008.0494,6637.7311,23751.1871,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, p.P_TYPE, l.L_QUANTITY FROM   ORDERS   o JOIN   C"
+THR_Q093,three_table_joins,55375.5354,47584.156,70056.2422,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, p.P_NAME, l.L_DISCOUNT FROM   ORDERS   o JOIN   C"
+THR_Q097,three_table_joins,125000.6906,103874.3691,156234.0989,3,OK,"SELECT r.R_NAME        AS region, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS"
+THR_Q103,three_table_joins,68444.3204,60680.459,77254.144,3,OK,"SELECT cn.N_NAME       AS cust_nation, sn.N_NAME       AS supp_nation, SUM(l.L_E"
+THR_Q106,three_table_joins,30.232,1.502,85.012,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, cn.N_NAME       AS cust_nation, p.P_NAME, s.S_NAM"
+THR_Q117,three_table_joins,95201.8073,84719.0309,115163.9462,3,OK,"SELECT c.C_MKTSEGMENT, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS net_revenu"
+THR_Q119,three_table_joins,19415.9358,14640.0921,28915.2212,3,OK,"SELECT r.R_NAME        AS region, SUM(ps.PS_AVAILQTY * ps.PS_SUPPLYCOST) AS stoc"
+THR_Q121,three_table_joins,34977.7288,29653.9528,45536.5458,3,OK,"SELECT c.C_MKTSEGMENT, YEAR(o.O_ORDERDATE) AS order_year, COUNT(o.O_ORDERKEY)  A"
+THR_Q123,three_table_joins,36408.6618,32427.8312,44041.0881,3,OK,"SELECT c.C_MKTSEGMENT, n.N_NAME        AS nation, MAX(o.O_TOTALPRICE) AS max_ord"
+THR_Q124,three_table_joins,24201.4089,19420.387,33740.2928,3,OK,"SELECT p.P_CONTAINER, r.R_NAME        AS region, AVG(ps.PS_SUPPLYCOST) AS avg_co"
+THR_Q125,three_table_joins,101821.4321,78066.4949,133811.1403,3,OK,"SELECT c.C_MKTSEGMENT, YEAR(o.O_ORDERDATE)   AS yr, MONTH(o.O_ORDERDATE)  AS mo,"
+THR_Q128,three_table_joins,26260.69,20306.808,38130.265,3,OK,"SELECT p.P_BRAND, r.R_NAME        AS region, SUM(ps.PS_AVAILQTY * ps.PS_SUPPLYCO"
+THR_Q130,three_table_joins,30870.3094,30440.2039,31703.7892,3,OK,"SELECT n.N_NAME        AS nation, SUM(o.O_TOTALPRICE)   AS total_revenue FROM   "
+THR_Q131,three_table_joins,30039.892,29489.5561,30933.9981,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, COUNT(ps.PS_PARTKEY) AS part_count FROM   SUPPLIER"
+THR_Q133,three_table_joins,360.0948,307.1811,464.268,3,OK,"SELECT r.R_NAME        AS region, COUNT(c.C_CUSTKEY) AS customer_count FROM   CU"
+THR_Q134,three_table_joins,132077.1923,127933.733,139611.141,3,OK,"SELECT p.P_TYPE, COUNT(l.L_LINENUMBER) AS line_count FROM   LINEITEM l JOIN   PA"
+THR_Q135,three_table_joins,10264.2291,9267.385,12248.5521,3,OK,"SELECT c.C_MKTSEGMENT, n.N_NAME        AS nation, AVG(c.C_ACCTBAL) AS avg_balanc"
+THR_Q136,three_table_joins,16572.9263,11916.6946,25878.989,3,OK,"SELECT n.N_NAME        AS nation, SUM(ps.PS_AVAILQTY) AS total_stock FROM   SUPP"
+THR_Q137,three_table_joins,14522.9591,13743.5942,16044.595,3,OK,"SELECT p.P_CONTAINER, AVG(ps.PS_SUPPLYCOST) AS avg_cost, COUNT(DISTINCT p.P_PART"
+THR_Q139,three_table_joins,582.6257,540.3152,663.305,3,OK,"SELECT n.N_NAME        AS nation, COUNT(c.C_CUSTKEY) AS customer_count FROM   CU"
+THR_Q140,three_table_joins,43202.0276,34047.035,60756.779,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation, r.R_NAME        AS reg"
+THR_Q141,three_table_joins,9593.8305,4330.579,20070.8983,3,OK,"SELECT s.S_NAME, p.P_NAME, ps.PS_AVAILQTY * ps.PS_SUPPLYCOST AS stock_value FROM"
+THR_Q142,three_table_joins,120661.3685,94921.3958,169484.3438,3,OK,"SELECT n.N_NAME        AS nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS"
+THR_Q143,three_table_joins,43749.6969,42903.6491,45411.5987,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation, COUNT(o.O_ORDERKEY) AS "
+THR_Q144,three_table_joins,39324.5378,35455.2593,44007.3731,3,OK,"SELECT p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   "
+THR_Q145,three_table_joins,5.8189,0.7041,15.907,3,OK,"SELECT o.O_ORDERKEY, o.O_ORDERDATE, c.C_NAME, n.N_NAME        AS nation, o.O_TOT"
+THR_Q146,three_table_joins,14973.0914,13343.677,18132.067,3,OK,"SELECT p.P_NAME, s.S_NAME, n.N_NAME        AS nation, ps.PS_SUPPLYCOST FROM   PA"
+THR_Q148,three_table_joins,12699.9753,10654.1629,16652.0929,3,OK,"SELECT s.S_NAME, n.N_NAME        AS nation, AVG(ps.PS_SUPPLYCOST) AS avg_cost FR"
+THR_Q149,three_table_joins,104879.1789,90601.3238,130833.05,3,OK,"SELECT n.N_NAME        AS nation, YEAR(o.O_ORDERDATE) AS order_year, SUM(l.L_EXT"
+THR_Q150,three_table_joins,1186.3424,772.7041,2008.647,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation FROM   CUSTOMER c JOIN  "
+THR_Q151,three_table_joins,5549.8983,5227.0968,6171.3371,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation FROM   CUSTOMER c JOIN  "
+THR_Q152,three_table_joins,7789.3412,2417.5341,18476.8989,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation FROM   SUPPLIER s JOIN  "
+THR_Q153,three_table_joins,106160.0456,61612.1049,166277.8201,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation FROM   ORDERS   o JOIN "
+THR_Q154,three_table_joins,11078.7126,7666.8451,17679.07,3,OK,"SELECT p.P_PARTKEY, p.P_NAME FROM   PART p WHERE  p.P_PARTKEY IN ( SELECT ps.PS_"
+THR_Q155,three_table_joins,4299.6727,3782.6509,5323.8769,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation, r.R_NAME        AS regi"
+THR_Q156,three_table_joins,141053.0047,136854.6312,148065.4211,3,OK,"SELECT DISTINCT o.O_ORDERKEY, o.O_TOTALPRICE FROM   ORDERS o WHERE  o.O_ORDERKEY"
+THR_Q157,three_table_joins,4540.5103,1402.8013,10794.9958,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation FROM   SUPPLIER s JOIN  "
+THR_Q158,three_table_joins,649.9934,308.5492,1330.3173,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, c.C_NATIONKEY FROM   CUSTOMER c WHERE  c.C_NATIONK"
+THR_Q159,three_table_joins,95905.1558,82069.6478,118478.6789,3,OK,"SELECT DISTINCT p.P_PARTKEY, p.P_NAME, p.P_BRAND FROM   PART p WHERE  p.P_PARTKE"
+THR_Q160,three_table_joins,33608.8479,24794.8937,51146.6191,3,OK,SELECT DISTINCT r.R_NAME   AS region FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_
+THR_Q161,three_table_joins,54485.5696,43668.8488,71275.3029,3,OK,SELECT DISTINCT p.P_BRAND FROM   LINEITEM  l JOIN   ORDERS    o  ON l.L_ORDERKEY
+THR_Q163,three_table_joins,45729.002,41585.66,49815.1009,3,OK,SELECT DISTINCT p.P_CONTAINER FROM   LINEITEM  l JOIN   ORDERS    o  ON l.L_ORDE
+THR_Q164,three_table_joins,54977.284,49294.7812,65815.6559,3,OK,SELECT DISTINCT c.C_MKTSEGMENT FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKE
+THR_Q165,three_table_joins,21510.0331,18808.846,26552.9282,3,OK,"SELECT DISTINCT r.R_NAME  AS region, p.P_BRAND FROM   PART     p JOIN   PARTSUPP"
+THR_Q166,three_table_joins,46273.7453,16623.246,100894.8331,3,OK,SELECT DISTINCT l.L_SHIPMODE FROM   LINEITEM l JOIN   ORDERS   o ON l.L_ORDERKEY
+THR_Q167,three_table_joins,40501.6653,34704.4339,51833.873,3,OK,"SELECT r.R_NAME        AS region, YEAR(o.O_ORDERDATE) AS order_year, SUM(o.O_TOT"
+THR_Q169,three_table_joins,103994.0829,74207.6507,162488.9011,3,OK,"SELECT n.N_NAME        AS nation, COUNT(DISTINCT o.O_ORDERKEY) AS late_orders FR"
+THR_Q170,three_table_joins,329.8293,10.5181,946.281,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation, o.O_TOTALPRICE FROM   "
+THR_Q172,three_table_joins,46771.5243,39979.8059,60135.3259,3,OK,"SELECT n.N_NAME        AS nation, SUM(CASE WHEN YEAR(o.O_ORDERDATE) = 1995 THEN "
+THR_Q173,three_table_joins,85494.5999,62008.7059,107912.8499,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, l.L_SHIPDATE, o.O_ORDERDATE FROM   ORDERS   o JOI"
+THR_Q174,three_table_joins,148834.5517,125057.6961,173721.549,3,OK,"SELECT n.N_NAME        AS supplier_nation, AVG(DATEDIFF(l.L_RECEIPTDATE, l.L_SHI"
+THR_Q175,three_table_joins,37431.2231,32987.6339,44756.2091,3,OK,"SELECT r.R_NAME        AS region, MONTH(o.O_ORDERDATE) AS peak_month, COUNT(o.O_"
+THR_Q176,three_table_joins,141571.652,136227.8552,151798.5249,3,OK,"SELECT r.R_NAME            AS region, YEAR(l.L_SHIPDATE)  AS ship_year, COUNT(CA"
+THR_Q180,three_table_joins,78848.2063,39353.1778,130425.766,3,OK,"SELECT c.C_MKTSEGMENT, YEAR(o.O_ORDERDATE) AS yr, SUM(l.L_EXTENDEDPRICE * (1 - l"
+THR_Q181,three_table_joins,126194.3707,97013.7651,146715.2872,3,OK,"SELECT n.N_NAME        AS nation, SUM(CASE WHEN YEAR(o.O_ORDERDATE) = 1995 THEN "
+THR_Q182,three_table_joins,43346.1792,37824.4569,53941.3269,3,OK,"SELECT s.S_NAME, n.N_NAME        AS nation, r.R_NAME        AS region, AVG(ps.PS"
+THR_Q185,three_table_joins,101904.3272,82470.6931,112754.4167,3,OK,"SELECT r.R_NAME        AS customer_region, l.L_SHIPMODE, SUM(l.L_EXTENDEDPRICE *"
+THR_Q186,three_table_joins,120080.9793,99750.164,140166.0979,3,OK,"SELECT c.C_MKTSEGMENT, AVG(o.O_TOTALPRICE)   AS avg_order_value, COUNT(DISTINCT "
+THR_Q188,three_table_joins,7.398,0.5562,20.9298,3,OK,"SELECT c.C_NAME, n.N_NAME        AS nation, o.O_ORDERKEY, CASE WHEN o.O_TOTALPRI"
+THR_Q189,three_table_joins,40206.5363,38720.1359,43178.0889,3,OK,"SELECT r.R_NAME        AS region, SUM(CASE WHEN o.O_TOTALPRICE < 30000  THEN 1 E"
+THR_Q192,three_table_joins,41127.1863,39327.5461,44601.5019,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, n.N_NAME        AS nation FROM   CUSTOMER c JOIN  "
+TWO_Q001,two_table_joins,10239.0232,9820.0409,11047.684,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q002,two_table_joins,18072.5815,17726.8248,18687.758,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUST"
+TWO_Q003,two_table_joins,39092.9557,33029.1371,50399.6711,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q004,two_table_joins,3742.6548,3729.0392,3750.556,3,OK,"SELECT o.O_ORDERKEY, c.C_NATIONKEY FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CU"
+TWO_Q005,two_table_joins,14528.7393,14344.6949,14843.9651,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q006,two_table_joins,9020.1672,8911.603,9101.0749,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q007,two_table_joins,8065.7644,8026.4881,8090.77,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q008,two_table_joins,3577.9384,3296.2098,4117.1823,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUST"
+TWO_Q009,two_table_joins,4057.0902,4054.7619,4061.229,3,OK,"SELECT o.O_ORDERKEY, c.C_NATIONKEY FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CU"
+TWO_Q010,two_table_joins,13204.3158,13110.4503,13373.1363,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q011,two_table_joins,30792.8056,30629.56,30939.4069,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q012,two_table_joins,28617.8971,28553.551,28689.9672,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q013,two_table_joins,1429.6623,1413.5838,1458.9152,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q014,two_table_joins,27924.7424,27897.8541,27940.5141,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q015,two_table_joins,8040.5656,7986.325,8104.8808,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q019,two_table_joins,88528.1657,82685.3368,94929.8954,3,OK,"SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDE"
+TWO_Q024,two_table_joins,83907.8923,77048.033,96852.7288,3,OK,"SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDE"
+TWO_Q026,two_table_joins,17793.6737,11018.487,30967.5682,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q027,two_table_joins,8886.7289,8778.6679,8951.714,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q028,two_table_joins,6788.0837,6240.2091,7745.0759,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q029,two_table_joins,5891.3523,5703.078,6013.7148,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART     p JOIN   PARTSUPP ps ON p.P_P"
+TWO_Q030,two_table_joins,11718.202,11110.2479,12599.6411,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q031,two_table_joins,7221.2167,6908.1221,7835.7601,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S_SU"
+TWO_Q032,two_table_joins,10227.9046,10161.377,10356.4239,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S"
+TWO_Q033,two_table_joins,6941.4028,6576.298,7286.4561,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S"
+TWO_Q034,two_table_joins,6680.0917,6651.017,6737.433,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S_SU"
+TWO_Q035,two_table_joins,7166.3974,7129.2889,7202.4221,3,OK,"SELECT s.S_SUPPKEY, ps.PS_AVAILQTY FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S_S"
+TWO_Q036,two_table_joins,40257.4898,30537.3151,59679.4641,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q038,two_table_joins,12941.4677,6060.437,26301.383,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q039,two_table_joins,7514.8651,6969.4753,8250.2599,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S"
+TWO_Q040,two_table_joins,46799.3008,39893.3232,59947.541,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q042,two_table_joins,21767.3623,18112.73,28831.6159,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q044,two_table_joins,24033.6552,17978.241,35785.5177,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q045,two_table_joins,11390.5293,11292.546,11448.73,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART     p JOIN   PARTSUPP ps ON p.P_P"
+TWO_Q046,two_table_joins,14646.0666,14257.3709,14890.794,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S"
+TWO_Q047,two_table_joins,11029.4067,10994.504,11061.9831,3,OK,"SELECT s.S_SUPPKEY, ps.PS_AVAILQTY FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S_S"
+TWO_Q048,two_table_joins,1.9407,0.5481,4.3151,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q049,two_table_joins,1.0566,0.6778,1.492,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q050,two_table_joins,4.71,3.69,5.501,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDE"
+TWO_Q051,two_table_joins,3.2864,1.462,6.0911,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDE"
+TWO_Q052,two_table_joins,1.2619,1.224,1.2949,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P"
+TWO_Q053,two_table_joins,0.8066,0.7842,0.8199,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S"
+TWO_Q054,two_table_joins,37611.7136,34439.467,41704.885,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q055,two_table_joins,34384.7064,33918.8542,34969.4579,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q056,two_table_joins,33680.5396,33418.9279,33918.0601,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q057,two_table_joins,32428.381,32268.4982,32542.264,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q058,two_table_joins,31018.4387,30816.499,31372.6261,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q059,two_table_joins,19934.8974,18702.291,20909.909,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY "
+TWO_Q060,two_table_joins,18599.5406,18119.1609,19278.4078,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY "
+TWO_Q061,two_table_joins,18328.4843,17342.293,19709.2359,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY "
+TWO_Q062,two_table_joins,17340.4129,17140.8651,17564.4329,3,OK,"SELECT o.O_ORDERKEY, c.C_ACCTBAL FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY "
+TWO_Q063,two_table_joins,29714.6286,28758.934,30619.432,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q064,two_table_joins,28785.3964,28225.4541,29841.193,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q065,two_table_joins,30561.4628,30000.5751,31246.9182,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q066,two_table_joins,23957.2821,23174.8381,24649.8811,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q067,two_table_joins,18631.2377,18333.22,18995.008,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q068,two_table_joins,9774.0544,9678.0939,9899.4009,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q069,two_table_joins,369.7206,366.807,374.7041,3,OK,"SELECT o.O_ORDERKEY, c.C_NATIONKEY FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKE"
+TWO_Q070,two_table_joins,379.3139,372.1082,391.3963,3,OK,"SELECT o.O_ORDERKEY, c.C_NATIONKEY FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKE"
+TWO_Q071,two_table_joins,357.2768,355.125,361.2223,3,OK,"SELECT o.O_ORDERKEY, c.C_NATIONKEY FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKE"
+TWO_Q072,two_table_joins,1526.3369,1496.419,1585.309,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q073,two_table_joins,2738.4249,2644.2499,2843.8139,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q074,two_table_joins,7182.7923,6968.766,7493.8598,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q075,two_table_joins,534.8433,531.055,537.3268,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q076,two_table_joins,908.9652,900.5258,921.6299,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q077,two_table_joins,2911.1273,2870.893,2932.8198,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS o JOIN CUSTOMER c ON o.O_CUSTKEY = c"
+TWO_Q085,two_table_joins,10926.9599,7592.8152,17122.9739,3,OK,"SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q087,two_table_joins,143170.5633,132164.34,149972.163,3,OK,"SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q088,two_table_joins,80721.0977,79754.9889,81264.688,3,OK,"SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q089,two_table_joins,18299.2543,14488.2629,25542.985,3,OK,"SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q094,two_table_joins,89197.4091,80569.2518,105494.6182,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q095,two_table_joins,64364.7779,59387.4128,67864.9328,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q096,two_table_joins,60375.802,56120.755,62665.705,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q097,two_table_joins,132329.647,106300.7219,174669.3802,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q098,two_table_joins,107099.5981,100447.3033,115955.693,3,OK,"SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q099,two_table_joins,71558.8923,66952.1921,74356.6139,3,OK,"SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q100,two_table_joins,45393.2398,42102.2782,49370.2462,3,OK,"SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKE"
+TWO_Q101,two_table_joins,16108.1037,9594.0201,29099.757,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q102,two_table_joins,7737.1097,7690.7878,7821.418,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q103,two_table_joins,6479.725,6415.626,6549.511,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q104,two_table_joins,5396.7923,5316.761,5516.9661,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q105,two_table_joins,10135.987,9916.6801,10510.057,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q106,two_table_joins,7551.8658,7451.072,7629.1587,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q107,two_table_joins,5499.6684,5246.8729,5867.8131,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q108,two_table_joins,5509.6526,4815.254,6752.9221,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q109,two_table_joins,11208.9319,9762.7909,12370.326,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART p JOIN PARTSUPP ps ON p.P_PARTKEY"
+TWO_Q110,two_table_joins,310825.2165,5179.909,910008.383,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART p JOIN PARTSUPP ps ON p.P_PARTKEY"
+TWO_Q111,two_table_joins,509392.8421,11323.8971,910327.1041,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART p JOIN PARTSUPP ps ON p.P_PARTKEY"
+TWO_Q112,two_table_joins,77514.0942,5456.5017,221190.5839,3,OK,"SELECT p.P_PARTKEY, ps.PS_AVAILQTY FROM   PART p JOIN PARTSUPP ps ON p.P_PARTKEY"
+TWO_Q113,two_table_joins,1910.12,1874.656,1953.7821,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q114,two_table_joins,1784.2212,1713.0108,1902.004,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q115,two_table_joins,7147.7373,6816.2971,7784.7927,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q116,two_table_joins,6814.6302,6800.3509,6826.4887,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q117,two_table_joins,6793.6363,6784.703,6799.3698,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q118,two_table_joins,6758.1183,6747.0691,6774.4999,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q119,two_table_joins,5796.8349,5774.1718,5823.5018,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q120,two_table_joins,5787.8231,5779.4759,5797.2772,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q121,two_table_joins,5806.379,5802.3982,5812.294,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q122,two_table_joins,8895.0364,8569.078,9101.1062,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_S"
+TWO_Q123,two_table_joins,4263.616,4156.4369,4326.2401,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_S"
+TWO_Q124,two_table_joins,2475.0799,2452.6739,2510.767,3,OK,"SELECT s.S_SUPPKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_S"
+TWO_Q125,two_table_joins,5561.7553,5553.3011,5566.5388,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q126,two_table_joins,4569.5693,4558.454,4575.2029,3,OK,"SELECT s.S_SUPPKEY, ps.PS_PARTKEY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUPP"
+TWO_Q127,two_table_joins,6759.6589,6740.4549,6785.9647,3,OK,"SELECT s.S_SUPPKEY, ps.PS_AVAILQTY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUP"
+TWO_Q128,two_table_joins,6714.8041,6695.2181,6747.9432,3,OK,"SELECT s.S_SUPPKEY, ps.PS_AVAILQTY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUP"
+TWO_Q130,two_table_joins,8112.066,5464.8249,12915.071,3,OK,"SELECT p.P_PARTKEY, ps.PS_SUPPLYCOST FROM   PART p JOIN PARTSUPP ps ON p.P_PARTK"
+TWO_Q131,two_table_joins,1148.5333,1075.0,1289.4499,3,OK,"SELECT s.S_SUPPKEY, ps.PS_AVAILQTY FROM   SUPPLIER s JOIN PARTSUPP ps ON s.S_SUP"
+TWO_Q132,two_table_joins,52811.0414,40781.1368,71868.8211,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY"
+TWO_Q133,two_table_joins,109734.1766,89762.538,130651.0739,3,OK,"SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDE"
+TWO_Q134,two_table_joins,87297.2093,85571.413,89083.1609,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, SUM(o.O_TOTALPRICE)   AS total_revenue FROM   CUST"
+TWO_Q135,two_table_joins,87724.1166,84394.686,90237.994,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, AVG(o.O_TOTALPRICE)   AS avg_order_value FROM   CU"
+TWO_Q136,two_table_joins,29720.4173,29142.971,30479.9771,3,OK,"SELECT c.C_NATIONKEY, MAX(o.O_TOTALPRICE)   AS max_order_price FROM   ORDERS   o"
+TWO_Q137,two_table_joins,31698.1541,30743.4292,32604.1272,3,OK,"SELECT c.C_NATIONKEY, MIN(o.O_TOTALPRICE)   AS min_order_price FROM   ORDERS   o"
+TWO_Q138,two_table_joins,29530.2133,29180.6517,29827.2102,3,OK,"SELECT c.C_NATIONKEY, COUNT(o.O_ORDERKEY)   AS order_count, SUM(o.O_TOTALPRICE) "
+TWO_Q139,two_table_joins,71134.3671,66632.5102,73834.517,3,OK,"SELECT o.O_ORDERKEY, SUM(l.L_QUANTITY)     AS total_qty FROM   ORDERS  o JOIN   "
+TWO_Q140,two_table_joins,73135.0453,72083.3318,74119.2031,3,OK,"SELECT o.O_ORDERKEY, AVG(l.L_DISCOUNT)     AS avg_discount FROM   ORDERS  o JOIN"
+TWO_Q142,two_table_joins,105444.7157,98838.7661,113339.114,3,OK,"SELECT o.O_ORDERKEY, MAX(l.L_QUANTITY)     AS max_qty, MIN(l.L_DISCOUNT)     AS "
+TWO_Q143,two_table_joins,112223.5893,79252.476,177024.0116,3,OK,"SELECT YEAR(l.L_SHIPDATE)    AS ship_year, SUM(l.L_EXTENDEDPRICE) AS total_exten"
+TWO_Q144,two_table_joins,11730.2273,4791.666,25601.6948,3,OK,"SELECT p.P_SIZE, AVG(ps.PS_SUPPLYCOST) AS avg_supply_cost FROM   PART     p JOIN"
+TWO_Q145,two_table_joins,4441.375,3717.025,5698.287,3,OK,"SELECT p.P_PARTKEY, SUM(ps.PS_AVAILQTY)   AS total_availqty FROM   PART     p JO"
+TWO_Q146,two_table_joins,6458.2045,6217.8957,6842.3078,3,OK,"SELECT p.P_TYPE, MAX(ps.PS_SUPPLYCOST) AS max_cost, MIN(ps.PS_SUPPLYCOST) AS min"
+TWO_Q147,two_table_joins,24568.5625,24059.7241,25344.0151,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, COUNT(ps.PS_PARTKEY)  AS parts_supplied FROM   SUP"
+TWO_Q148,two_table_joins,7333.6975,7266.6671,7461.7941,3,OK,"SELECT s.S_NATIONKEY, AVG(ps.PS_SUPPLYCOST) AS avg_supply_cost FROM   SUPPLIER s"
+TWO_Q149,two_table_joins,7595.8626,7572.0248,7622.122,3,OK,"SELECT s.S_SUPPKEY, SUM(ps.PS_AVAILQTY)   AS total_availqty FROM   SUPPLIER s JO"
+TWO_Q150,two_table_joins,7364.7949,7329.7491,7426.1258,3,OK,"SELECT s.S_NATIONKEY, MAX(ps.PS_SUPPLYCOST) AS max_supply_cost FROM   SUPPLIER s"
+TWO_Q151,two_table_joins,43524.1339,35592.171,58508.6789,3,OK,"SELECT c.C_CUSTKEY, COUNT(o.O_ORDERKEY)   AS order_count FROM   CUSTOMER c JOIN "
+TWO_Q153,two_table_joins,36831.6801,36324.9261,37300.7548,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, COUNT(o.O_ORDERKEY)   AS order_count FROM   CUSTOM"
+TWO_Q154,two_table_joins,91082.0458,89117.264,92379.1332,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, SUM(o.O_TOTALPRICE)   AS total_revenue FROM   CUST"
+TWO_Q155,two_table_joins,32618.1459,31204.2999,34074.0361,3,OK,"SELECT c.C_NATIONKEY, AVG(o.O_TOTALPRICE)   AS avg_order_value FROM   ORDERS   o"
+TWO_Q156,two_table_joins,55815.2031,42007.5109,75910.0542,3,OK,"SELECT o.O_ORDERKEY, COUNT(l.L_LINENUMBER) AS line_count FROM   ORDERS  o JOIN  "
+TWO_Q157,two_table_joins,73634.6483,61757.9379,85938.3931,3,OK,"SELECT o.O_ORDERKEY, SUM(l.L_QUANTITY)     AS total_qty FROM   ORDERS  o JOIN   "
+TWO_Q158,two_table_joins,5883.4821,3368.655,10883.2092,3,OK,"SELECT p.P_PARTKEY, COUNT(ps.PS_SUPPKEY)  AS supplier_count FROM   PART     p JO"
+TWO_Q159,two_table_joins,5199.7924,5107.8849,5323.0553,3,OK,"SELECT p.P_SIZE, AVG(ps.PS_SUPPLYCOST) AS avg_cost FROM   PART     p JOIN   PART"
+TWO_Q160,two_table_joins,8153.6989,8065.5861,8200.9568,3,OK,"SELECT s.S_SUPPKEY, SUM(ps.PS_AVAILQTY)   AS total_qty FROM   SUPPLIER s JOIN   "
+TWO_Q161,two_table_joins,4283.7664,3525.1021,5733.0422,3,OK,"SELECT DISTINCT c.C_CUSTKEY, c.C_NAME FROM   CUSTOMER c JOIN   ORDERS   o ON c.C"
+TWO_Q162,two_table_joins,26156.0603,24096.9081,27258.425,3,OK,SELECT DISTINCT c.C_NATIONKEY FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY
+TWO_Q164,two_table_joins,10479.654,4634.768,22145.535,3,OK,SELECT DISTINCT p.P_TYPE FROM   PART     p JOIN   PARTSUPP ps ON p.P_PARTKEY = p
+TWO_Q165,two_table_joins,6694.6044,6615.6182,6850.035,3,OK,SELECT DISTINCT s.S_NATIONKEY FROM   SUPPLIER s JOIN   PARTSUPP ps ON s.S_SUPPKE
+TWO_Q166,two_table_joins,96360.5143,69170.8939,143751.9691,3,OK,SELECT DISTINCT o.O_ORDERKEY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY 
+TWO_Q167,two_table_joins,7.8347,0.329,21.929,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, o.O_TOTALPRICE FROM   ORDERS   o JOIN   CUSTOMER "
+TWO_Q168,two_table_joins,39228.4586,38067.1461,41350.971,3,OK,"SELECT c.C_NAME, c.C_ACCTBAL, COUNT(o.O_ORDERKEY) AS order_count FROM   CUSTOMER"
+TWO_Q169,two_table_joins,6.7416,2.187,13.5288,3,OK,"SELECT o.O_ORDERKEY, c.C_NAME, o.O_ORDERDATE FROM   ORDERS   o JOIN   CUSTOMER c"
+TWO_Q170,two_table_joins,68465.7667,59048.8379,79887.3792,3,OK,"SELECT o.O_ORDERKEY, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS  o JOIN   L"
+TWO_Q171,two_table_joins,49162.118,43781.914,57363.3831,3,OK,"SELECT o.O_ORDERKEY, l.L_LINENUMBER, l.L_EXTENDEDPRICE FROM   ORDERS  o JOIN   L"
+TWO_Q172,two_table_joins,28411.0547,23410.5351,37717.7849,3,OK,"SELECT p.P_PARTKEY, p.P_NAME, SUM(ps.PS_AVAILQTY)  AS total_qty FROM   PART     "
+TWO_Q173,two_table_joins,25899.2657,25726.1429,26098.835,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, AVG(ps.PS_SUPPLYCOST) AS avg_cost FROM   SUPPLIER "
+TWO_Q174,two_table_joins,4184.4367,3877.61,4763.736,3,OK,"SELECT s.S_NAME, ps.PS_PARTKEY, ps.PS_SUPPLYCOST FROM   SUPPLIER s JOIN   PARTSU"
+TWO_Q175,two_table_joins,41187.3835,21775.3541,51013.2341,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME FROM   CUSTOMER c WHERE  EXISTS ( SELECT 1 FROM   O"
+TWO_Q176,two_table_joins,25658.3769,25180.8131,26018.259,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME FROM   CUSTOMER c WHERE  NOT EXISTS ( SELECT 1 FROM"
+TWO_Q177,two_table_joins,4118.9645,3969.0628,4355.1669,3,OK,"SELECT o.O_ORDERKEY, o.O_TOTALPRICE FROM   ORDERS o WHERE  o.O_CUSTKEY IN ( SELE"
+TWO_Q178,two_table_joins,93138.1251,54367.013,167893.3082,3,OK,"SELECT o.O_ORDERKEY, o.O_TOTALPRICE FROM   ORDERS o WHERE  EXISTS ( SELECT 1 FRO"
+TWO_Q179,two_table_joins,39028.8184,38099.7829,40224.51,3,OK,"SELECT o.O_ORDERKEY, o.O_TOTALPRICE FROM   ORDERS o WHERE  NOT EXISTS ( SELECT 1"
+TWO_Q180,two_table_joins,5042.728,4230.001,6619.6849,3,OK,"SELECT p.P_PARTKEY, p.P_NAME FROM   PART p WHERE  p.P_PARTKEY IN ( SELECT ps.PS_"
+TWO_Q181,two_table_joins,12426.0903,5925.1709,25310.9992,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME FROM   SUPPLIER s WHERE  EXISTS ( SELECT 1 FROM   P"
+TWO_Q182,two_table_joins,15639.3711,12568.6243,21654.249,3,OK,"SELECT c.C_NATIONKEY, COUNT(o.O_ORDERKEY)   AS order_count, SUM(o.O_TOTALPRICE) "
+TWO_Q183,two_table_joins,29175.0787,29147.702,29216.1312,3,OK,"SELECT c.C_NATIONKEY, YEAR(o.O_ORDERDATE)   AS order_year, COUNT(o.O_ORDERKEY)  "
+TWO_Q184,two_table_joins,103786.7043,80834.9528,147536.068,3,OK,"SELECT YEAR(l.L_SHIPDATE)           AS ship_year, SUM(l.L_EXTENDEDPRICE * (1 - l"
+TWO_Q185,two_table_joins,119140.0639,109755.4698,128829.2289,3,OK,"SELECT o.O_ORDERKEY, o.O_TOTALPRICE, COUNT(l.L_LINENUMBER) AS line_count FROM   "
+TWO_Q186,two_table_joins,11304.9761,5322.2399,23261.2212,3,OK,"SELECT p.P_BRAND, MAX(ps.PS_SUPPLYCOST) - MIN(ps.PS_SUPPLYCOST) AS cost_spread, "
+TWO_Q187,two_table_joins,28183.1226,27522.7718,29065.475,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, COUNT(DISTINCT p.P_SIZE) AS distinct_sizes FROM   "
+TWO_Q188,two_table_joins,6388.436,5476.166,8205.348,3,OK,"SELECT c.C_NATIONKEY, AVG(c.C_ACCTBAL)      AS avg_balance, COUNT(DISTINCT c.C_C"
+TWO_Q189,two_table_joins,58266.8902,28135.5441,101284.6978,3,OK,"SELECT YEAR(l.L_SHIPDATE)    AS ship_year, COUNT(l.L_LINENUMBER) AS discounted_l"
+TWO_Q190,two_table_joins,34743.857,30168.1468,43548.4371,3,OK,"SELECT p.P_PARTKEY, p.P_NAME, SUM(ps.PS_AVAILQTY * ps.PS_SUPPLYCOST) AS stock_va"
+TWO_Q191,two_table_joins,60486.7578,42256.4502,69604.2559,3,OK,"SELECT c.C_CUSTKEY, c.C_NAME, COUNT(DISTINCT o.O_ORDERSTATUS) AS status_count FR"
+TWO_Q193,two_table_joins,7.8197,0.8168,20.103,3,OK,"SELECT p.P_PARTKEY, p.P_NAME FROM   PART p WHERE  p.P_PARTKEY NOT IN ( SELECT ps"
+TWO_Q194,two_table_joins,59263.3497,54218.2748,68260.5062,3,OK,"SELECT o.O_ORDERKEY, o.O_ORDERDATE, o.O_TOTALPRICE, c.C_ACCTBAL FROM   ORDERS   "
+TWO_Q195,two_table_joins,93455.7456,70094.6178,133754.7021,3,OK,"SELECT YEAR(l.L_SHIPDATE)    AS ship_year, MONTH(l.L_SHIPDATE)   AS ship_month, "
+TWO_Q196,two_table_joins,33213.0116,29032.1107,41185.3261,3,OK,"SELECT s.S_SUPPKEY, s.S_NAME, s.S_NATIONKEY, AVG(ps.PS_SUPPLYCOST) AS avg_cost, "

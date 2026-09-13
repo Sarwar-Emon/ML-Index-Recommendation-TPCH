@@ -1,0 +1,42 @@
+{
+  "scale_factor": 10,
+  "index_strategy": "smart_selective_composite",
+  "n_queries": 33,
+  "overall_speedup": 0.865,
+  "mean_speedup": 1.0368,
+  "best_speedup": 2.0125,
+  "best_query": "SIN_lineitem_shipdate",
+  "pct_improved": 30.3,
+  "categories": {
+    "aggregation": {
+      "avg_before_ms": 22891.5,
+      "avg_after_ms": 25018.8,
+      "avg_speedup": 0.946,
+      "pct_improved": 0.0
+    },
+    "complex_queries": {
+      "avg_before_ms": 45434.0,
+      "avg_after_ms": 61833.9,
+      "avg_speedup": 0.7118,
+      "pct_improved": 0.0
+    },
+    "single_table_filters": {
+      "avg_before_ms": 2977.5,
+      "avg_after_ms": 2662.9,
+      "avg_speedup": 1.0932,
+      "pct_improved": 30.0
+    },
+    "three_table_joins": {
+      "avg_before_ms": 12668.2,
+      "avg_after_ms": 13536.4,
+      "avg_speedup": 1.3071,
+      "pct_improved": 75.0
+    },
+    "two_table_joins": {
+      "avg_before_ms": 2947.8,
+      "avg_after_ms": 2891.6,
+      "avg_speedup": 1.0437,
+      "pct_improved": 50.0
+    }
+  }
+}

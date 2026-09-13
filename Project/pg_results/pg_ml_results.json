@@ -1,0 +1,38 @@
+{
+  "dbms": "PostgreSQL 16",
+  "database": "tpch_pg (SF-1)",
+  "total_queries": 809,
+  "n_features": 30,
+  "label_pos_pct": 60.4,
+  "p60_threshold": 26253496.0,
+  "mann_whitney_p": 4e-06,
+  "runtime_ratio": 1.86,
+  "models": {
+    "Random Forest": {
+      "accuracy": 0.963,
+      "f1": 0.9697,
+      "cv_f1": 0.9837,
+      "cv_std": 0.0059,
+      "gkf_f1": 0.9225,
+      "gkf_std": 0.1051
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.9877,
+      "f1": 0.9898,
+      "cv_f1": 0.9868,
+      "cv_std": 0.0068,
+      "gkf_f1": 0.9291,
+      "gkf_std": 0.1082
+    },
+    "SVM": {
+      "accuracy": 0.9444,
+      "f1": 0.9534,
+      "cv_f1": 0.943,
+      "cv_std": 0.015,
+      "gkf_f1": 0.7714,
+      "gkf_std": 0.3042
+    }
+  },
+  "best_model": "Gradient Boosting",
+  "best_cv_f1": 0.9868
+}

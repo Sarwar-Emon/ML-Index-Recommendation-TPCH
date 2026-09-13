@@ -1,0 +1,5 @@
+k,indexes_applied,storage_mb,write_orders_ms,write_lineitem_ms,total_before_ms,total_after_ms,overall_speedup,mean_speedup,pct_improved,best_query,best_speedup
+5,5,19.11,4.25,3.75,3473.27,2765.49,1.2559,1.9561,61.1,TWO_orders_lineitem,5.8
+10,10,51.22,2.87,3.87,3473.27,1311.6,2.6481,2.5466,61.1,AGG_lineitem_discount,11.41
+15,15,83.63,3.71,4.2,3473.27,1554.45,2.2344,2.5083,66.7,TWO_orders_lineitem,10.96
+20,20,96.32,3.13,4.27,3473.27,1269.57,2.7358,2.9562,72.2,AGG_lineitem_discount,13.83

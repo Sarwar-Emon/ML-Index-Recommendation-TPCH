@@ -1,0 +1,4 @@
+query_id,category,error
+THR_orders_lineitem_part,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time exceeded"
+COM_top_suppliers,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time exceeded"
+COM_market_share,complex_queries,1052 (23000): Column 'n_name' in field list is ambiguous

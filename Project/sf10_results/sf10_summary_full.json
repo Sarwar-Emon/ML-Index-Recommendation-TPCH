@@ -1,0 +1,48 @@
+{
+  "scale_factor": 10,
+  "n_queries": 33,
+  "overall_speedup": 1.0042,
+  "mean_speedup": 1.3615,
+  "best_speedup": 9.8491,
+  "best_query": "THR_customer_nation_region",
+  "pct_improved": 48.5,
+  "total_before_ms": 377175.1,
+  "total_after_ms": 375604.31,
+  "categories": {
+    "aggregation": {
+      "avg_before_ms": 18868.9,
+      "avg_after_ms": 25268.2,
+      "avg_speedup": 0.8769,
+      "pct_improved": 25.0,
+      "n_queries": 8
+    },
+    "complex_queries": {
+      "avg_before_ms": 46116.7,
+      "avg_after_ms": 30223.3,
+      "avg_speedup": 1.4879,
+      "pct_improved": 100.0,
+      "n_queries": 3
+    },
+    "single_table_filters": {
+      "avg_before_ms": 2678.2,
+      "avg_after_ms": 2710.2,
+      "avg_speedup": 1.0677,
+      "pct_improved": 30.0,
+      "n_queries": 10
+    },
+    "three_table_joins": {
+      "avg_before_ms": 10263.0,
+      "avg_after_ms": 9094.5,
+      "avg_speedup": 3.6311,
+      "pct_improved": 100.0,
+      "n_queries": 4
+    },
+    "two_table_joins": {
+      "avg_before_ms": 2505.0,
+      "avg_after_ms": 2413.6,
+      "avg_speedup": 1.0314,
+      "pct_improved": 50.0,
+      "n_queries": 8
+    }
+  }
+}

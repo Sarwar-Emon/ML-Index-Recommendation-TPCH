@@ -1,0 +1,311 @@
+query_id,category,error,sql
+Q001,complex_queries,1007 (HY000): Can't create database 'tpch'; database exists,CREATE DATABASE tpch
+Q005,complex_queries,1050 (42S01): Table 'nation' already exists,"CREATE TABLE NATION (
+    N_NATIONKEY INTEGER NOT NULL,
+    N_NAME CHAR(25) NOT NULL,
+    N_REGIONKE"
+Q006,complex_queries,1050 (42S01): Table 'region' already exists,"CREATE TABLE REGION (
+    R_REGIONKEY INTEGER NOT NULL,
+    R_NAME CHAR(25) NOT NULL,
+    R_COMMENT "
+Q007,complex_queries,1050 (42S01): Table 'part' already exists,"CREATE TABLE PART (
+    P_PARTKEY INTEGER NOT NULL,
+    P_NAME VARCHAR(55) NOT NULL,
+    P_MFGR CHAR"
+Q008,complex_queries,1050 (42S01): Table 'supplier' already exists,"CREATE TABLE SUPPLIER (
+    S_SUPPKEY INTEGER NOT NULL,
+    S_NAME CHAR(25) NOT NULL,
+    S_ADDRESS "
+Q009,complex_queries,1050 (42S01): Table 'partsupp' already exists,"CREATE TABLE PARTSUPP (
+    PS_PARTKEY INTEGER NOT NULL,
+    PS_SUPPKEY INTEGER NOT NULL,
+    PS_AVA"
+Q010,complex_queries,1050 (42S01): Table 'customer' already exists,"CREATE TABLE CUSTOMER (
+    C_CUSTKEY INTEGER NOT NULL,
+    C_NAME VARCHAR(25) NOT NULL,
+    C_ADDRE"
+Q011,complex_queries,1050 (42S01): Table 'orders' already exists,"CREATE TABLE ORDERS (
+    O_ORDERKEY INTEGER NOT NULL,
+    O_CUSTKEY INTEGER NOT NULL,
+    O_ORDERST"
+Q012,complex_queries,1050 (42S01): Table 'lineitem' already exists,"CREATE TABLE LINEITEM (
+    L_ORDERKEY INTEGER NOT NULL,
+    L_PARTKEY INTEGER NOT NULL,
+    L_SUPPK"
+Q044,complex_queries,1061 (42000): Duplicate key name 'idx_orders_custkey',"CREATE INDEX idx_orders_custkey
+ON ORDERS(O_CUSTKEY)"
+Q050,complex_queries,1061 (42000): Duplicate key name 'idx_lineitem_partkey',CREATE INDEX idx_lineitem_partkey ON LINEITEM(L_PARTKEY)
+Q051,complex_queries,1061 (42000): Duplicate key name 'idx_customer_nationkey',CREATE INDEX idx_customer_nationkey ON CUSTOMER(C_NATIONKEY)
+Q052,complex_queries,1061 (42000): Duplicate key name 'idx_orders_orderdate',CREATE INDEX idx_orders_orderdate ON ORDERS(O_ORDERDATE)
+Q053,complex_queries,1061 (42000): Duplicate key name 'idx_partsupp_partkey',CREATE INDEX idx_partsupp_partkey ON PARTSUPP(PS_PARTKEY)
+Q065,complex_queries,1061 (42000): Duplicate key name 'idx_orders_totalprice',"CREATE INDEX idx_orders_totalprice
+ON ORDERS(O_TOTALPRICE)"
+Q071,complex_queries,1061 (42000): Duplicate key name 'idx_lineitem_shipdate',"CREATE INDEX idx_lineitem_shipdate
+ON LINEITEM(L_SHIPDATE)"
+Q075,complex_queries,1061 (42000): Duplicate key name 'idx_part_size',"CREATE INDEX idx_part_size
+ON PART(P_SIZE)"
+AGG_Q047,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, SUM(l_extendedprice) AS total_price FROM lineitem GROUP BY l_partkey ORDER BY tota"
+AGG_Q066,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, p_brand, SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM lineitem JOIN part O"
+AGG_Q070,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, l_shipmode, SUM(l_quantity) AS total_qty FROM lineitem GROUP BY l_suppkey, l_shipm"
+AGG_Q078,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, l_shipmode, AVG(l_extendedprice) AS avg_price FROM lineitem JOIN part ON l_partkey ="
+AGG_Q080,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, l_returnflag, AVG(l_quantity) AS avg_qty FROM lineitem GROUP BY l_partkey, l_retur"
+AGG_Q084,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS supplier_nation, n2.n_name AS customer_nation, SUM(l_extendedprice * (1 - l_disc"
+AGG_Q102,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_shipmode, SUM(l_quantity) AS total_qty FROM lineitem GROUP BY l_shipmode HAVING SUM(l_quant"
+AGG_Q120,aggregation,1054 (42S22): Unknown column 'r_regionkey' in 'field list',"SELECT r_regionkey, COUNT(*) AS nation_count FROM nation GROUP BY r_regionkey HAVING COUNT(*) > 5 OR"
+AGG_Q122,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_partkey, p_type, p_retailprice FROM part p WHERE p_retailprice > ( SELECT AVG(p2.p_retailpr"
+AGG_Q132,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_name, revenue FROM ( SELECT p_brand, p_name, SUM(l_extendedprice * (1 - l_discount"
+AGG_Q134,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT order_year, AVG(lineitem_count) AS avg_lineitems_per_order FROM ( SELECT YEAR(o_orderdate) AS"
+AGG_Q143,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_orderpriority, AVG(item_count) AS avg_lineitems FROM ( SELECT o_orderkey, o_orderpriority, "
+AGG_Q144,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT CASE WHEN p_size > 30 THEN 'Large' ELSE 'Small' END AS size_group, SUM(l_extendedprice * (1 -"
+AGG_Q152,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, l_linenumber, l_extendedprice, ROW_NUMBER() OVER (PARTITION BY l_orderkey ORDER B"
+AGG_Q157,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_partkey, part_revenue, RANK() OVER (PARTITION BY p_brand ORDER BY part_revenue DES"
+AGG_Q163,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderdate, o_totalprice, MIN(o_totalprice) OVER (PARTITION BY o_custkey ORDER BY"
+AGG_Q166,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_shipmode, SUM(CASE WHEN l_returnflag = 'R' THEN l_extendedprice * (1 - l_discount) ELSE 0 E"
+AGG_Q172,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT CASE WHEN p_size > 25 THEN 'Large' ELSE 'Small' END AS part_size_group, COUNT(DISTINCT l_part"
+AGG_Q175,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT CASE WHEN p_type LIKE 'STANDARD%' THEN 'Standard' WHEN p_type LIKE 'SMALL%' THEN 'Small' WHEN
+AGG_Q190,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_type, p_size, COUNT(DISTINCT l_orderkey) AS order_appearances, SUM(l_quantity) AS "
+AGG_Q195,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, COUNT(DISTINCT l_partkey) AS distinct_parts, COUNT(*) AS total_orders, SUM(l_quantity"
+AGG_Q196,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS supplier_nation, n2.n_name AS customer_nation, YEAR(o_orderdate) AS trade_year, "
+AGG_Q200,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r_name AS region, n_name AS nation, c_mktsegment AS market_segment, YEAR(o_orderdate) AS orde"
+COM_Q002,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_partkey, p_name, p_brand, p_retailprice FROM part p WHERE p_retailprice > ( SELECT AVG(p2.p"
+COM_Q009,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, l_partkey, l_quantity FROM lineitem l WHERE l_quantity > ( SELECT AVG(l2.l_quanti"
+COM_Q010,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_orderkey, o_custkey, o_orderdate, o_totalprice FROM orders o WHERE o_orderdate > ( SELECT M"
+COM_Q011,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_type, SUM(l_extendedprice * (1 - l_discount)) AS part_revenue FROM lineitem JOIN"
+COM_Q017,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT n_name FROM nation WHERE ( SELECT SUM(ps_availqty) FROM partsupp JOIN supplier ON ps_suppkey 
+COM_Q019,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT o_custkey FROM orders o WHERE o_totalprice = (SELECT MAX(o2.o_totalprice) FROM orders o2 WHER
+COM_Q033,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT DISTINCT p_brand FROM lineitem JOIN part    ON l_partkey  = p_partkey JOIN orders  ON l_order
+COM_Q039,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderkey, o_totalprice, 'Best' AS label FROM orders o WHERE o_totalprice = ( SEL"
+COM_Q055,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s_suppkey, s_name FROM supplier WHERE NOT EXISTS ( SELECT DISTINCT p_type FROM part WHERE NOT"
+COM_Q058,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT s_suppkey, s_name FROM supplier WHERE EXISTS ( SELECT 1 FROM lineitem JOIN orders   "
+COM_Q065,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT l_partkey FROM lineitem GROUP BY l_partkey HAVING COUNT(DISTINCT l_shipmode) = 7 ORDER BY l_p
+COM_Q073,complex_queries,1054 (42S22): Unknown column 'o_orderkey' in 'field list',"SELECT o_orderkey, COUNT(*) AS lineitem_count, SUM(l_extendedprice * (1 - l_discount)) AS order_reve"
+COM_Q076,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_type, SUM(total_stock)   AS total_supply, SUM(total_demand)  AS total_demand, ROUN"
+COM_Q080,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_name, total_ordered, total_returned, ROUND(total_returned / NULLIF(total_ordered"
+COM_Q082,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n_name, ROUND(SUM(POWER(revenue_share, 2)), 4) AS hhi_index FROM ( SELECT n_name, l_suppkey, "
+COM_Q083,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT size_bucket, AVG(ship_lag) AS avg_ship_lag_days, COUNT(*)      AS item_count FROM ( SELECT CA"
+COM_Q087,complex_queries,1052 (23000): Column 'p_partkey' in field list is ambiguous,"SELECT p_partkey, p_name, avg_price, total_qty, RANK() OVER (ORDER BY avg_price DESC)  AS price_rank"
+COM_Q089,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT supplier_nation, customer_nation, export_value, import_value, export_value - import_value AS "
+COM_Q091,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT material_type, p_brand, p_type, SUM(revenue) AS total_revenue FROM ( SELECT SUBSTRING_INDEX(p"
+COM_Q100,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, ship_month, monthly_revenue, LAG(monthly_revenue)  OVER (PARTITION BY l_suppkey OR"
+COM_Q101,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_container, l_partkey, part_revenue, DENSE_RANK() OVER ( PARTITION BY p_container ORDER BY p"
+COM_Q102,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, FIRST_VALUE(l_linenumber) OVER ( PARTITION BY l_orderkey ORDER BY l_shipdate ) AS"
+COM_Q103,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderdate, order_discount, SUM(order_discount) OVER ( PARTITION BY o_custkey ORD"
+COM_Q106,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, n_name, supp_revenue, nation_avg_revenue, supp_revenue - nation_avg_revenue AS dev"
+COM_Q112,complex_queries,1690 (22003): BIGINT UNSIGNED value is out of range in '(`ranked`.`rank_1997` - ,"SELECT s_name, rank_1994, rank_1997, rank_1997 - rank_1994 AS rank_change FROM ( SELECT l_suppkey, R"
+COM_Q113,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, order_month, monthly_qty, monthly_qty / AVG(monthly_qty) OVER (PARTITION BY l_part"
+COM_Q121,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o1.o_custkey, o1.o_orderdate          AS day1, o2.o_orderdate          AS day2, o1.o_totalpri"
+COM_Q123,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c1.c_custkey   AS customer_a, c2.c_custkey   AS customer_b, c1.c_mktsegment, n_name          "
+COM_Q124,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS from_nation, n2.n_name AS to_nation, COALESCE(trade_value, 0) AS trade_value FRO"
+COM_Q129,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p1.p_partkey   AS part_a, p2.p_partkey   AS part_b, p1.p_brand, p1.p_retailprice, p1.p_mfgr  "
+COM_Q149,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, l_shipmode, c_mktsegment, COUNT(*)                                          AS line_"
+COM_Q151,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_name, p_brand, MIN(o_orderdate)  AS first_ordered, MAX(o_orderdate)  AS last_ord"
+COM_Q152,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c_mktsegment, avg_distinct_parts, avg_distinct_brands, avg_distinct_types, COUNT(*) AS custom"
+COM_Q156,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT ps_partkey, p_name, p_brand, total_stock, avg_monthly_demand, ROUND(total_stock / NULLIF(avg_"
+COM_Q159,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r1.r_name AS region, total_orders, active_customers, total_revenue, avg_order_value, total_li"
+COM_Q160,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, order_year, annual_revenue, annual_qty, ROUND( annual_revenue / SUM(annual_revenue) O"
+SIN_Q027,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 20
+SIN_Q028,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY BETWEEN 10 AND 30
+SIN_Q029,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE > '1996-01-01'
+SIN_Q030,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_DISCOUNT > 0.05
+SIN_Q031,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 30
+SIN_Q034,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE BETWEEN '1995-01-01' AND '1997-01-01'
+SIN_Q035,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_DISCOUNT BETWEEN 0.02 AND 0.07
+SIN_Q037,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_RETURNFLAG = 'R'
+SIN_Q038,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 15 AND L_DISCOUNT > 0.03
+SIN_Q041,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE BETWEEN '1994-01-01' AND '1995-01-01'
+SIN_Q043,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 20 AND L_SHIPDATE > '1996-01-01'
+THR_Q021,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_NAME, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L"
+THR_Q022,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_TYPE, l.L_EXTENDEDPRICE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY "
+THR_Q023,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_NAME, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L"
+THR_Q024,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_RETAILPRICE, l.L_SHIPDATE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKE"
+THR_Q025,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  o JOIN   LIN"
+THR_Q026,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_TYPE, AVG(l.L_QUANTITY)    AS avg_quantity, COUNT(l.L_LINENUMBER) AS line_count FROM   OR"
+THR_Q027,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_NAME, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS  o JOIN   LINEITEM l O"
+THR_Q028,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, o.O_TOTALPRICE, MAX(p.P_RETAILPRICE) AS max_part_price FROM   ORDERS  o JOIN   "
+THR_Q031,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, s.S_NAME, l.L_QUANTITY FROM   ORDERS   o JOIN   LINEITEM l ON o.O_ORDERKEY = l."
+THR_Q032,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, s.S_NAME, l.L_DISCOUNT FROM   ORDERS   o JOIN   LINEITEM l ON o.O_ORDERKEY = l."
+THR_Q033,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  "
+THR_Q034,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  "
+THR_Q036,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS   o JOIN   LINEITEM l "
+THR_Q039,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY "
+THR_Q040,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST, l.L_EXTENDEDPRICE FROM   LINEITEM l JOIN   PART    "
+THR_Q041,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY "
+THR_Q042,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_NAME, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total_margin FROM   LINEI"
+THR_Q043,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, AVG(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS avg_margin FROM   LINEITEM l JOIN   P"
+THR_Q044,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_SIZE, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P_PARTKEY ="
+THR_Q045,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_TYPE, COUNT(l.L_LINENUMBER) AS line_count, AVG(ps.PS_SUPPLYCOST) AS avg_supply_cost FROM "
+AGG_Q047,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, SUM(l_extendedprice) AS total_price FROM lineitem GROUP BY l_partkey ORDER BY tota"
+AGG_Q066,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, p_brand, SUM(l_extendedprice * (1 - l_discount)) AS revenue FROM lineitem JOIN part O"
+AGG_Q070,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, l_shipmode, SUM(l_quantity) AS total_qty FROM lineitem GROUP BY l_suppkey, l_shipm"
+AGG_Q078,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, l_shipmode, AVG(l_extendedprice) AS avg_price FROM lineitem JOIN part ON l_partkey ="
+AGG_Q080,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, l_returnflag, AVG(l_quantity) AS avg_qty FROM lineitem GROUP BY l_partkey, l_retur"
+AGG_Q084,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS supplier_nation, n2.n_name AS customer_nation, SUM(l_extendedprice * (1 - l_disc"
+AGG_Q120,aggregation,1054 (42S22): Unknown column 'r_regionkey' in 'field list',"SELECT r_regionkey, COUNT(*) AS nation_count FROM nation GROUP BY r_regionkey HAVING COUNT(*) > 5 OR"
+AGG_Q122,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_partkey, p_type, p_retailprice FROM part p WHERE p_retailprice > ( SELECT AVG(p2.p_retailpr"
+AGG_Q132,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_name, revenue FROM ( SELECT p_brand, p_name, SUM(l_extendedprice * (1 - l_discount"
+AGG_Q134,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT order_year, AVG(lineitem_count) AS avg_lineitems_per_order FROM ( SELECT YEAR(o_orderdate) AS"
+AGG_Q143,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_orderpriority, AVG(item_count) AS avg_lineitems FROM ( SELECT o_orderkey, o_orderpriority, "
+AGG_Q144,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT CASE WHEN p_size > 30 THEN 'Large' ELSE 'Small' END AS size_group, SUM(l_extendedprice * (1 -"
+AGG_Q152,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, l_linenumber, l_extendedprice, ROW_NUMBER() OVER (PARTITION BY l_orderkey ORDER B"
+AGG_Q157,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_partkey, part_revenue, RANK() OVER (PARTITION BY p_brand ORDER BY part_revenue DES"
+AGG_Q163,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderdate, o_totalprice, MIN(o_totalprice) OVER (PARTITION BY o_custkey ORDER BY"
+AGG_Q172,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT CASE WHEN p_size > 25 THEN 'Large' ELSE 'Small' END AS part_size_group, COUNT(DISTINCT l_part"
+AGG_Q175,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT CASE WHEN p_type LIKE 'STANDARD%' THEN 'Standard' WHEN p_type LIKE 'SMALL%' THEN 'Small' WHEN
+AGG_Q190,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_type, p_size, COUNT(DISTINCT l_orderkey) AS order_appearances, SUM(l_quantity) AS "
+AGG_Q195,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, COUNT(DISTINCT l_partkey) AS distinct_parts, COUNT(*) AS total_orders, SUM(l_quantity"
+AGG_Q196,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS supplier_nation, n2.n_name AS customer_nation, YEAR(o_orderdate) AS trade_year, "
+AGG_Q200,aggregation,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r_name AS region, n_name AS nation, c_mktsegment AS market_segment, YEAR(o_orderdate) AS orde"
+COM_Q002,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_partkey, p_name, p_brand, p_retailprice FROM part p WHERE p_retailprice > ( SELECT AVG(p2.p"
+COM_Q009,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, l_partkey, l_quantity FROM lineitem l WHERE l_quantity > ( SELECT AVG(l2.l_quanti"
+COM_Q010,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_orderkey, o_custkey, o_orderdate, o_totalprice FROM orders o WHERE o_orderdate > ( SELECT M"
+COM_Q011,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_type, SUM(l_extendedprice * (1 - l_discount)) AS part_revenue FROM lineitem JOIN"
+COM_Q017,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT n_name FROM nation WHERE ( SELECT SUM(ps_availqty) FROM partsupp JOIN supplier ON ps_suppkey 
+COM_Q019,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT o_custkey FROM orders o WHERE o_totalprice = (SELECT MAX(o2.o_totalprice) FROM orders o2 WHER
+COM_Q033,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT DISTINCT p_brand FROM lineitem JOIN part    ON l_partkey  = p_partkey JOIN orders  ON l_order
+COM_Q039,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderkey, o_totalprice, 'Best' AS label FROM orders o WHERE o_totalprice = ( SEL"
+COM_Q055,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s_suppkey, s_name FROM supplier WHERE NOT EXISTS ( SELECT DISTINCT p_type FROM part WHERE NOT"
+COM_Q058,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT s_suppkey, s_name FROM supplier WHERE EXISTS ( SELECT 1 FROM lineitem JOIN orders   "
+COM_Q065,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT l_partkey FROM lineitem GROUP BY l_partkey HAVING COUNT(DISTINCT l_shipmode) = 7 ORDER BY l_p
+COM_Q073,complex_queries,1054 (42S22): Unknown column 'o_orderkey' in 'field list',"SELECT o_orderkey, COUNT(*) AS lineitem_count, SUM(l_extendedprice * (1 - l_discount)) AS order_reve"
+COM_Q076,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, p_type, SUM(total_stock)   AS total_supply, SUM(total_demand)  AS total_demand, ROUN"
+COM_Q080,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_name, total_ordered, total_returned, ROUND(total_returned / NULLIF(total_ordered"
+COM_Q082,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n_name, ROUND(SUM(POWER(revenue_share, 2)), 4) AS hhi_index FROM ( SELECT n_name, l_suppkey, "
+COM_Q083,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT size_bucket, AVG(ship_lag) AS avg_ship_lag_days, COUNT(*)      AS item_count FROM ( SELECT CA"
+COM_Q087,complex_queries,1052 (23000): Column 'p_partkey' in field list is ambiguous,"SELECT p_partkey, p_name, avg_price, total_qty, RANK() OVER (ORDER BY avg_price DESC)  AS price_rank"
+COM_Q089,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT supplier_nation, customer_nation, export_value, import_value, export_value - import_value AS "
+COM_Q091,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT material_type, p_brand, p_type, SUM(revenue) AS total_revenue FROM ( SELECT SUBSTRING_INDEX(p"
+COM_Q100,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, ship_month, monthly_revenue, LAG(monthly_revenue)  OVER (PARTITION BY l_suppkey OR"
+COM_Q101,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_container, l_partkey, part_revenue, DENSE_RANK() OVER ( PARTITION BY p_container ORDER BY p"
+COM_Q102,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_orderkey, FIRST_VALUE(l_linenumber) OVER ( PARTITION BY l_orderkey ORDER BY l_shipdate ) AS"
+COM_Q103,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o_custkey, o_orderdate, order_discount, SUM(order_discount) OVER ( PARTITION BY o_custkey ORD"
+COM_Q106,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_suppkey, n_name, supp_revenue, nation_avg_revenue, supp_revenue - nation_avg_revenue AS dev"
+COM_Q112,complex_queries,1690 (22003): BIGINT UNSIGNED value is out of range in '(`ranked`.`rank_1997` - ,"SELECT s_name, rank_1994, rank_1997, rank_1997 - rank_1994 AS rank_change FROM ( SELECT l_suppkey, R"
+COM_Q113,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, order_month, monthly_qty, monthly_qty / AVG(monthly_qty) OVER (PARTITION BY l_part"
+COM_Q121,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o1.o_custkey, o1.o_orderdate          AS day1, o2.o_orderdate          AS day2, o1.o_totalpri"
+COM_Q123,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c1.c_custkey   AS customer_a, c2.c_custkey   AS customer_b, c1.c_mktsegment, n_name          "
+COM_Q124,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n1.n_name AS from_nation, n2.n_name AS to_nation, COALESCE(trade_value, 0) AS trade_value FRO"
+COM_Q129,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p1.p_partkey   AS part_a, p2.p_partkey   AS part_b, p1.p_brand, p1.p_retailprice, p1.p_mfgr  "
+COM_Q149,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_brand, l_shipmode, c_mktsegment, COUNT(*)                                          AS line_"
+COM_Q151,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l_partkey, p_name, p_brand, MIN(o_orderdate)  AS first_ordered, MAX(o_orderdate)  AS last_ord"
+COM_Q152,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c_mktsegment, avg_distinct_parts, avg_distinct_brands, avg_distinct_types, COUNT(*) AS custom"
+COM_Q156,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT ps_partkey, p_name, p_brand, total_stock, avg_monthly_demand, ROUND(total_stock / NULLIF(avg_"
+COM_Q159,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r1.r_name AS region, total_orders, active_customers, total_revenue, avg_order_value, total_li"
+COM_Q160,complex_queries,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p_type, order_year, annual_revenue, annual_qty, ROUND( annual_revenue / SUM(annual_revenue) O"
+SIN_Q027,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 20
+SIN_Q028,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY BETWEEN 10 AND 30
+SIN_Q029,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE > '1996-01-01'
+SIN_Q030,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_DISCOUNT > 0.05
+SIN_Q031,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 30
+SIN_Q034,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE BETWEEN '1995-01-01' AND '1997-01-01'
+SIN_Q035,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_DISCOUNT BETWEEN 0.02 AND 0.07
+SIN_Q038,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 15 AND L_DISCOUNT > 0.03
+SIN_Q041,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_SHIPDATE BETWEEN '1994-01-01' AND '1995-01-01'
+SIN_Q043,single_table_filters,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT * FROM LINEITEM WHERE L_QUANTITY > 20 AND L_SHIPDATE > '1996-01-01'
+THR_Q021,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_NAME, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L"
+THR_Q022,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_TYPE, l.L_EXTENDEDPRICE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY "
+THR_Q023,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_NAME, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L"
+THR_Q024,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_RETAILPRICE, l.L_SHIPDATE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKE"
+THR_Q025,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  o JOIN   LIN"
+THR_Q026,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_TYPE, AVG(l.L_QUANTITY)    AS avg_quantity, COUNT(l.L_LINENUMBER) AS line_count FROM   OR"
+THR_Q027,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_NAME, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS  o JOIN   LINEITEM l O"
+THR_Q028,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, o.O_TOTALPRICE, MAX(p.P_RETAILPRICE) AS max_part_price FROM   ORDERS  o JOIN   "
+THR_Q031,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, s.S_NAME, l.L_QUANTITY FROM   ORDERS   o JOIN   LINEITEM l ON o.O_ORDERKEY = l."
+THR_Q032,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, s.S_NAME, l.L_DISCOUNT FROM   ORDERS   o JOIN   LINEITEM l ON o.O_ORDERKEY = l."
+THR_Q033,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  "
+THR_Q034,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS  "
+THR_Q036,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS   o JOIN   LINEITEM l "
+THR_Q039,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY "
+THR_Q040,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST, l.L_EXTENDEDPRICE FROM   LINEITEM l JOIN   PART    "
+THR_Q041,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, ps.PS_SUPPLYCOST FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY "
+THR_Q042,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_NAME, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total_margin FROM   LINEI"
+THR_Q043,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, AVG(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS avg_margin FROM   LINEITEM l JOIN   P"
+THR_Q044,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_SIZE, ps.PS_SUPPLYCOST FROM   PART     p JOIN   PARTSUPP ps ON p.P_PARTKEY ="
+THR_Q045,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_TYPE, COUNT(l.L_LINENUMBER) AS line_count, AVG(ps.PS_SUPPLYCOST) AS avg_supply_cost FROM "
+THR_Q046,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, AVG(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS avg_margin FROM   LINEITEM l JOIN   P"
+THR_Q047,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST AS margin FROM   LINEITEM l JOIN"
+THR_Q048,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT p.P_TYPE, p.P_BRAND FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY  = p.P_PARTK"
+THR_Q049,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, s.S_NAME, ps.PS_SUPPLYCOST FROM   LINEITEM l JOIN   PART     p  ON l."
+THR_Q051,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_NAME, p.P_TYPE, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   LINEITEM l "
+THR_Q052,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total_margin FROM   LINEI"
+THR_Q053,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_ORDERKEY, p.P_NAME, s.S_NAME, l.L_QUANTITY FROM   LINEITEM l JOIN   PART     p  ON l.L_PA"
+THR_Q054,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, s.S_NATIONKEY, AVG(ps.PS_SUPPLYCOST) AS avg_cost FROM   LINEITEM l JOIN   PART    "
+THR_Q055,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, AVG(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS avg_margin FROM   LINEITE"
+THR_Q056,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_NAME, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   LINEITEM l "
+THR_Q057,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT p.P_BRAND, s.S_NATIONKEY FROM   LINEITEM l JOIN   PART     p  ON l.L_PARTKEY  = p.P_"
+THR_Q058,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, s.S_NATIONKEY, COUNT(DISTINCT l.L_ORDERKEY) AS order_count FROM   LINEITEM l JOIN "
+THR_Q061,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_CUSTKEY, c.C_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS total_spend FROM   ORDE"
+THR_Q062,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_CUSTKEY, c.C_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS total_spend FROM   ORDE"
+THR_Q064,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_CUSTKEY, c.C_NAME, COUNT(l.L_LINENUMBER) AS total_lines FROM   ORDERS   o JOIN   CUSTOMER"
+THR_Q089,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_CUSTKEY, c.C_NAME, p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM"
+THR_Q090,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_NATIONKEY, p.P_TYPE, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS"
+THR_Q091,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_NATIONKEY, p.P_BRAND, SUM(l.L_QUANTITY)    AS total_qty FROM   ORDERS   o JOIN   CUSTOMER"
+THR_Q092,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_NATIONKEY, p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDER"
+THR_Q094,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT c.C_NATIONKEY, p.P_TYPE FROM   ORDERS   o JOIN   CUSTOMER c ON o.O_CUSTKEY  = c.C_CU"
+THR_Q095,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT YEAR(o.O_ORDERDATE) AS order_year, p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS "
+THR_Q096,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, c.C_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS net_revenue FROM   ORD"
+THR_Q098,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n.N_NAME        AS supplier_nation, p.P_BRAND, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS"
+THR_Q099,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, p.P_NAME, s.S_NAME, n.N_NAME        AS supplier_nation, l.L_EXTENDEDPRICE FROM "
+THR_Q100,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, c.C_NAME, p.P_NAME, l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST AS margin FROM   ORDER"
+THR_Q101,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT c.C_CUSTKEY, c.C_NAME, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total_margin FROM   ORDER"
+THR_Q102,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n.N_NAME        AS nation, p.P_TYPE, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue F"
+THR_Q104,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cn.N_NAME       AS nation, COUNT(DISTINCT o.O_ORDERKEY) AS order_count, SUM(l.L_EXTENDEDPRICE"
+THR_Q105,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n.N_NAME        AS nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDE"
+THR_Q107,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cn.N_NAME       AS cust_nation, p.P_BRAND, s.S_NAME, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUN"
+THR_Q108,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS region, p.P_TYPE, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue F"
+THR_Q109,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS customer_region, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue, A"
+THR_Q110,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cn.N_NAME       AS cust_nation, p.P_BRAND, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total"
+THR_Q111,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS region, p.P_BRAND, SUM(l.L_QUANTITY) AS total_qty FROM   ORDERS    o JOIN "
+THR_Q112,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cn.N_NAME       AS cust_nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM  "
+THR_Q113,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS region, p.P_BRAND, COUNT(DISTINCT c.C_CUSTKEY) AS cust_count FROM   ORDERS"
+THR_Q114,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cn.N_NAME       AS cust_nation, sn.N_NAME       AS supp_nation, AVG(o.O_TOTALPRICE) AS avg_or"
+THR_Q115,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME                 AS region, YEAR(o.O_ORDERDATE)      AS yr, MONTH(o.O_ORDERDATE)     "
+THR_Q116,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, n.N_NAME        AS supplier_nation, MAX(l.L_EXTENDEDPRICE) AS max_price, MIN(l.L_E"
+THR_Q118,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_SIZE, r.R_NAME        AS supplier_region, AVG(l.L_DISCOUNT) AS avg_discount FROM   LINEIT"
+THR_Q120,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_SHIPMODE, p.P_TYPE, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDERS "
+THR_Q122,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_CONTAINER, n.N_NAME        AS nation, SUM(l.L_QUANTITY) AS total_qty FROM   LINEITEM l JO"
+THR_Q126,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, YEAR(l.L_SHIPDATE)    AS ship_year, MAX(l.L_QUANTITY) - MIN(l.L_QUANTITY) AS qty_s"
+THR_Q127,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_TYPE, COUNT(DISTINCT c.C_CUSTKEY) AS customer_count FROM   ORDERS   o JOIN   CUSTOMER c O"
+THR_Q129,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS region, o.O_ORDERSTATUS  AS status, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCO"
+THR_Q132,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, AVG(l.L_EXTENDEDPRICE) AS avg_line_revenue FROM   LINEITEM l JOIN   PART     p  ON"
+THR_Q138,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT l.L_SHIPMODE, AVG(l.L_QUANTITY)    AS avg_qty, COUNT(l.L_LINENUMBER) AS line_count FROM   LIN"
+THR_Q147,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, c.C_NAME, n.N_NAME        AS nation, AVG(l.L_DISCOUNT) AS avg_discount FROM   O"
+THR_Q162,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT DISTINCT sn.N_NAME  AS supplier_nation, cn.N_NAME            AS customer_nation FROM   ORDERS"
+THR_Q168,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT MONTH(l.L_SHIPDATE)   AS ship_month, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue F"
+THR_Q171,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n.N_NAME        AS supplier_nation, p.P_BRAND, SUM(l.L_QUANTITY) AS total_qty FROM   LINEITEM"
+THR_Q177,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT n.N_NAME        AS nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT)) AS revenue FROM   ORDE"
+THR_Q178,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT))"
+THR_Q179,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, p.P_TYPE, SUM(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS total_margin FROM   LINEITE"
+THR_Q183,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_BRAND, COUNT(DISTINCT r.R_REGIONKEY) AS region_count, SUM(l.L_QUANTITY)             AS to"
+THR_Q184,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT r.R_NAME        AS supplier_region, p.P_TYPE, AVG(l.L_EXTENDEDPRICE - ps.PS_SUPPLYCOST) AS av"
+THR_Q187,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT a.C_NAME        AS customer_a, b.C_NAME        AS customer_b, n.N_NAME        AS nation, a.C_"
+THR_Q190,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT s.S_SUPPKEY, s.S_NAME, n.N_NAME        AS nation, SUM(l.L_EXTENDEDPRICE * (1 - l.L_DISCOUNT))"
+THR_Q191,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT p.P_PARTKEY, p.P_NAME, SUM(CASE WHEN YEAR(l.L_SHIPDATE) = 1995 THEN l.L_QUANTITY ELSE 0 END) "
+THR_Q193,three_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT cr.R_NAME       AS customer_region, sr.R_NAME       AS supplier_region, COUNT(DISTINCT o.O_OR"
+TWO_Q016,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY"
+TWO_Q017,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q018,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q020,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q021,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q022,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q023,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q025,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q037,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q041,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q043,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY "
+TWO_Q078,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q079,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q080,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q081,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q082,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q083,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q084,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q086,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_SHIPDATE FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q090,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q091,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q092,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q093,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_QUANTITY FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q129,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, l.L_DISCOUNT FROM   ORDERS o JOIN LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHE"
+TWO_Q141,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, COUNT(l.L_LINENUMBER) AS line_count FROM   ORDERS  o JOIN   LINEITEM l ON o.O_O"
+TWO_Q152,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, COUNT(l.L_LINENUMBER) AS line_count, AVG(l.L_QUANTITY)     AS avg_qty FROM   OR"
+TWO_Q163,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ",SELECT DISTINCT l.L_SHIPDATE FROM   ORDERS  o JOIN   LINEITEM l ON o.O_ORDERKEY = l.L_ORDERKEY WHERE
+TWO_Q192,two_table_joins,"3024 (HY000): Query execution was interrupted, maximum statement execution time ","SELECT o.O_ORDERKEY, o.O_TOTALPRICE FROM   ORDERS o WHERE  EXISTS ( SELECT 1 FROM LINEITEM l WHERE l"

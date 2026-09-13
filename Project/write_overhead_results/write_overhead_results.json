@@ -1,0 +1,82 @@
+{
+  "experiment": "write_overhead",
+  "database": "tpch (SF-1)",
+  "insert_batch": 1000,
+  "trials": 5,
+  "tables": {
+    "orders": {
+      "has_indexes": true,
+      "n_indexes": 6,
+      "index_names": [
+        "idx_orders_custkey",
+        "idx_orders_totalprice",
+        "idx_orders_orderdate",
+        "idx_orders_orderstatus",
+        "idx_orders_orderpriority",
+        "idx_orders_date_price"
+      ],
+      "n_rows": 1000,
+      "trials": 5,
+      "times_ms": [
+        234.06,
+        20.32,
+        19.01,
+        22.87,
+        21.01
+      ],
+      "avg_ms": 63.45,
+      "std_ms": 95.38,
+      "per_row_ms": 0.0635
+    },
+    "lineitem": {
+      "has_indexes": true,
+      "n_indexes": 4,
+      "index_names": [
+        "idx_lineitem_shipdate",
+        "idx_lineitem_returnflag",
+        "idx_lineitem_discount",
+        "idx_lineitem_quantity"
+      ],
+      "n_rows": 1000,
+      "trials": 5,
+      "times_ms": [
+        1096.08,
+        31.45,
+        31.28,
+        33.91,
+        42.34
+      ],
+      "avg_ms": 247.01,
+      "std_ms": 474.67,
+      "per_row_ms": 0.247
+    },
+    "customer": {
+      "has_indexes": true,
+      "n_indexes": 2,
+      "index_names": [
+        "idx_customer_mktsegment",
+        "idx_customer_nationkey"
+      ],
+      "n_rows": 1000,
+      "trials": 5,
+      "times_ms": [
+        58.38,
+        34.85,
+        30.94,
+        38.78,
+        36.14
+      ],
+      "avg_ms": 39.82,
+      "std_ms": 10.75,
+      "per_row_ms": 0.0398
+    }
+  },
+  "summary": {
+    "lineitem_n_indexes": 4,
+    "lineitem_avg_ms": 247.01,
+    "lineitem_per_row_ms": 0.247,
+    "orders_n_indexes": 6,
+    "orders_avg_ms": 63.45,
+    "orders_per_row_ms": 0.0635
+  }
+}

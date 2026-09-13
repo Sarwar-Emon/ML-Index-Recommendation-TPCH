@@ -1,0 +1,30 @@
+{
+  "scale_factor": 10,
+  "database": "tpch_sf10",
+  "total_queries": 36,
+  "successful": 33,
+  "errors": 3,
+  "categories": {
+    "aggregation": {
+      "count": 8,
+      "avg_ms": 12893.7
+    },
+    "complex_queries": {
+      "count": 3,
+      "avg_ms": 46022.1
+    },
+    "single_table_filters": {
+      "count": 10,
+      "avg_ms": 5528.9
+    },
+    "three_table_joins": {
+      "count": 4,
+      "avg_ms": 8557.0
+    },
+    "two_table_joins": {
+      "count": 8,
+      "avg_ms": 10787.0
+    }
+  },
+  "total_runtime_ms": 417029.06
+}
